@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D7420A516A8989D002E5CA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A416A8989D002E5CA3 /* UIKit.framework */; };
+		5D7420A716A8989D002E5CA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A616A8989D002E5CA3 /* Foundation.framework */; };
+		5D7420A916A8989D002E5CA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */; };
+		5D7420AF16A8989D002E5CA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D7420AD16A8989D002E5CA3 /* InfoPlist.strings */; };
+		5D7420B116A8989D002E5CA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420B016A8989D002E5CA3 /* main.m */; };
+		5D7420B516A8989D002E5CA3 /* MWTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */; };
+		5D7420B716A8989D002E5CA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7420B616A8989D002E5CA3 /* Default.png */; };
+		5D7420B916A8989D002E5CA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7420B816A8989D002E5CA3 /* Default@2x.png */; };
+		5D7420BB16A8989D002E5CA3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D7420BA16A8989D002E5CA3 /* Default-568h@2x.png */; };
+		5D7420BE16A8989D002E5CA3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7420BC16A8989D002E5CA3 /* MainStoryboard.storyboard */; };
+		5D7420C916A89A22002E5CA3 /* MWTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420C816A89A22002E5CA3 /* MWTTableViewController.m */; };
+		5D7420CC16A89A97002E5CA3 /* MWTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420CB16A89A97002E5CA3 /* MWTCell.m */; };
+		5D7420CF16A89C68002E5CA3 /* MWTCellDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420CE16A89C68002E5CA3 /* MWTCellDetailViewController.m */; };
+		5D7420D616A89FB8002E5CA3 /* MWTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */; };
+		5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */; };
+		5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */; };
+		5D7420E016A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */; };
+		5D7420E316A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */; };
+		5D7420E616A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */; };
+		5D7420E916A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */; };
+		5D7420EC16A8A6DB002E5CA3 /* MWTTradeStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */; };
+		5D7420EF16A8A6E3002E5CA3 /* MWTSearchStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */; };
+		5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWinningTradeStoryboarded.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D7420A416A8989D002E5CA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5D7420A616A8989D002E5CA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5D7420AC16A8989D002E5CA3 /* MyWinningTradeStoryboarded-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyWinningTradeStoryboarded-Info.plist"; sourceTree = "<group>"; };
+		5D7420AE16A8989D002E5CA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D7420B016A8989D002E5CA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D7420B216A8989D002E5CA3 /* MyWinningTradeStoryboarded-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyWinningTradeStoryboarded-Prefix.pch"; sourceTree = "<group>"; };
+		5D7420B316A8989D002E5CA3 /* MWTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWTAppDelegate.h; sourceTree = "<group>"; };
+		5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWTAppDelegate.m; sourceTree = "<group>"; };
+		5D7420B616A8989D002E5CA3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5D7420B816A8989D002E5CA3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5D7420BA16A8989D002E5CA3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5D7420BD16A8989D002E5CA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5D7420C716A89A22002E5CA3 /* MWTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTTableViewController.h; sourceTree = "<group>"; };
+		5D7420C816A89A22002E5CA3 /* MWTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTTableViewController.m; sourceTree = "<group>"; };
+		5D7420CA16A89A97002E5CA3 /* MWTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTCell.h; sourceTree = "<group>"; };
+		5D7420CB16A89A97002E5CA3 /* MWTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTCell.m; sourceTree = "<group>"; };
+		5D7420CD16A89C68002E5CA3 /* MWTCellDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTCellDetailViewController.h; sourceTree = "<group>"; };
+		5D7420CE16A89C68002E5CA3 /* MWTCellDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTCellDetailViewController.m; sourceTree = "<group>"; };
+		5D7420D416A89FB8002E5CA3 /* MWTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTLoginViewController.h; sourceTree = "<group>"; };
+		5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTLoginViewController.m; sourceTree = "<group>"; };
+		5D7420D716A8A333002E5CA3 /* MWTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSignUpViewController.h; sourceTree = "<group>"; };
+		5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSignUpViewController.m; sourceTree = "<group>"; };
+		5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioViewController.h; sourceTree = "<group>"; };
+		5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioViewController.m; sourceTree = "<group>"; };
+		5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingPositionsViewController.h; sourceTree = "<group>"; };
+		5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingPositionsViewController.m; sourceTree = "<group>"; };
+		5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTProcessedPositionsViewController.h; sourceTree = "<group>"; };
+		5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTProcessedPositionsViewController.m; sourceTree = "<group>"; };
+		5D7420E416A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTUpcomingFuturesViewController.h; sourceTree = "<group>"; };
+		5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTUpcomingFuturesViewController.m; sourceTree = "<group>"; };
+		5D7420E716A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTProcessedFuturesViewController.h; sourceTree = "<group>"; };
+		5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTProcessedFuturesViewController.m; sourceTree = "<group>"; };
+		5D7420EA16A8A6DB002E5CA3 /* MWTTradeStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTTradeStockViewController.h; sourceTree = "<group>"; };
+		5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTTradeStockViewController.m; sourceTree = "<group>"; };
+		5D7420ED16A8A6E2002E5CA3 /* MWTSearchStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSearchStockViewController.h; sourceTree = "<group>"; };
+		5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSearchStockViewController.m; sourceTree = "<group>"; };
+		5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSettingsViewController.h; sourceTree = "<group>"; };
+		5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSettingsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D74209D16A8989D002E5CA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7420A516A8989D002E5CA3 /* UIKit.framework in Frameworks */,
+				5D7420A716A8989D002E5CA3 /* Foundation.framework in Frameworks */,
+				5D7420A916A8989D002E5CA3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D74209516A8989D002E5CA3 = {
+			isa = PBXGroup;
+			children = (
+				5D7420AA16A8989D002E5CA3 /* MyWinningTradeStoryboarded */,
+				5D7420A316A8989D002E5CA3 /* Frameworks */,
+				5D7420A116A8989D002E5CA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D7420A116A8989D002E5CA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D7420A316A8989D002E5CA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420A416A8989D002E5CA3 /* UIKit.framework */,
+				5D7420A616A8989D002E5CA3 /* Foundation.framework */,
+				5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D7420AA16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420B316A8989D002E5CA3 /* MWTAppDelegate.h */,
+				5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */,
+				5D7420BC16A8989D002E5CA3 /* MainStoryboard.storyboard */,
+				5D7420C716A89A22002E5CA3 /* MWTTableViewController.h */,
+				5D7420C816A89A22002E5CA3 /* MWTTableViewController.m */,
+				5D7420CA16A89A97002E5CA3 /* MWTCell.h */,
+				5D7420CB16A89A97002E5CA3 /* MWTCell.m */,
+				5D7420DA16A8A60A002E5CA3 /* Interface View Controllers */,
+				5D7420AB16A8989D002E5CA3 /* Supporting Files */,
+			);
+			path = MyWinningTradeStoryboarded;
+			sourceTree = "<group>";
+		};
+		5D7420AB16A8989D002E5CA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420AC16A8989D002E5CA3 /* MyWinningTradeStoryboarded-Info.plist */,
+				5D7420AD16A8989D002E5CA3 /* InfoPlist.strings */,
+				5D7420B016A8989D002E5CA3 /* main.m */,
+				5D7420B216A8989D002E5CA3 /* MyWinningTradeStoryboarded-Prefix.pch */,
+				5D7420B616A8989D002E5CA3 /* Default.png */,
+				5D7420B816A8989D002E5CA3 /* Default@2x.png */,
+				5D7420BA16A8989D002E5CA3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D7420DA16A8A60A002E5CA3 /* Interface View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420CD16A89C68002E5CA3 /* MWTCellDetailViewController.h */,
+				5D7420CE16A89C68002E5CA3 /* MWTCellDetailViewController.m */,
+				5D7420D416A89FB8002E5CA3 /* MWTLoginViewController.h */,
+				5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */,
+				5D7420D716A8A333002E5CA3 /* MWTSignUpViewController.h */,
+				5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */,
+				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
+				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
+				5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */,
+				5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */,
+				5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */,
+				5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */,
+				5D7420E416A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.h */,
+				5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */,
+				5D7420E716A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.h */,
+				5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */,
+				5D7420EA16A8A6DB002E5CA3 /* MWTTradeStockViewController.h */,
+				5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */,
+				5D7420ED16A8A6E2002E5CA3 /* MWTSearchStockViewController.h */,
+				5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */,
+				5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */,
+				5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */,
+			);
+			name = "Interface View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D74209F16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "MyWinningTradeStoryboarded" */;
+			buildPhases = (
+				5D74209C16A8989D002E5CA3 /* Sources */,
+				5D74209D16A8989D002E5CA3 /* Frameworks */,
+				5D74209E16A8989D002E5CA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWinningTradeStoryboarded;
+			productName = MyWinningTradeStoryboarded;
+			productReference = 5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D74209716A8989D002E5CA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MWT;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Conclave Labs";
+			};
+			buildConfigurationList = 5D74209A16A8989D002E5CA3 /* Build configuration list for PBXProject "MyWinningTradeStoryboarded" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5D74209516A8989D002E5CA3;
+			productRefGroup = 5D7420A116A8989D002E5CA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D74209F16A8989D002E5CA3 /* MyWinningTradeStoryboarded */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D74209E16A8989D002E5CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7420AF16A8989D002E5CA3 /* InfoPlist.strings in Resources */,
+				5D7420B716A8989D002E5CA3 /* Default.png in Resources */,
+				5D7420B916A8989D002E5CA3 /* Default@2x.png in Resources */,
+				5D7420BB16A8989D002E5CA3 /* Default-568h@2x.png in Resources */,
+				5D7420BE16A8989D002E5CA3 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D74209C16A8989D002E5CA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7420B116A8989D002E5CA3 /* main.m in Sources */,
+				5D7420B516A8989D002E5CA3 /* MWTAppDelegate.m in Sources */,
+				5D7420C916A89A22002E5CA3 /* MWTTableViewController.m in Sources */,
+				5D7420CC16A89A97002E5CA3 /* MWTCell.m in Sources */,
+				5D7420CF16A89C68002E5CA3 /* MWTCellDetailViewController.m in Sources */,
+				5D7420D616A89FB8002E5CA3 /* MWTLoginViewController.m in Sources */,
+				5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */,
+				5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */,
+				5D7420E016A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m in Sources */,
+				5D7420E316A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m in Sources */,
+				5D7420E616A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m in Sources */,
+				5D7420E916A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m in Sources */,
+				5D7420EC16A8A6DB002E5CA3 /* MWTTradeStockViewController.m in Sources */,
+				5D7420EF16A8A6E3002E5CA3 /* MWTSearchStockViewController.m in Sources */,
+				5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D7420AD16A8989D002E5CA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D7420AE16A8989D002E5CA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5D7420BC16A8989D002E5CA3 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D7420BD16A8989D002E5CA3 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D7420C216A8989D002E5CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5D7420C316A8989D002E5CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D7420C516A8989D002E5CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
+				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5D7420C616A8989D002E5CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
+				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D74209A16A8989D002E5CA3 /* Build configuration list for PBXProject "MyWinningTradeStoryboarded" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D7420C216A8989D002E5CA3 /* Debug */,
+				5D7420C316A8989D002E5CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "MyWinningTradeStoryboarded" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D7420C516A8989D002E5CA3 /* Debug */,
+				5D7420C616A8989D002E5CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D74209716A8989D002E5CA3 /* Project object */;
+}
