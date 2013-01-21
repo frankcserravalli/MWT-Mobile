@@ -40,6 +40,7 @@
 		5D8FE29D16ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29116ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m */; };
 		5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */; };
 		5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */; };
+		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,8 @@
 		5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
 		5D8FE29416ADBDCE0094F9B0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioCell.h; sourceTree = "<group>"; };
+		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */,
 				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
 				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
+				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
+				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
 				5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */,
 				5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */,
 				5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */,
@@ -328,6 +333,7 @@
 				5D8FE29D16ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */,
 				5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */,
+				5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

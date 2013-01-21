@@ -7,6 +7,7 @@
 //
 
 #import "MWTPortfolioViewController.h"
+#import "MWTPortfolioCell.h"
 #import "SBJson.h"
 
 @interface MWTPortfolioViewController ()
@@ -14,6 +15,13 @@
 @end
 
 @implementation MWTPortfolioViewController
+
+/*
+ *  TODO
+ *  -parent portfolio UI table view
+ *  -stock subview
+ */
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +44,18 @@
     _portfolioValue.text = _totalValue;
     _accountValueLabel.text = _accountValue;
     _cashLabel.text = _cash;
+    
+    for (NSString *key in _stocks)
+    {
+        NSLog(@"KEY: %@", key);
+        NSString *value = [_stocks objectForKey:key];
+        
+        NSLog(@"VALUE: %@", value);
+        
+        NSDictionary *subvalues = [_stocks objectForKey:key];
+        NSLog(@"percent_gained:");
+        NSLog([[subvalues objectForKey:@"percent_gain"] stringValue]);
+    }
 }
 
 - (void) getPortfolio
@@ -63,13 +83,15 @@
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSDictionary *portfolio = [parser objectWithData:data];
     
-    NSString *valueString = [[portfolio objectForKey:@"current_value"] stringValue];
-    NSString *accountValueString = [[portfolio objectForKey:@"account_value"] stringValue];
-    NSString *cashString = [[portfolio objectForKey:@"cash"] stringValue];
-
-    _totalValue = valueString;
-    _accountValue = accountValueString;
-    _cash = cashString;
+    [self assignValuesFrom:portfolio];
+//    
+//    NSString *valueString = [[portfolio objectForKey:@"current_value"] stringValue];
+//    NSString *accountValueString = [[portfolio objectForKey:@"account_value"] stringValue];
+//    NSString *cashString = [[portfolio objectForKey:@"cash"] stringValue];
+//
+//    _totalValue = valueString;
+//    _accountValue = accountValueString;
+//    _cash = cashString;
     
     _sections = [portfolio allKeys];
     
@@ -82,6 +104,26 @@
         }
 }
 
+- (void) assignValuesFrom:(NSDictionary *)dictionary
+{
+    NSDecimalNumberHandler *numberBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:4 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *value = [dictionary objectForKey:@"current_value"];
+
+    value = [value decimalNumberByRoundingAccordingToBehavior:numberBehavior];
+    NSString *valueString = [value stringValue];
+    _totalValue = valueString;
+
+    NSString *accountValueString = [[dictionary objectForKey:@"account_value"] stringValue];
+    _accountValue = accountValueString;
+
+    NSString *cashString = [[dictionary objectForKey:@"cash"] stringValue];
+    _cash = cashString;
+    
+    _stocks = [dictionary objectForKey:@"stocks"];
+    _stocksArray = [_stocks allKeys];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -91,26 +133,40 @@
 #pragma mark - Table View
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [_sections objectAtIndex:section];
+    //return [_sections objectAtIndex:section];
+    return @"Stocks";
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return _sections.count;
+    //return _sections.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return _stocksArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PortfolioCell";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"Test";
+    NSString *stock = _stocksArray[indexPath.row];
+    NSDictionary *stockInformation = [_stocks objectForKey:stock];
+    
+//    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gained"] stringValue];
+//    cell.symbolLabel.text = stock;
+//    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
+//    cell.totalLabel.text = @"0";
+    
+    cell.symbolLabel.text = stock;
+    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gain"] stringValue];
+    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
+    cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
+    
     
     return cell;
 }
