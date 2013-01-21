@@ -255,9 +255,102 @@
                     <view key="view" contentMode="scaleToFill" id="X3x-DK-8q9">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-iS-5rb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8x2-nL-Miw"/>
+                                    <constraint firstAttribute="width" constant="49" id="BPS-XC-FTz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3H-p2-ULc">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Portfolio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX5-y2-iJP">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUY-bp-2nK">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" type="user" id="mAY-7Z-JsM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-ZP-KcN">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PortfolioCell" id="43O-yL-tRW">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TMf-JY-xRO" id="1ud-o5-L0P"/>
+                                    <outlet property="delegate" destination="TMf-JY-xRO" id="Gbc-Rt-Ry7"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gi-bl-Mum">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WQ3-LD-TTa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" type="user" id="l5i-Ds-vZn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ee-j9-ZDz">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" type="user" id="CPg-0G-j9U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S3H-p2-ULc" firstAttribute="baseline" secondItem="DKK-iS-5rb" secondAttribute="baseline" type="default" id="0BZ-R8-fb1"/>
+                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="7" id="1A1-e8-zPg"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="top" secondItem="1gi-bl-Mum" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Bi7-ex-gaS"/>
+                            <constraint firstItem="mX5-y2-iJP" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="EdQ-id-d3N"/>
+                            <constraint firstItem="mX5-y2-iJP" firstAttribute="baseline" secondItem="S3H-p2-ULc" secondAttribute="baseline" type="default" id="Gfw-oc-KDw"/>
+                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="1gi-bl-Mum" secondAttribute="leading" type="default" id="IMg-qO-zkV"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="LGk-Uo-3um"/>
+                            <constraint firstItem="S3H-p2-ULc" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="N3w-N9-ZSO"/>
+                            <constraint firstItem="0Ee-j9-ZDz" firstAttribute="trailing" secondItem="S3H-p2-ULc" secondAttribute="trailing" type="default" id="OeZ-wQ-ea4"/>
+                            <constraint firstItem="DKK-iS-5rb" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="Qua-OZ-veO"/>
+                            <constraint firstAttribute="trailing" secondItem="mX5-y2-iJP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S4k-be-3zm"/>
+                            <constraint firstItem="1gi-bl-Mum" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XMh-dR-erN"/>
+                            <constraint firstItem="0Ee-j9-ZDz" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="boc-bM-oeC"/>
+                            <constraint firstItem="jUY-bp-2nK" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="egY-Kh-U4q"/>
+                            <constraint firstItem="jUY-bp-2nK" firstAttribute="centerX" secondItem="mX5-y2-iJP" secondAttribute="centerX" type="default" id="gwu-eb-7Bc"/>
+                            <constraint firstItem="0Ee-j9-ZDz" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lTS-h0-S4C"/>
+                            <constraint firstItem="0Ee-j9-ZDz" firstAttribute="baseline" secondItem="jUY-bp-2nK" secondAttribute="baseline" type="default" id="lgg-SR-ROR"/>
+                            <constraint firstItem="1gi-bl-Mum" firstAttribute="baseline" secondItem="0Ee-j9-ZDz" secondAttribute="baseline" type="default" id="nBd-i6-H6N"/>
+                            <constraint firstItem="S3H-p2-ULc" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nOZ-kL-Lkq"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="bottom" secondItem="X3x-DK-8q9" secondAttribute="bottom" type="default" id="w0a-9J-eLe"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="wwV-T2-57j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EeT-Qn-2Ha"/>
+                    <connections>
+                        <outlet property="accountValueLabel" destination="1gi-bl-Mum" id="67A-oI-JpD"/>
+                        <outlet property="cashLabel" destination="0Ee-j9-ZDz" id="ClR-Nm-AJs"/>
+                        <outlet property="portfolioValue" destination="jUY-bp-2nK" id="Oxl-nQ-qPl"/>
+                        <outlet property="tableView" destination="tNc-ZP-KcN" id="2zc-AF-qxB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,6 +388,7 @@
         <class className="MWTLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="login"/>
                 <relationship kind="action" name="login:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
@@ -305,6 +399,12 @@
         </class>
         <class className="MWTPortfolioViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="MWTProcessedFuturesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTProcessedFuturesViewController.h"/>
