@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400E916AF32A700D5F659 /* MWTStockViewController.m */; };
+		5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400ED16AF33C700D5F659 /* MWTStockCell.m */; };
+		5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F016AF411600D5F659 /* MWTShortsViewController.m */; };
 		5D7420A516A8989D002E5CA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A416A8989D002E5CA3 /* UIKit.framework */; };
 		5D7420A716A8989D002E5CA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A616A8989D002E5CA3 /* Foundation.framework */; };
 		5D7420A916A8989D002E5CA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */; };
@@ -44,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D6400E816AF32A700D5F659 /* MWTStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockViewController.h; sourceTree = "<group>"; };
+		5D6400E916AF32A700D5F659 /* MWTStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockViewController.m; sourceTree = "<group>"; };
+		5D6400EC16AF33C700D5F659 /* MWTStockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockCell.h; sourceTree = "<group>"; };
+		5D6400ED16AF33C700D5F659 /* MWTStockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockCell.m; sourceTree = "<group>"; };
+		5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShortsViewController.h; sourceTree = "<group>"; };
+		5D6400F016AF411600D5F659 /* MWTShortsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTShortsViewController.m; sourceTree = "<group>"; };
 		5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWinningTradeStoryboarded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7420A416A8989D002E5CA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D7420A616A8989D002E5CA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +132,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D6400F216AF412200D5F659 /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
+				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
+				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
+				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
+				5D6400E816AF32A700D5F659 /* MWTStockViewController.h */,
+				5D6400E916AF32A700D5F659 /* MWTStockViewController.m */,
+				5D6400EC16AF33C700D5F659 /* MWTStockCell.h */,
+				5D6400ED16AF33C700D5F659 /* MWTStockCell.m */,
+				5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */,
+				5D6400F016AF411600D5F659 /* MWTShortsViewController.m */,
+			);
+			name = Portfolio;
+			sourceTree = "<group>";
+		};
 		5D74209516A8989D002E5CA3 = {
 			isa = PBXGroup;
 			children = (
@@ -190,10 +216,7 @@
 				5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */,
 				5D7420D716A8A333002E5CA3 /* MWTSignUpViewController.h */,
 				5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */,
-				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
-				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
-				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
-				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
+				5D6400F216AF412200D5F659 /* Portfolio */,
 				5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */,
 				5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */,
 				5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */,
@@ -334,6 +357,9 @@
 				5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */,
 				5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */,
 				5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */,
+				5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */,
+				5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */,
+				5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

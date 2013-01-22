@@ -8,6 +8,7 @@
 
 #import "MWTPortfolioViewController.h"
 #import "MWTPortfolioCell.h"
+#import "MWTStockViewController.h"
 #import "SBJson.h"
 
 @interface MWTPortfolioViewController ()
@@ -37,6 +38,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.tableView.dataSource = self;
+    
+    _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions", @"Processed Date Time Transactions", @"Processed Stop Loss Transactions"];
+    
 
     NSLog(@"Call portfolio");
     [self getPortfolio];
@@ -45,17 +49,17 @@
     _accountValueLabel.text = _accountValue;
     _cashLabel.text = _cash;
     
-    for (NSString *key in _stocks)
-    {
-        NSLog(@"KEY: %@", key);
-        NSString *value = [_stocks objectForKey:key];
-        
-        NSLog(@"VALUE: %@", value);
-        
-        NSDictionary *subvalues = [_stocks objectForKey:key];
-        NSLog(@"percent_gained:");
-        NSLog([[subvalues objectForKey:@"percent_gain"] stringValue]);
-    }
+//    for (NSString *key in _stocks)
+//    {
+//        NSLog(@"KEY: %@", key);
+//        NSString *value = [_stocks objectForKey:key];
+//        
+//        NSLog(@"VALUE: %@", value);
+//        
+//        NSDictionary *subvalues = [_stocks objectForKey:key];
+//        NSLog(@"percent_gained:");
+//        NSLog([[subvalues objectForKey:@"percent_gain"] stringValue]);
+//    }
 }
 
 - (void) getPortfolio
@@ -71,11 +75,6 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
     [self parsePortfolio:response];
-    
-//    NSString *responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-//    NSLog(responseString);
-    
-//    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (void) parsePortfolio:(NSData *)data
@@ -84,24 +83,15 @@
     NSDictionary *portfolio = [parser objectWithData:data];
     
     [self assignValuesFrom:portfolio];
-//    
-//    NSString *valueString = [[portfolio objectForKey:@"current_value"] stringValue];
-//    NSString *accountValueString = [[portfolio objectForKey:@"account_value"] stringValue];
-//    NSString *cashString = [[portfolio objectForKey:@"cash"] stringValue];
-//
-//    _totalValue = valueString;
-//    _accountValue = accountValueString;
-//    _cash = cashString;
     
     _sections = [portfolio allKeys];
     
-        for (NSString *key in portfolio)
-        {
-            NSLog(@"KEY: %@", key);
-            NSString *value = [portfolio objectForKey:key];
-    
-            NSLog(@"VALUE: %@", value);
-        }
+//    for (NSString *key in portfolio)
+//    {
+//        NSLog(@"KEY: %@", key);
+//        NSString *value = [portfolio objectForKey:key];
+//        NSLog(@"VALUE: %@", value);
+//    }
 }
 
 - (void) assignValuesFrom:(NSDictionary *)dictionary
@@ -131,11 +121,7 @@
 }
 
 #pragma mark - Table View
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    //return [_sections objectAtIndex:section];
-    return @"Stocks";
-}
+
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -154,27 +140,64 @@
     MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSString *stock = _stocksArray[indexPath.row];
-    NSDictionary *stockInformation = [_stocks objectForKey:stock];
-    
-//    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gained"] stringValue];
+//    NSString *stock = _stocksArray[indexPath.row];
+//    NSDictionary *stockInformation = [_stocks objectForKey:stock];
+//
 //    cell.symbolLabel.text = stock;
+//    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gain"] stringValue];
 //    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
-//    cell.totalLabel.text = @"0";
-    
-    cell.symbolLabel.text = stock;
-    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gain"] stringValue];
-    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
-    cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
-    
+//    cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
+    cell.symbolLabel.text = _interfaceElements[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Cell pressed");
+    NSLog(@"Cell %i pressed", indexPath.row);
+    if (_interfaceElements[indexPath.row] == @"Stocks")
+    {
+        [self performSegueWithIdentifier:@"Stocks" sender:self];
+    }
+    else if (_interfaceElements[indexPath.row] == @"Shorts")
+    {
+        [self performSegueWithIdentifier:@"Shorts" sender:self];
+    }
+    else if (_interfaceElements[indexPath.row] == @"Pending Date Time Transactions")
+    {
+        NSLog(_interfaceElements[indexPath.row]);
+    }
+    else if (_interfaceElements[indexPath.row] == @"Pending Stop Loss Transactions")
+    {
+        NSLog(_interfaceElements[indexPath.row]);
+    }
+    else if (_interfaceElements[indexPath.row] == @"Processed Date Time Transactions")
+    {
+        NSLog(_interfaceElements[indexPath.row]);
+    }
+    else if (_interfaceElements[indexPath.row] == @"Processed Stop Loss Transactions")
+    {
+        NSLog(_interfaceElements[indexPath.row]);
+    }
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"Stocks"])
+    {
+        NSLog(@"Segue performed");
+        MWTStockViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSInteger row = [indexPath row];
+        
+        detailViewController.title = _interfaceElements[row];
+    }
+    else
+    {
+        NSLog(@"Undefined segue");
+    }
+}
 
 @end
