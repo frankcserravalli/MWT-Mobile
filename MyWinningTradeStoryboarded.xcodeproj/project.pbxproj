@@ -45,6 +45,7 @@
 		5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */; };
 		5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */; };
 		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
+		5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,8 @@
 		5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioCell.h; sourceTree = "<group>"; };
 		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
+		5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolio.h; sourceTree = "<group>"; };
+		5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,7 @@
 		5D7420AA16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
 			isa = PBXGroup;
 			children = (
+				5DA9A6E616B0475C00C67CEA /* Models */,
 				5D7420B316A8989D002E5CA3 /* MWTAppDelegate.h */,
 				5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */,
 				5D7420BC16A8989D002E5CA3 /* MainStoryboard.storyboard */,
@@ -277,6 +281,15 @@
 			);
 			name = JSON;
 			path = objc;
+			sourceTree = "<group>";
+		};
+		5DA9A6E616B0475C00C67CEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */,
+				5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +389,7 @@
 				5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */,
 				5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */,
 				5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */,
+				5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
