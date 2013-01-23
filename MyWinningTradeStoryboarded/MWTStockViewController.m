@@ -29,25 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    MWTPortfolio *portfolio = [[MWTPortfolio alloc] init];
-    _portfolio = portfolio;
-    
-//    NSLog(@"Call portfolio");
-//    [self getPortfolio];
-    
-//    for (NSString *key in _stocks)
-//    {
-//        NSLog(@"KEY: %@", key);
-//        NSString *value = [_stocks objectForKey:key];
-//        
-//        NSLog(@"VALUE: %@", value);
-//        
-//        NSDictionary *subvalues = [_stocks objectForKey:key];
-//        NSLog(@"percent_gained:");
-//        NSLog([[subvalues objectForKey:@"percent_gain"] stringValue]);
-//    }
-
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,79 +37,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    _portfolio = [[MWTPortfolio alloc] init];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-//- (void) getPortfolio
-//{
-//    int user_id = 1;
-//    NSString *portfolioURLString = [NSString stringWithFormat:@"http://%@/api/v1/users/portfolio?user_id=%i", serverURL,user_id];
-//    NSURL *portfolioURL = [NSURL URLWithString:portfolioURLString];
-//    
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:portfolioURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-//    [request setHTTPMethod:@"GET"];
-//    NSError *requestError;
-//    NSURLResponse *urlResponse = nil;
-//    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
-//    
-//    [self parsePortfolio:response];
-//}
-
-//- (void) parsePortfolio:(NSData *)data
-//{
-//    SBJsonParser *parser = [[SBJsonParser alloc] init];
-//    NSDictionary *portfolio = [parser objectWithData:data];
-//    
-//    [self assignValuesFrom:portfolio];
-//    
-//    _sections = [portfolio allKeys];
-//    
-//    for (NSString *key in portfolio)
-//    {
-//        NSLog(@"KEY: %@", key);
-//        NSString *value = [portfolio objectForKey:key];
-//        NSLog(@"VALUE: %@", value);
-//    }
-//}
-//
-//- (void) assignValuesFrom:(NSDictionary *)dictionary
-//{
-//    NSDecimalNumberHandler *numberBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:4 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
-//    NSDecimalNumber *value = [dictionary objectForKey:@"current_value"];
-//    
-//    value = [value decimalNumberByRoundingAccordingToBehavior:numberBehavior];
-//    NSString *valueString = [value stringValue];
-//    _totalValue = valueString;
-//    
-//    NSString *accountValueString = [[dictionary objectForKey:@"account_value"] stringValue];
-//    _accountValue = accountValueString;
-//    
-//    NSString *cashString = [[dictionary objectForKey:@"cash"] stringValue];
-//    _cash = cashString;
-//    
-//    _stocks = [dictionary objectForKey:@"stocks"];
-//    _stocksArray = [_stocks allKeys];
-//    
-//}
-
-
-
-
-
-
-
-
-
 #pragma mark - Table view data source
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    //return [_sections objectAtIndex:section];
-//    return @"Stocks";
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -148,17 +70,15 @@
     MWTStockCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-//    NSString *stockSymbol = _stocksArray[indexPath.row];
-//    NSDictionary *stockInformation = [_stocks objectForKey:stock];
-//    
-//    cell.symbolLabel.text = stockSymbol;
-//    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gain"] stringValue];
-//    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
-//    cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
-    cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
-    
 
+    cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
+    MWTStock *myStock = [[MWTStock alloc] init];
+    [myStock parsePortfolioForStock:_portfolio.stockSymbols[indexPath.row]];
     
+    cell.percentGainLabel.text = [myStock.percent_gain stringValue];
+    cell.sharesLabel.text = [myStock.shares_owned stringValue];
+    cell.totalLabel.text = [myStock.current_value stringValue];
+        
     return cell;
 }
 
@@ -220,11 +140,10 @@
     MWTStockDetailViewController *detailViewController = [segue destinationViewController];
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
     
     NSInteger row = [indexPath row];
     
-    detailViewController.title = @"Stock Summary";
+    detailViewController.title = [[_portfolio stockSymbols] objectAtIndex:row];
 }
 
 @end
