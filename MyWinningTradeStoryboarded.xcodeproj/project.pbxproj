@@ -46,6 +46,7 @@
 		5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */; };
 		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
 		5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */; };
+		5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,8 @@
 		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
 		5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolio.h; sourceTree = "<group>"; };
 		5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolio.m; sourceTree = "<group>"; };
+		5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStock.h; sourceTree = "<group>"; };
+		5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,8 @@
 		5DA9A6E616B0475C00C67CEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */,
+				5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */,
 				5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */,
 				5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */,
 			);
@@ -390,6 +395,7 @@
 				5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */,
 				5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */,
 				5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */,
+				5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
