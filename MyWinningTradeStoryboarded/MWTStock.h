@@ -24,6 +24,8 @@
 @property (strong, nonatomic) NSNumber *percent_gain;
 @property (strong, nonatomic) NSNumber *shares_owned;
 
+
 - (void) parsePortfolioForStock:(NSString *)stockName;
+- (void) parse:(MWTPortfolio *)portfolio forStock:(NSString *)stockName;
 
 @end

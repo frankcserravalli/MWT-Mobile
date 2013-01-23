@@ -12,12 +12,6 @@
 #import "MWTLoginViewController.h"
 #import "MWTSignUpViewController.h"
 #import "MWTPortfolioViewController.h"
-#import "MWTPendingPositionsViewController.h"
-#import "MWTProcessedPositionsViewController.h"
-#import "MWTUpcomingFuturesViewController.h"
-#import "MWTProcessedFuturesViewController.h"
-#import "MWTTradeStockViewController.h"
-#import "MWTSearchStockViewController.h"
 #import "MWTSettingsViewController.h"
 
 @interface MWTTableViewController ()
@@ -45,7 +39,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-//    _interfaceElements = @[@"Login", @"Sign Up", @"Portfolio", @"Pending Positions", @"Processed Positions", @"Upcoming Future Transcations", @"Processed Future Transactions", @"Trade Stock", @"Search Stock", @"Settings"];
     _interfaceElements = @[@"Login", @"Sign Up", @"Portfolio", @"Settings"];
 }
 
@@ -146,31 +139,6 @@
     {
         [self performSegueWithIdentifier:@"Portfolio" sender:self];
     }
-//    else if (_interfaceElements[indexPath.row] == @"Pending Positions")
-//    {
-//        [self performSegueWithIdentifier:@"PendingPositions" sender:self];
-//    }
-//    
-//    else if (_interfaceElements[indexPath.row] == @"Processed Positions")
-//    {
-//        [self performSegueWithIdentifier:@"ProcessedPositions" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Upcoming Future Transcations")
-//    {
-//        [self performSegueWithIdentifier:@"UpcomingFutures" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Processed Future Transactions")
-//    {
-//        [self performSegueWithIdentifier:@"ProcessedFutures" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Trade Stock")
-//    {
-//        [self performSegueWithIdentifier:@"TradeStock" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Search Stock")
-//    {
-//        [self performSegueWithIdentifier:@"SearchStock" sender:self];
-//    }
     else if (_interfaceElements[indexPath.row] == @"Settings")
     {
         [self performSegueWithIdentifier:@"Settings" sender:self];
@@ -204,66 +172,6 @@
     else if ([[segue identifier] isEqualToString:@"Portfolio"])
     {
         MWTPortfolioViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"PendingPositions"])
-    {
-        MWTPendingPositionsViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"ProcessedPositions"])
-    {
-        MWTProcessedPositionsViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"UpcomingFutures"])
-    {
-        MWTUpcomingFuturesViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"ProcessedFutures"])
-    {
-        MWTProcessedFuturesViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"TradeStock"])
-    {
-        MWTTradeStockViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"SearchStock"])
-    {
-        MWTSearchStockViewController *detailViewController = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         

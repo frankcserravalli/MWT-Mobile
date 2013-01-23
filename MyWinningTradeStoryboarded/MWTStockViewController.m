@@ -29,12 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -66,19 +70,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"cellForRow called on stock: %@", _portfolio.stockSymbols[indexPath.row]);
     static NSString *CellIdentifier = @"StockCell";
     MWTStockCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
 
-    cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
     MWTStock *myStock = [[MWTStock alloc] init];
-    [myStock parsePortfolioForStock:_portfolio.stockSymbols[indexPath.row]];
-    
+    [myStock parse:_portfolio forStock:_portfolio.stockSymbols[indexPath.row]];
+
+    cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
     cell.percentGainLabel.text = [myStock.percent_gain stringValue];
     cell.sharesLabel.text = [myStock.shares_owned stringValue];
     cell.totalLabel.text = [myStock.current_value stringValue];
-        
+
     return cell;
 }
 
@@ -143,7 +148,11 @@
     
     NSInteger row = [indexPath row];
     
-    detailViewController.title = [[_portfolio stockSymbols] objectAtIndex:row];
+    NSString *stockSymbol = [[_portfolio stockSymbols] objectAtIndex:row];
+//    
+//    MWTStock *myStock = [[MWTStock alloc] init];
+//    [myStock parse:_portfolio forStock:stockSymbol];
+    detailViewController.title = stockSymbol;
 }
 
 @end

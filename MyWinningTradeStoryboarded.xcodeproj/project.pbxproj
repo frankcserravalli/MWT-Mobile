@@ -27,12 +27,6 @@
 		5D7420D616A89FB8002E5CA3 /* MWTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */; };
 		5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */; };
 		5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */; };
-		5D7420E016A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */; };
-		5D7420E316A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */; };
-		5D7420E616A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */; };
-		5D7420E916A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */; };
-		5D7420EC16A8A6DB002E5CA3 /* MWTTradeStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */; };
-		5D7420EF16A8A6E3002E5CA3 /* MWTSearchStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */; };
 		5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */; };
 		5D8FE29616ADBDCE0094F9B0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */; };
 		5D8FE29716ADBDCE0094F9B0 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28516ADBDCE0094F9B0 /* SBJsonStreamParser.m */; };
@@ -85,18 +79,6 @@
 		5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSignUpViewController.m; sourceTree = "<group>"; };
 		5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioViewController.h; sourceTree = "<group>"; };
 		5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioViewController.m; sourceTree = "<group>"; };
-		5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingPositionsViewController.h; sourceTree = "<group>"; };
-		5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingPositionsViewController.m; sourceTree = "<group>"; };
-		5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTProcessedPositionsViewController.h; sourceTree = "<group>"; };
-		5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTProcessedPositionsViewController.m; sourceTree = "<group>"; };
-		5D7420E416A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTUpcomingFuturesViewController.h; sourceTree = "<group>"; };
-		5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTUpcomingFuturesViewController.m; sourceTree = "<group>"; };
-		5D7420E716A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTProcessedFuturesViewController.h; sourceTree = "<group>"; };
-		5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTProcessedFuturesViewController.m; sourceTree = "<group>"; };
-		5D7420EA16A8A6DB002E5CA3 /* MWTTradeStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTTradeStockViewController.h; sourceTree = "<group>"; };
-		5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTTradeStockViewController.m; sourceTree = "<group>"; };
-		5D7420ED16A8A6E2002E5CA3 /* MWTSearchStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSearchStockViewController.h; sourceTree = "<group>"; };
-		5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSearchStockViewController.m; sourceTree = "<group>"; };
 		5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSettingsViewController.h; sourceTree = "<group>"; };
 		5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSettingsViewController.m; sourceTree = "<group>"; };
 		5D8FE28116ADBDCE0094F9B0 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -238,21 +220,9 @@
 				5D7420D516A89FB8002E5CA3 /* MWTLoginViewController.m */,
 				5D7420D716A8A333002E5CA3 /* MWTSignUpViewController.h */,
 				5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */,
-				5D6400F216AF412200D5F659 /* Portfolio */,
-				5D7420DE16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.h */,
-				5D7420DF16A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m */,
-				5D7420E116A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.h */,
-				5D7420E216A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m */,
-				5D7420E416A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.h */,
-				5D7420E516A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m */,
-				5D7420E716A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.h */,
-				5D7420E816A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m */,
-				5D7420EA16A8A6DB002E5CA3 /* MWTTradeStockViewController.h */,
-				5D7420EB16A8A6DB002E5CA3 /* MWTTradeStockViewController.m */,
-				5D7420ED16A8A6E2002E5CA3 /* MWTSearchStockViewController.h */,
-				5D7420EE16A8A6E3002E5CA3 /* MWTSearchStockViewController.m */,
 				5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */,
 				5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */,
+				5D6400F216AF412200D5F659 /* Portfolio */,
 			);
 			name = "Interface View Controllers";
 			sourceTree = "<group>";
@@ -372,12 +342,6 @@
 				5D7420D616A89FB8002E5CA3 /* MWTLoginViewController.m in Sources */,
 				5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */,
 				5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */,
-				5D7420E016A8A6AD002E5CA3 /* MWTPendingPositionsViewController.m in Sources */,
-				5D7420E316A8A6BB002E5CA3 /* MWTProcessedPositionsViewController.m in Sources */,
-				5D7420E616A8A6C8002E5CA3 /* MWTUpcomingFuturesViewController.m in Sources */,
-				5D7420E916A8A6D3002E5CA3 /* MWTProcessedFuturesViewController.m in Sources */,
-				5D7420EC16A8A6DB002E5CA3 /* MWTTradeStockViewController.m in Sources */,
-				5D7420EF16A8A6E3002E5CA3 /* MWTSearchStockViewController.m in Sources */,
 				5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */,
 				5D8FE29616ADBDCE0094F9B0 /* SBJsonParser.m in Sources */,
 				5D8FE29716ADBDCE0094F9B0 /* SBJsonStreamParser.m in Sources */,

@@ -26,4 +26,19 @@
     _shares_owned = [_stockInformation objectForKey:@"shares_owned"];
 }
 
+- (void) parse:(MWTPortfolio *)portfolio forStock:(NSString *)stockName
+{
+    _stockInformation = [[portfolio stocks] objectForKey:stockName];
+    
+    _stockSymbol = stockName;
+    _companyName = [_stockInformation objectForKey:@"name"];
+    
+    _capital_gain = [_stockInformation objectForKey:@"capital_gain"];
+    _cost_basis = [_stockInformation objectForKey:@"cost_basis"];
+    _current_price = [_stockInformation objectForKey:@"current_price"];
+    _current_value = [_stockInformation objectForKey:@"current_value"];
+    _percent_gain = [_stockInformation objectForKey:@"percent_gain"];
+    _shares_owned = [_stockInformation objectForKey:@"shares_owned"];
+}
+
 @end
