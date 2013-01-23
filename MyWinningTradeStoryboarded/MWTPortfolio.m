@@ -67,6 +67,7 @@
     _shorts = [dictionary objectForKey:@"shorts"];
     
     _stocks = [dictionary objectForKey:@"stocks"];
+    _stockSymbols = [[dictionary objectForKey:@"stocks"] allKeys];
 }
 
 @end

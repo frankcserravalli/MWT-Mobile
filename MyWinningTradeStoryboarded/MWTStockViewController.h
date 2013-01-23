@@ -7,21 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWTPortfolio.h"
 
 @interface MWTStockViewController : UITableViewController
 
-@property (strong, nonatomic) NSString *totalValue;
-@property (strong, nonatomic) NSString *cash;
-@property (strong, nonatomic) NSString *accountValue;
+//@property (strong, nonatomic) NSString *totalValue;
+//@property (strong, nonatomic) NSString *cash;
+//@property (strong, nonatomic) NSString *accountValue;
+
+@property (strong, nonatomic) MWTPortfolio *portfolio;
 
 @property (strong, nonatomic) NSDictionary *stocks;
 @property (strong, nonatomic) NSString *stockSymbol;
 @property (strong, nonatomic) NSArray *stocksArray;
 @property (strong, nonatomic) NSArray *sections;
 
-- (void) getPortfolio;
-- (void) parsePortfolio:(NSData*)data;
-- (void) assignValuesFrom:(NSDictionary*)dictionary;
+//- (void) getPortfolio;
+//- (void) parsePortfolio:(NSData*)data;
+//- (void) assignValuesFrom:(NSDictionary*)dictionary;
 
 
 @end

@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSDictionary *shorts;
 @property (nonatomic, strong) NSDictionary *stocks;
+@property (nonatomic, strong) NSArray *stockSymbols;
 
 - (void) getPortfolio;
 - (void) parsePortfolio:(NSData*)data;

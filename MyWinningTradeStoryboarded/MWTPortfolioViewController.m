@@ -90,19 +90,19 @@
     }
     else if (_interfaceElements[indexPath.row] == @"Pending Date Time Transactions")
     {
-        NSLog(_interfaceElements[indexPath.row]);
+//        NSLog(_interfaceElements[indexPath.row]);
     }
     else if (_interfaceElements[indexPath.row] == @"Pending Stop Loss Transactions")
     {
-        NSLog(_interfaceElements[indexPath.row]);
+//        NSLog(_interfaceElements[indexPath.row]);
     }
     else if (_interfaceElements[indexPath.row] == @"Processed Date Time Transactions")
     {
-        NSLog(_interfaceElements[indexPath.row]);
+//        NSLog(_interfaceElements[indexPath.row]);
     }
     else if (_interfaceElements[indexPath.row] == @"Processed Stop Loss Transactions")
     {
-        NSLog(_interfaceElements[indexPath.row]);
+//        NSLog(_interfaceElements[indexPath.row]);
     }
 }
 

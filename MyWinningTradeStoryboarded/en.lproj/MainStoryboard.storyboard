@@ -47,78 +47,12 @@
                         <segue destination="kUa-aY-Xy3" kind="push" identifier="Login" id="cPT-1E-Ifl"/>
                         <segue destination="aqo-Jv-DcD" kind="push" identifier="SignUp" id="HQb-jP-LqL"/>
                         <segue destination="TMf-JY-xRO" kind="push" identifier="Portfolio" id="cAq-5o-awd"/>
-                        <segue destination="J1B-qp-fsz" kind="push" identifier="PendingPositions" id="R4Z-NP-VAe"/>
-                        <segue destination="TeB-CA-ffV" kind="push" identifier="ProcessedPositions" id="qGF-y7-SuE"/>
-                        <segue destination="Tib-7c-4xx" kind="push" identifier="UpcomingFutures" id="wkB-tf-r5g"/>
-                        <segue destination="ct7-qb-K2A" kind="push" identifier="ProcessedFutures" id="vHI-Me-lQX"/>
-                        <segue destination="r3M-9v-MSt" kind="push" identifier="TradeStock" id="OXO-dY-vrw"/>
-                        <segue destination="1RC-yg-pBe" kind="push" identifier="SearchStock" id="xH3-hl-KS2"/>
                         <segue destination="AkR-zO-gLN" kind="push" identifier="Settings" id="j8H-fk-xKO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxe-BM-G17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="88"/>
-        </scene>
-        <!--Upcoming Futures View Controller-->
-        <scene sceneID="GAq-qX-gDs">
-            <objects>
-                <viewController id="Tib-7c-4xx" customClass="MWTUpcomingFuturesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fs1-sX-jWC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="CgY-jR-sbD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tSX-Z4-2aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2415" y="-272"/>
-        </scene>
-        <!--Processed Positions View Controller-->
-        <scene sceneID="vDZ-co-lpT">
-            <objects>
-                <viewController id="TeB-CA-ffV" customClass="MWTProcessedPositionsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bwp-AN-tL2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Wc6-h4-82u"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ONr-Jb-UvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2021" y="392"/>
-        </scene>
-        <!--Pending Positions View Controller-->
-        <scene sceneID="wh0-fH-HdR">
-            <objects>
-                <viewController id="J1B-qp-fsz" customClass="MWTPendingPositionsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ijI-YC-osy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="GtJ-z3-MF5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JVm-vQ-emM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2021" y="-272"/>
-        </scene>
-        <!--Cell Detail View Controller-->
-        <scene sceneID="oex-IY-Zdt">
-            <objects>
-                <viewController id="RHv-6f-oKM" customClass="MWTCellDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dw6-tP-diJ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="MVV-EN-ObN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cc1-fm-sUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="854" y="-272"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="QIj-xJ-6Nd">
@@ -171,52 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mby-7H-bGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="-272"/>
-        </scene>
-        <!--Processed Futures View Controller-->
-        <scene sceneID="NcM-jm-GDX">
-            <objects>
-                <viewController id="ct7-qb-K2A" customClass="MWTProcessedFuturesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uiT-ut-62f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RZv-7E-tmm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="da8-YJ-0ET" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2415" y="392"/>
-        </scene>
-        <!--Trade Stock View Controller-->
-        <scene sceneID="NLQ-Ay-g2L">
-            <objects>
-                <viewController id="r3M-9v-MSt" customClass="MWTTradeStockViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BQy-66-xlG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="IBS-fN-dn9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tYU-hj-ona" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2812" y="-272"/>
-        </scene>
-        <!--Search Stock View Controller-->
-        <scene sceneID="zho-Ct-gaK">
-            <objects>
-                <viewController id="1RC-yg-pBe" customClass="MWTSearchStockViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AYB-gf-vqC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fO2-Ep-qdd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p7y-Mw-qnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2812" y="392"/>
+            <point key="canvasLocation" x="888" y="460"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WIb-2u-c1I">
@@ -231,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXP-za-woK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="392"/>
+            <point key="canvasLocation" x="1277" y="1124"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Ew3-aL-b1j">
@@ -246,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8iR-yx-R1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="392"/>
+            <point key="canvasLocation" x="888" y="1124"/>
         </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="EJd-pn-a1q">
@@ -261,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUJ-mX-Hwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="-1657"/>
+            <point key="canvasLocation" x="1807" y="-815"/>
         </scene>
         <!--Stock View Controller-->
         <scene sceneID="A9f-Fg-9MG">
@@ -332,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuz-wc-0hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="-963"/>
+            <point key="canvasLocation" x="1277" y="-231"/>
         </scene>
         <!--Shorts View Controller-->
         <scene sceneID="P1Z-Ed-C17">
@@ -343,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Zht-3F-lii">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShortCell" id="Zht-3F-lii">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -362,7 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwM-nK-3cR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="-963"/>
+            <point key="canvasLocation" x="879" y="-231"/>
         </scene>
         <!--Portfolio View Controller-->
         <scene sceneID="ua9-RM-Dpg">
@@ -488,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="-272"/>
+            <point key="canvasLocation" x="1277" y="460"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aue-0A-sDW">
@@ -516,9 +405,6 @@
                 <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="MWTCellDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTCellDetailViewController.h"/>
-        </class>
         <class className="MWTLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
             <relationships>
@@ -527,9 +413,6 @@
                 <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
             </relationships>
-        </class>
-        <class className="MWTPendingPositionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingPositionsViewController.h"/>
         </class>
         <class className="MWTPortfolioCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioCell.h"/>
@@ -548,15 +431,6 @@
                 <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
-        </class>
-        <class className="MWTProcessedFuturesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTProcessedFuturesViewController.h"/>
-        </class>
-        <class className="MWTProcessedPositionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTProcessedPositionsViewController.h"/>
-        </class>
-        <class className="MWTSearchStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSearchStockViewController.h"/>
         </class>
         <class className="MWTSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSettingsViewController.h"/>
@@ -584,12 +458,6 @@
         </class>
         <class className="MWTTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTableViewController.h"/>
-        </class>
-        <class className="MWTTradeStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTradeStockViewController.h"/>
-        </class>
-        <class className="MWTUpcomingFuturesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTUpcomingFuturesViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

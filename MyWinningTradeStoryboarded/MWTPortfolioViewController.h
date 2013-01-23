@@ -17,14 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *cashLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-//@property (strong, nonatomic) NSDictionary *stocks;
-//@property (strong, nonatomic) NSArray *stocksArray;
-//@property (strong, nonatomic) NSArray *sections;
-
 @property (strong, nonatomic) NSArray *interfaceElements;
-
-- (void) getPortfolio;
-- (void) parsePortfolio:(NSData*)data;
-- (void) assignValuesFrom:(NSDictionary*)dictionary;
 
 @end
