@@ -17,13 +17,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *cashLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSString *totalValue;
-@property (strong, nonatomic) NSString *cash;
-@property (strong, nonatomic) NSString *accountValue;
-
-@property (strong, nonatomic) NSDictionary *stocks;
-@property (strong, nonatomic) NSArray *stocksArray;
-@property (strong, nonatomic) NSArray *sections;
+//@property (strong, nonatomic) NSDictionary *stocks;
+//@property (strong, nonatomic) NSArray *stocksArray;
+//@property (strong, nonatomic) NSArray *sections;
 
 @property (strong, nonatomic) NSArray *interfaceElements;
 
