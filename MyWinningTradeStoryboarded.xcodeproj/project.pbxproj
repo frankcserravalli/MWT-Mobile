@@ -10,6 +10,7 @@
 		5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400E916AF32A700D5F659 /* MWTStockViewController.m */; };
 		5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400ED16AF33C700D5F659 /* MWTStockCell.m */; };
 		5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F016AF411600D5F659 /* MWTShortsViewController.m */; };
+		5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */; };
 		5D7420A516A8989D002E5CA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A416A8989D002E5CA3 /* UIKit.framework */; };
 		5D7420A716A8989D002E5CA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A616A8989D002E5CA3 /* Foundation.framework */; };
 		5D7420A916A8989D002E5CA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */; };
@@ -53,6 +54,9 @@
 		5D6400ED16AF33C700D5F659 /* MWTStockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockCell.m; sourceTree = "<group>"; };
 		5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShortsViewController.h; sourceTree = "<group>"; };
 		5D6400F016AF411600D5F659 /* MWTShortsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTShortsViewController.m; sourceTree = "<group>"; };
+		5D6400F316AF4BD500D5F659 /* MWTStockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockDetailViewController.h; sourceTree = "<group>"; };
+		5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockDetailViewController.m; sourceTree = "<group>"; };
+		5D6400F716AF6A7E00D5F659 /* MWTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTConstants.h; sourceTree = "<group>"; };
 		5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWinningTradeStoryboarded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7420A416A8989D002E5CA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D7420A616A8989D002E5CA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,14 +143,24 @@
 				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
 				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
 				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
-				5D6400E816AF32A700D5F659 /* MWTStockViewController.h */,
-				5D6400E916AF32A700D5F659 /* MWTStockViewController.m */,
-				5D6400EC16AF33C700D5F659 /* MWTStockCell.h */,
-				5D6400ED16AF33C700D5F659 /* MWTStockCell.m */,
+				5D6400F616AF4BE100D5F659 /* Stocks */,
 				5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */,
 				5D6400F016AF411600D5F659 /* MWTShortsViewController.m */,
 			);
 			name = Portfolio;
+			sourceTree = "<group>";
+		};
+		5D6400F616AF4BE100D5F659 /* Stocks */ = {
+			isa = PBXGroup;
+			children = (
+				5D6400F316AF4BD500D5F659 /* MWTStockDetailViewController.h */,
+				5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */,
+				5D6400E816AF32A700D5F659 /* MWTStockViewController.h */,
+				5D6400E916AF32A700D5F659 /* MWTStockViewController.m */,
+				5D6400EC16AF33C700D5F659 /* MWTStockCell.h */,
+				5D6400ED16AF33C700D5F659 /* MWTStockCell.m */,
+			);
+			name = Stocks;
 			sourceTree = "<group>";
 		};
 		5D74209516A8989D002E5CA3 = {
@@ -189,6 +203,7 @@
 				5D7420CB16A89A97002E5CA3 /* MWTCell.m */,
 				5D7420DA16A8A60A002E5CA3 /* Interface View Controllers */,
 				5D7420AB16A8989D002E5CA3 /* Supporting Files */,
+				5D6400F716AF6A7E00D5F659 /* MWTConstants.h */,
 			);
 			path = MyWinningTradeStoryboarded;
 			sourceTree = "<group>";
@@ -360,6 +375,7 @@
 				5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */,
 				5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */,
 				5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */,
+				5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

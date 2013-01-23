@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *accountValue;
 
 @property (strong, nonatomic) NSDictionary *stocks;
+@property (strong, nonatomic) NSString *stockSymbol;
 @property (strong, nonatomic) NSArray *stocksArray;
 @property (strong, nonatomic) NSArray *sections;
 

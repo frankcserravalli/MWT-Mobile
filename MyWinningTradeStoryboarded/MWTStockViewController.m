@@ -8,6 +8,7 @@
 
 #import "MWTStockViewController.h"
 #import "MWTStockCell.h"
+#import "MWTStockDetailViewController.h"
 #import "SBJson.h"
 
 @interface MWTStockViewController ()
@@ -61,7 +62,7 @@
 - (void) getPortfolio
 {
     int user_id = 1;
-    NSString *portfolioURLString = [NSString stringWithFormat:@"http://localhost:3000/api/v1/users/portfolio?user_id=%i", user_id];
+    NSString *portfolioURLString = [NSString stringWithFormat:@"http://%@/api/v1/users/portfolio?user_id=%i", serverURL,user_id];
     NSURL *portfolioURL = [NSURL URLWithString:portfolioURLString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:portfolioURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
@@ -154,6 +155,7 @@
     cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
     cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
     
+    
 
     
     return cell;
@@ -209,6 +211,19 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    [self performSegueWithIdentifier:@"StockDetails" sender:indexPath];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MWTStockDetailViewController *detailViewController = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    NSInteger row = [indexPath row];
+    
+    detailViewController.title = @"Stock Summary";
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "MWTPortfolioViewController.h"
 #import "MWTPortfolioCell.h"
 #import "MWTStockViewController.h"
+#import "MWTShortsViewController.h"
 #import "SBJson.h"
 
 @interface MWTPortfolioViewController ()
@@ -16,13 +17,6 @@
 @end
 
 @implementation MWTPortfolioViewController
-
-/*
- *  TODO
- *  -parent portfolio UI table view
- *  -stock subview
- */
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,7 +35,6 @@
     
     _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions", @"Processed Date Time Transactions", @"Processed Stop Loss Transactions"];
     
-
     NSLog(@"Call portfolio");
     [self getPortfolio];
    
@@ -49,23 +42,12 @@
     _accountValueLabel.text = _accountValue;
     _cashLabel.text = _cash;
     
-//    for (NSString *key in _stocks)
-//    {
-//        NSLog(@"KEY: %@", key);
-//        NSString *value = [_stocks objectForKey:key];
-//        
-//        NSLog(@"VALUE: %@", value);
-//        
-//        NSDictionary *subvalues = [_stocks objectForKey:key];
-//        NSLog(@"percent_gained:");
-//        NSLog([[subvalues objectForKey:@"percent_gain"] stringValue]);
-//    }
 }
 
 - (void) getPortfolio
 {
     int user_id = 1;
-    NSString *portfolioURLString = [NSString stringWithFormat:@"http://localhost:3000/api/v1/users/portfolio?user_id=%i", user_id];
+    NSString *portfolioURLString = [NSString stringWithFormat:@"http://%@/api/v1/users/portfolio?user_id=%i", serverURL, user_id];
     NSURL *portfolioURL = [NSURL URLWithString:portfolioURLString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:portfolioURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
@@ -140,13 +122,6 @@
     MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-//    NSString *stock = _stocksArray[indexPath.row];
-//    NSDictionary *stockInformation = [_stocks objectForKey:stock];
-//
-//    cell.symbolLabel.text = stock;
-//    cell.percentGainLabel.text = [[stockInformation objectForKey:@"percent_gain"] stringValue];
-//    cell.sharesLabel.text = [[stockInformation objectForKey:@"shares_owned"] stringValue];
-//    cell.totalLabel.text = [[stockInformation objectForKey:@"current_value"] stringValue];
     cell.symbolLabel.text = _interfaceElements[indexPath.row];
     
     return cell;
@@ -187,6 +162,16 @@
     {
         NSLog(@"Segue performed");
         MWTStockViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSInteger row = [indexPath row];
+        
+        detailViewController.title = _interfaceElements[row];
+    }
+    else if ([[segue identifier] isEqualToString:@"Shorts"])
+    {
+        MWTShortsViewController *detailViewController = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
