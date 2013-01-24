@@ -7,14 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWTPortfolio.h"
 
 @interface MWTStockDetailViewController : UIViewController
+
+@property (strong, nonatomic) MWTPortfolio *portfolio;
+@property (strong, nonatomic) NSDictionary *stockDetails;
+
+@property (strong, nonatomic) IBOutlet UILabel *buyPriceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *percentChangeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *pointChangeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *peRatioLabel;
+@property (strong, nonatomic) IBOutlet UILabel *volumeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *capitalGainLabel;
-@property (strong, nonatomic) IBOutlet UILabel *percentGainLabel;
-@property (strong, nonatomic) IBOutlet UILabel *currentPriceLabel;
-@property (strong, nonatomic) IBOutlet UILabel *sharesOwnedLabel;
-@property (strong, nonatomic) IBOutlet UILabel *currentValueLabel;
-@property (strong, nonatomic) IBOutlet UILabel *costBasisLabel;
+
+-(void)getStockDetails;
+-(void)parseStock:(NSData *)data;
+-(void)assignLabels;
 
 @end

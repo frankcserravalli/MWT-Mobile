@@ -38,17 +38,19 @@
     NSURLResponse *urlResponse = nil;
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
-    if (response == nil)
-    {
-        if (requestError != nil)
-        {
-            NSLog(@"I have an error");
-        }
-    }
-    else
-    {
+//    if (response == nil)
+//    {
+//        if (requestError != nil)
+//        {
+//            NSLog(@"I have an error");
+//        }
+//    }
+//    else
+//    {
+//        [self parsePortfolio:response];
+//    }
         [self parsePortfolio:response];
-    }
+
 }
 
 - (void) parsePortfolio:(NSData *)data
