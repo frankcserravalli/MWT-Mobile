@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MWTPortfolio.h"
-#import "MWTStock.h"
 
 @interface MWTStockViewController : UITableViewController
 

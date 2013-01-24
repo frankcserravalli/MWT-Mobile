@@ -81,4 +81,9 @@
     _stockSymbols = [[dictionary objectForKey:@"stocks"] allKeys];
 }
 
+- (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol
+{
+    return [_stocks objectForKey:stockSymbol];
+}
+
 @end

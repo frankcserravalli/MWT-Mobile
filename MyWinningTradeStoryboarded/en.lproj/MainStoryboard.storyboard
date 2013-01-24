@@ -336,10 +336,10 @@
                                     <constraint firstAttribute="trailing" secondItem="LNC-PS-Xnw" secondAttribute="trailing" constant="80" id="lFJ-MI-SqM"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="currentValueLabel" destination="7KB-GF-1OE" id="Ehl-I8-ALp"/>
                                     <outlet property="percentGainLabel" destination="e5d-Oz-fDe" id="hiP-uv-YjR"/>
                                     <outlet property="sharesLabel" destination="LNC-PS-Xnw" id="WHK-9N-dlB"/>
                                     <outlet property="symbolLabel" destination="MCH-Ng-LHU" id="hC1-Xb-gaU"/>
-                                    <outlet property="totalLabel" destination="7KB-GF-1OE" id="lEM-4e-JZu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -578,16 +578,17 @@
         <class className="MWTStockCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="currentValueLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MWTStockDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockDetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>

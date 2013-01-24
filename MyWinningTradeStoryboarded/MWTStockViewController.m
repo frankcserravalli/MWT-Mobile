@@ -76,13 +76,12 @@
     
     // Configure the cell...
 
-    MWTStock *myStock = [[MWTStock alloc] init];
-    [myStock parse:_portfolio forStock:_portfolio.stockSymbols[indexPath.row]];
-
-    cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
-    cell.percentGainLabel.text = [myStock.percent_gain stringValue];
-    cell.sharesLabel.text = [myStock.shares_owned stringValue];
-    cell.totalLabel.text = [myStock.current_value stringValue];
+    NSString *currentStockSymbol = _portfolio.stockSymbols[indexPath.row];
+    NSDictionary *currentStockDictionary = [_portfolio getStockDictionaryFromStock:currentStockSymbol];
+    cell.symbolLabel.text = currentStockSymbol;
+    cell.percentGainLabel.text = [[currentStockDictionary objectForKey:@"percent_gain"] stringValue];
+    cell.sharesLabel.text = [[currentStockDictionary objectForKey:@"shares_owned"] stringValue];
+    cell.currentValueLabel.text = [[currentStockDictionary objectForKey:@"current_value"] stringValue];
 
     return cell;
 }
@@ -149,9 +148,6 @@
     NSInteger row = [indexPath row];
     
     NSString *stockSymbol = [[_portfolio stockSymbols] objectAtIndex:row];
-//    
-//    MWTStock *myStock = [[MWTStock alloc] init];
-//    [myStock parse:_portfolio forStock:stockSymbol];
     detailViewController.title = stockSymbol;
 }
 

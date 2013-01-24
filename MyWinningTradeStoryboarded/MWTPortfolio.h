@@ -10,9 +10,6 @@
 
 @interface MWTPortfolio : NSObject
 
-//TODO
-//Set up stocks array
-
 @property (nonatomic, strong) NSNumber *account_value;
 @property (nonatomic, strong) NSNumber *cash;
 @property (nonatomic, strong) NSNumber *current_value;
@@ -28,10 +25,10 @@
 @property (nonatomic, strong) NSDictionary *stocks;
 @property (nonatomic, strong) NSArray *stockSymbols;
 
-@property (nonatomic, strong) NSArray *stockArray;
 
 - (void) getPortfolio;
 - (void) parsePortfolio:(NSData*)data;
 - (void) assignValuesFrom:(NSDictionary*)dictionary;
+- (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol;
 
 @end

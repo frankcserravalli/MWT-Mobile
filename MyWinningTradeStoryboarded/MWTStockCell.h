@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *symbolLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sharesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *totalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentValueLabel;
 
 @end
