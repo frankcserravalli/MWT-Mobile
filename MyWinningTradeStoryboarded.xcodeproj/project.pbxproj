@@ -39,6 +39,9 @@
 		5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */; };
 		5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */; };
 		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
+		5DA753D916B1D3A7004A648E /* MWTBuyStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */; };
+		5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DB16B1D3B8004A648E /* MWTSellStockViewController.m */; };
+		5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */; };
 		5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */; };
 		5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */; };
 /* End PBXBuildFile section */
@@ -104,6 +107,12 @@
 		5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioCell.h; sourceTree = "<group>"; };
 		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
+		5DA753D716B1D3A7004A648E /* MWTBuyStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTBuyStockViewController.h; sourceTree = "<group>"; };
+		5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTBuyStockViewController.m; sourceTree = "<group>"; };
+		5DA753DA16B1D3B8004A648E /* MWTSellStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSellStockViewController.h; sourceTree = "<group>"; };
+		5DA753DB16B1D3B8004A648E /* MWTSellStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSellStockViewController.m; sourceTree = "<group>"; };
+		5DA753DD16B1D3C9004A648E /* MWTShortStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShortStockViewController.h; sourceTree = "<group>"; };
+		5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTShortStockViewController.m; sourceTree = "<group>"; };
 		5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolio.h; sourceTree = "<group>"; };
 		5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolio.m; sourceTree = "<group>"; };
 		5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStock.h; sourceTree = "<group>"; };
@@ -141,6 +150,7 @@
 		5D6400F616AF4BE100D5F659 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				5DA753D516B1D374004A648E /* Operations */,
 				5D6400F316AF4BD500D5F659 /* MWTStockDetailViewController.h */,
 				5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */,
 				5D6400E816AF32A700D5F659 /* MWTStockViewController.h */,
@@ -256,6 +266,19 @@
 			path = objc;
 			sourceTree = "<group>";
 		};
+		5DA753D516B1D374004A648E /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5DA753D716B1D3A7004A648E /* MWTBuyStockViewController.h */,
+				5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */,
+				5DA753DA16B1D3B8004A648E /* MWTSellStockViewController.h */,
+				5DA753DB16B1D3B8004A648E /* MWTSellStockViewController.m */,
+				5DA753DD16B1D3C9004A648E /* MWTShortStockViewController.h */,
+				5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		5DA9A6E616B0475C00C67CEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +383,9 @@
 				5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */,
 				5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */,
 				5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */,
+				5DA753D916B1D3A7004A648E /* MWTBuyStockViewController.m in Sources */,
+				5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */,
+				5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

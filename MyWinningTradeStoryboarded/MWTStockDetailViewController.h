@@ -21,5 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
 
 -(void)assignLabels;
+- (IBAction)buyButtonAction:(id)sender;
+- (IBAction)sellButtonAction:(id)sender;
+- (IBAction)shortButtonAction:(id)sender;
 
 @end

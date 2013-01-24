@@ -51,4 +51,40 @@
     self.volumeLabel.text = [stockDetails objectForKey:@"volume"];
 }
 
+- (IBAction)buyButtonAction:(id)sender
+{
+    NSLog(@"Buy button pressed");
+    [self performSegueWithIdentifier:@"BuyStock" sender:self];
+}
+
+- (IBAction)sellButtonAction:(id)sender
+{
+    NSLog(@"Sell button pressed");
+    [self performSegueWithIdentifier:@"SellStock" sender:self];
+}
+
+- (IBAction)shortButtonAction:(id)sender
+{
+    NSLog(@"Short button pressed");
+    [self performSegueWithIdentifier:@"ShortStock" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"BuyStock"])
+    {
+        NSLog(@"Pass buy data");
+    }
+    else if ([[segue identifier] isEqualToString:@"SellStock"])
+    {
+        NSLog(@"Pass sell data");
+    }
+    else if ([[segue identifier] isEqualToString:@"ShortStock"])
+    {
+        NSLog(@"Pass short data");
+    }
+
+}
+
+
 @end
