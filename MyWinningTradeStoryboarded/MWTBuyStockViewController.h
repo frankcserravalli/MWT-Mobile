@@ -10,5 +10,15 @@
 
 @interface MWTBuyStockViewController : UIViewController
 - (IBAction)submitButtonAction:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)backgroundDismissKeyboard:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentPriceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *totalPriceToBuyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentCashLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cashAfterPurchaseLabel;
+@property (strong, nonatomic) IBOutlet UITextField *volumeTextField;
 
 @end

@@ -37,6 +37,18 @@
 
 - (IBAction)submitButtonAction:(id)sender
 {
+    NSLog(@"Bought %i shares", [[_volumeTextField text] integerValue]);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (IBAction)backgroundDismissKeyboard:(id)sender
+{
+    [_volumeTextField resignFirstResponder];
+}
+
 @end
