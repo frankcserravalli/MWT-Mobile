@@ -7,25 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MWTPortfolio.h"
+#import "SBJson.h"
 
 @interface MWTStock : NSObject
 
-@property (strong, nonatomic) MWTPortfolio *portfolio;
-@property (strong, nonatomic) NSDictionary *stockInformation;
+@property (strong, nonatomic) NSDictionary *stockDetails;
 
-@property (strong, nonatomic) NSString *stockSymbol;
-@property (strong, nonatomic) NSString *companyName;
-
-@property (strong, nonatomic) NSNumber *capital_gain;
-@property (strong, nonatomic) NSNumber *cost_basis;
-@property (strong, nonatomic) NSNumber *current_price;
-@property (strong, nonatomic) NSNumber *current_value;
-@property (strong, nonatomic) NSNumber *percent_gain;
-@property (strong, nonatomic) NSNumber *shares_owned;
-
-
-- (void) parsePortfolioForStock:(NSString *)stockName;
-- (void) parse:(MWTPortfolio *)portfolio forStock:(NSString *)stockName;
+-(void)getStockDetailsForStock:(NSString *)symbol;
+-(void)parseStock:(NSData *)data;
 
 @end

@@ -10,35 +10,28 @@
 
 @implementation MWTStock
 
-- (void) parsePortfolioForStock:(NSString *)stockName
-{
-    _portfolio = [[MWTPortfolio alloc] init];
-    _stockInformation = [[_portfolio stocks] objectForKey:stockName];
+
+- (void) getStockDetailsForStock:(NSString *)symbol
+{    
+    NSString *stockDetailURLString = [NSString stringWithFormat:@"http://%@/api/v1/stocks/details?symbol=%@", serverURL, symbol];
+    NSURL *stockDetailURL = [NSURL URLWithString:stockDetailURLString];
     
-    _stockSymbol = stockName;
-    _companyName = [_stockInformation objectForKey:@"name"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:stockDetailURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    [request setHTTPMethod:@"GET"];
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
-    _capital_gain = [_stockInformation objectForKey:@"capital_gain"];
-    _cost_basis = [_stockInformation objectForKey:@"cost_basis"];
-    _current_price = [_stockInformation objectForKey:@"current_price"];
-    _current_value = [_stockInformation objectForKey:@"current_value"];
-    _percent_gain = [_stockInformation objectForKey:@"percent_gain"];
-    _shares_owned = [_stockInformation objectForKey:@"shares_owned"];
+    [self parseStock:response];
 }
 
-- (void) parse:(MWTPortfolio *)portfolio forStock:(NSString *)stockName
+- (void) parseStock:(NSData *)data
 {
-    _stockInformation = [[portfolio stocks] objectForKey:stockName];
-    
-    _stockSymbol = stockName;
-    _companyName = [_stockInformation objectForKey:@"name"];
-    
-    _capital_gain = [_stockInformation objectForKey:@"capital_gain"];
-    _cost_basis = [_stockInformation objectForKey:@"cost_basis"];
-    _current_price = [_stockInformation objectForKey:@"current_price"];
-    _current_value = [_stockInformation objectForKey:@"current_value"];
-    _percent_gain = [_stockInformation objectForKey:@"percent_gain"];
-    _shares_owned = [_stockInformation objectForKey:@"shares_owned"];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSDictionary *stockJSON = [parser objectWithData:data];
+    NSDictionary *stockDetails = [stockJSON objectForKey:@"table"];
+    _stockDetails = stockDetails;
 }
+
 
 @end
