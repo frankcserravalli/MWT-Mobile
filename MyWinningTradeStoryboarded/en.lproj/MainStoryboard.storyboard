@@ -214,29 +214,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Volume" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7y-bh-hCy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="Trc-PT-4TL"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
                                     <action selector="dismissKeyboard:" destination="Y6D-TF-SqT" eventType="editingDidEndOnExit" id="aF7-Ed-ugy"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Bw-piI">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="Y6D-TF-SqT" eventType="touchUpInside" id="ES8-ah-1vQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hXz-fw-76d" firstAttribute="top" secondItem="6ug-dY-bOG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="5Sl-Wm-idS"/>
+                            <constraint firstAttribute="trailing" secondItem="r5Y-Bw-piI" secondAttribute="trailing" constant="70" id="C16-rd-vfQ"/>
                             <constraint firstAttribute="trailing" secondItem="LZz-ST-cpt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CJG-JF-BO5"/>
                             <constraint firstItem="xbR-pb-rKn" firstAttribute="top" secondItem="GZ3-xX-UrT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CV7-8g-KyR"/>
                             <constraint firstItem="e7y-bh-hCy" firstAttribute="top" secondItem="LZz-ST-cpt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ClH-Su-23Q"/>
                             <constraint firstItem="ddq-gn-bbT" firstAttribute="top" secondItem="6ug-dY-bOG" secondAttribute="top" constant="86" id="GGF-lB-RED"/>
                             <constraint firstItem="AZY-ZY-Rxl" firstAttribute="top" secondItem="6ug-dY-bOG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Ht6-99-yFj"/>
                             <constraint firstAttribute="trailing" secondItem="e7y-bh-hCy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ID1-FP-ISx"/>
-                            <constraint firstItem="xbR-pb-rKn" firstAttribute="centerX" secondItem="6ug-dY-bOG" secondAttribute="centerX" type="default" id="Pzm-cV-czD"/>
+                            <constraint firstItem="r5Y-Bw-piI" firstAttribute="baseline" secondItem="xbR-pb-rKn" secondAttribute="baseline" type="default" id="LZ8-va-GJ4"/>
                             <constraint firstItem="ndM-vT-EnX" firstAttribute="baseline" secondItem="Nrw-w5-X2q" secondAttribute="baseline" type="default" id="QxY-fn-1hq"/>
+                            <constraint firstItem="r5Y-Bw-piI" firstAttribute="leading" secondItem="e7y-bh-hCy" secondAttribute="leading" type="default" id="RjW-HI-78r"/>
                             <constraint firstItem="6pX-LY-Gbv" firstAttribute="baseline" secondItem="GZ3-xX-UrT" secondAttribute="baseline" type="default" id="SCz-Mb-RB9"/>
                             <constraint firstItem="PXn-QM-P1Z" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SF1-OY-1HH"/>
+                            <constraint firstItem="xbR-pb-rKn" firstAttribute="leading" secondItem="hXz-fw-76d" secondAttribute="leading" type="default" id="Sjt-6P-L4D"/>
                             <constraint firstItem="LZz-ST-cpt" firstAttribute="baseline" secondItem="ddq-gn-bbT" secondAttribute="baseline" type="default" id="Usd-Hq-uyA"/>
                             <constraint firstItem="Nrw-w5-X2q" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WrX-fO-Dl7"/>
                             <constraint firstItem="GZ3-xX-UrT" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Xfq-rX-VSP"/>
@@ -244,11 +257,11 @@
                             <constraint firstItem="AZY-ZY-Rxl" firstAttribute="leading" secondItem="hXz-fw-76d" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="clO-6P-d6w"/>
                             <constraint firstItem="ICE-0G-dwo" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dxh-Q6-Nwt"/>
                             <constraint firstItem="PXn-QM-P1Z" firstAttribute="top" secondItem="Nrw-w5-X2q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eUL-uo-Qzf"/>
-                            <constraint firstItem="hXz-fw-76d" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="80" id="fPQ-hF-igL"/>
                             <constraint firstAttribute="trailing" secondItem="ndM-vT-EnX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="h1k-Yp-z3g"/>
                             <constraint firstItem="GZ3-xX-UrT" firstAttribute="top" secondItem="PXn-QM-P1Z" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mAG-6s-8aa"/>
                             <constraint firstItem="ICE-0G-dwo" firstAttribute="top" secondItem="ddq-gn-bbT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mQN-5k-nbw"/>
                             <constraint firstItem="ddq-gn-bbT" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nwD-xZ-4vE"/>
+                            <constraint firstItem="xbR-pb-rKn" firstAttribute="trailing" secondItem="PXn-QM-P1Z" secondAttribute="trailing" type="default" id="o5n-9I-YwI"/>
                             <constraint firstItem="ndM-vT-EnX" firstAttribute="top" secondItem="e7y-bh-hCy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="q3G-3D-BM7"/>
                             <constraint firstItem="RYb-sp-1dj" firstAttribute="baseline" secondItem="PXn-QM-P1Z" secondAttribute="baseline" type="default" id="q8t-xA-pyP"/>
                             <constraint firstAttribute="trailing" secondItem="RYb-sp-1dj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xas-FB-fvG"/>

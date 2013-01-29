@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MWTPortfolio.h"
+
 
 @interface MWTPortfolioSingleton : NSObject
 {
-    NSString *someProperty;
 }
 
-@property (nonatomic, retain) NSString *someProperty;
+@property (nonatomic, retain) MWTPortfolio *userPortfolio;
 
 + (id) sharedInstance;
 

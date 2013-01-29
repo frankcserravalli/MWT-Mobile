@@ -27,7 +27,7 @@
     if (self = [super init])
     {
         //Initialization
-        _someProperty = @"Default Property Value";
+        _userPortfolio = [[MWTPortfolio alloc] init];
     }
     return self;
 }

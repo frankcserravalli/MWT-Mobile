@@ -10,8 +10,7 @@
 #import "MWTPortfolioCell.h"
 #import "MWTStockViewController.h"
 #import "MWTShortsViewController.h"
-#import "MWTPortfolio.h"
-#import "SBJson.h"
+#import "MWTPortfolioSingleton.h"
 
 @interface MWTPortfolioViewController ()
 
@@ -36,13 +35,10 @@
     
     _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions", @"Processed Date Time Transactions", @"Processed Stop Loss Transactions"];
         
-    MWTPortfolio *portfolio = [[MWTPortfolio alloc] init];
-   
-    _portfolioValue.text = [[portfolio current_value] stringValue];
-    
-    _accountValueLabel.text = [[portfolio account_value] stringValue];
-
-    _cashLabel.text = [[portfolio cash] stringValue];
+    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
+    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
     
 }
 

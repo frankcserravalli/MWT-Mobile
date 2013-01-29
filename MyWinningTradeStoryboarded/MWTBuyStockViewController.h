@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWTPortfolioSingleton.h"
 
 @interface MWTBuyStockViewController : UIViewController
 - (IBAction)submitButtonAction:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)backgroundDismissKeyboard:(id)sender;
+- (IBAction)cancelButtonAction:(id)sender;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
@@ -21,5 +23,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *cashAfterPurchaseLabel;
 @property (strong, nonatomic) IBOutlet UITextField *volumeTextField;
 @property (strong, nonatomic) NSString *stockSymbol;
+@property float volume;
 
 @end

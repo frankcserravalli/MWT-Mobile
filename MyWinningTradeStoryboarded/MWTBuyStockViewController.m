@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Conclave Labs. All rights reserved.
 //
 
+#warning NEEDS REFACTORING
+
 #import "MWTBuyStockViewController.h"
 
 @interface MWTBuyStockViewController ()
@@ -19,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _volume = 0.0f;
     }
     return self;
 }
@@ -28,6 +31,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _companyNameLabel.text = _stockSymbol;
+    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+    NSDictionary *stockDict = [[portfolioSingleton userPortfolio] getStockDictionaryFromStock:_stockSymbol];
+    NSNumber *currentPriceOfStock = [stockDict objectForKey:@"current_price"];
+    
+    _companyNameLabel.text = [stockDict objectForKey:@"name"];
+    _currentPriceLabel.text = [currentPriceOfStock stringValue];
+    _currentCashLabel.text = [[[portfolioSingleton userPortfolio] cash] stringValue];
     
 }
 
@@ -44,6 +54,11 @@
     [self connectToAPIPath:@"/api/v1/buys" toBuy:[_volumeTextField.text integerValue] ofStock:_stockSymbol];
     
     
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)cancelButtonAction:(id)sender
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -82,11 +97,27 @@
 - (IBAction)dismissKeyboard:(id)sender
 {
     [sender resignFirstResponder];
+    _volume = 0.0f;
+    _volume = [[_volumeTextField text] floatValue];
+    float totalPriceToBuy = _volume * [_currentPriceLabel.text floatValue];
+    NSString *totalPriceToBuyString = [NSString stringWithFormat:@"%f", totalPriceToBuy];
+    _totalPriceToBuyLabel.text = totalPriceToBuyString;
+    float cash = [_currentCashLabel.text floatValue];
+    float cashAfterPurchase = cash - totalPriceToBuy;
+    _cashAfterPurchaseLabel.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
 }
 
 - (IBAction)backgroundDismissKeyboard:(id)sender
 {
     [_volumeTextField resignFirstResponder];
+    _volume = 0.0f;
+      _volume = [[_volumeTextField text] floatValue];
+    float totalPriceToBuy = _volume * [_currentPriceLabel.text floatValue];
+    NSString *totalPriceToBuyString = [NSString stringWithFormat:@"%f", totalPriceToBuy];
+    _totalPriceToBuyLabel.text = totalPriceToBuyString;
+    float cash = [_currentCashLabel.text floatValue];
+    float cashAfterPurchase = cash - totalPriceToBuy;
+    _cashAfterPurchaseLabel.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
 }
 
 @end
