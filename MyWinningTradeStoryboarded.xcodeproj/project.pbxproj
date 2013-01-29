@@ -28,6 +28,7 @@
 		5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */; };
 		5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */; };
 		5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */; };
+		5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */; };
 		5D8FE29616ADBDCE0094F9B0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */; };
 		5D8FE29716ADBDCE0094F9B0 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28516ADBDCE0094F9B0 /* SBJsonStreamParser.m */; };
 		5D8FE29816ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28716ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m */; };
@@ -84,6 +85,8 @@
 		5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioViewController.m; sourceTree = "<group>"; };
 		5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSettingsViewController.h; sourceTree = "<group>"; };
 		5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSettingsViewController.m; sourceTree = "<group>"; };
+		5D7E32AB16B84795008BADB0 /* MWTPortfolioSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioSingleton.h; sourceTree = "<group>"; };
+		5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioSingleton.m; sourceTree = "<group>"; };
 		5D8FE28116ADBDCE0094F9B0 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
 		5D8FE28216ADBDCE0094F9B0 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 		5D7420AA16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
 			isa = PBXGroup;
 			children = (
+				5D7E32AB16B84795008BADB0 /* MWTPortfolioSingleton.h */,
+				5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */,
 				5DA9A6E616B0475C00C67CEA /* Models */,
 				5D7420B316A8989D002E5CA3 /* MWTAppDelegate.h */,
 				5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */,
@@ -386,6 +391,7 @@
 				5DA753D916B1D3A7004A648E /* MWTBuyStockViewController.m in Sources */,
 				5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */,
 				5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */,
+				5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
