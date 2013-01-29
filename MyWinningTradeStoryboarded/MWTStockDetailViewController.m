@@ -45,7 +45,7 @@
     NSDictionary *stockDetails = [_stock stockDetails];
     
     self.companyNameLabel.text = [stockDetails objectForKey:@"name"];
-    self.buyPriceLabel.text = [[stockDetails objectForKey:@"buy_price"] stringValue];
+    self.buyPriceLabel.text = [stockDetails objectForKey:@"current_price"];
     self.percentChangeLabel.text = [[stockDetails objectForKey:@"percent_change"] stringValue];
     self.pointChangeLabel.text = [stockDetails objectForKey:@"point_change"];
     self.peRatioLabel.text = [stockDetails objectForKey:@"pe_ratio"];
