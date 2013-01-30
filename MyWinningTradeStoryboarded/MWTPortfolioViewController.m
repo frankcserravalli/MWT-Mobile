@@ -33,7 +33,7 @@
 	// Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     
-    _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions", @"Processed Date Time Transactions", @"Processed Stop Loss Transactions"];
+    _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions"];
         
     MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
     _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];

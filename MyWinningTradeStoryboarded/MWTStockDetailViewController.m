@@ -8,6 +8,7 @@
 
 #import "MWTStockDetailViewController.h"
 #import "MWTBuyStockViewController.h"
+#import "MWTSellStockViewController.h"
 
 @interface MWTStockDetailViewController ()
 
@@ -81,6 +82,9 @@
     else if ([[segue identifier] isEqualToString:@"SellStock"])
     {
         NSLog(@"Pass sell data");
+        MWTSellStockViewController *destinationController = [segue destinationViewController];
+        destinationController.stockSymbol = self.title;
+
     }
     else if ([[segue identifier] isEqualToString:@"ShortStock"])
     {
