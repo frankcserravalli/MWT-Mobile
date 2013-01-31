@@ -28,6 +28,10 @@
 
 - (void) getPortfolio;
 - (void) parsePortfolio:(NSData*)data;
+- (void) getPendingDateTimePositions;
+- (void) getPendingStopLossPositions;
+- (void) parsePendingDateTimePositions:(NSData *)data;
+- (void) parsePendingStopLossPositions:(NSData *)data;
 - (void) assignValuesFrom:(NSDictionary*)dictionary;
 - (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol;
 

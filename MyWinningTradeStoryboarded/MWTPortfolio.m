@@ -55,6 +55,50 @@
 
 }
 
+- (void) getPendingDateTimePositions
+{
+    int user_id = 1;
+    
+    NSString *pendingDateTimeTransactionsURLString = [NSString stringWithFormat:@"http://%@/api/v1/users/pending_date_time_transactions?user_id=%i", serverURL, user_id];
+    
+    NSURL *pendingDateTimeTransactionsURL = [NSURL URLWithString:pendingDateTimeTransactionsURLString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:pendingDateTimeTransactionsURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    NSError *requestError;
+    
+    NSURLResponse *urlResponse = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [self parsePendingDateTimePositions:response];
+}
+
+- (void) getPendingStopLossPositions
+{
+    int user_id = 1;
+    
+    NSString *pendingDateTimeTransactionsURLString = [NSString stringWithFormat:@"http://%@/api/v1/users/pending_stop_loss_transactions?user_id=%i", serverURL, user_id];
+    
+    NSURL *pendingDateTimeTransactionsURL = [NSURL URLWithString:pendingDateTimeTransactionsURLString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:pendingDateTimeTransactionsURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    NSError *requestError;
+    
+    NSURLResponse *urlResponse = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [self parsePendingStopLossPositions:response];
+}
+
+- (void) parsePendingDateTimePositions:(NSData *)data
+{
+    
+}
+
+- (void) parsePendingStopLossPositions:(NSData *)data
+{
+    
+}
+
 - (void) parsePortfolio:(NSData *)data
 {
     SBJsonParser *parser = [[SBJsonParser alloc] init];
