@@ -838,11 +838,73 @@
                         <outlet property="tableView" destination="tNc-ZP-KcN" id="2zc-AF-qxB"/>
                         <segue destination="PA1-Eu-enw" kind="push" identifier="Stocks" id="ZJJ-b0-l7S"/>
                         <segue destination="vcZ-Gi-IaW" kind="push" identifier="Shorts" id="HIV-SC-nTc"/>
+                        <segue destination="VYz-Xx-rGr" kind="push" identifier="PendingDateTimeTransactions" id="jHD-YT-pU9"/>
+                        <segue destination="u27-2O-d5O" kind="push" identifier="PendingStopLossTransactions" id="QO5-8f-oQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1277" y="460"/>
+        </scene>
+        <!--Pending Date Time Transactions View Controller-->
+        <scene sceneID="aRb-Bv-scq">
+            <objects>
+                <tableViewController id="VYz-Xx-rGr" customClass="MWTPendingDateTimeTransactionsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="omw-zV-yhd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iq4-rg-i9v">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VYz-Xx-rGr" id="hBw-JG-B3o"/>
+                            <outlet property="delegate" destination="VYz-Xx-rGr" id="Oxc-Ez-9Hq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BHL-ce-zJN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEN-ik-vTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="460"/>
+        </scene>
+        <!--Pending Stop Loss Transactions View Controller-->
+        <scene sceneID="355-yP-dNd">
+            <objects>
+                <tableViewController id="u27-2O-d5O" customClass="MWTPendingStopLossTransactionsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="m1K-VB-iOR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aiw-aO-BgN">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u27-2O-d5O" id="NSH-Ji-0gz"/>
+                            <outlet property="delegate" destination="u27-2O-d5O" id="AxE-Uj-myq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2Hn-pk-cSk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9i-Fk-Wyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="-136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aue-0A-sDW">
@@ -893,6 +955,12 @@
                 <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="MWTPendingDateTimeTransactionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingDateTimeTransactionsViewController.h"/>
+        </class>
+        <class className="MWTPendingStopLossTransactionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingStopLossTransactionsViewController.h"/>
         </class>
         <class className="MWTPortfolioCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioCell.h"/>

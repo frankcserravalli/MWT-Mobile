@@ -11,6 +11,8 @@
 #import "MWTStockViewController.h"
 #import "MWTShortsViewController.h"
 #import "MWTPortfolioSingleton.h"
+#import "MWTPendingDateTimeTransactionsViewController.h"
+#import "MWTPendingStopLossTransactionsViewController.h"
 
 @interface MWTPortfolioViewController ()
 
@@ -87,18 +89,12 @@
     else if (_interfaceElements[indexPath.row] == @"Pending Date Time Transactions")
     {
 //        NSLog(_interfaceElements[indexPath.row]);
+        [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
     }
     else if (_interfaceElements[indexPath.row] == @"Pending Stop Loss Transactions")
     {
 //        NSLog(_interfaceElements[indexPath.row]);
-    }
-    else if (_interfaceElements[indexPath.row] == @"Processed Date Time Transactions")
-    {
-//        NSLog(_interfaceElements[indexPath.row]);
-    }
-    else if (_interfaceElements[indexPath.row] == @"Processed Stop Loss Transactions")
-    {
-//        NSLog(_interfaceElements[indexPath.row]);
+        [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
     }
 }
 
@@ -118,6 +114,26 @@
     else if ([[segue identifier] isEqualToString:@"Shorts"])
     {
         MWTShortsViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSInteger row = [indexPath row];
+        
+        detailViewController.title = _interfaceElements[row];
+    }
+    else if ([[segue identifier] isEqualToString:@"PendingDateTimeTransactions"])
+    {
+        MWTPendingDateTimeTransactionsViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSInteger row = [indexPath row];
+        
+        detailViewController.title = _interfaceElements[row];
+    }
+    else if ([[segue identifier] isEqualToString:@"PendingStopLossTransactions"])
+    {
+        MWTPendingStopLossTransactionsViewController *detailViewController = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         

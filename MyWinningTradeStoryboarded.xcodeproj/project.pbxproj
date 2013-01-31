@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D241AB316BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */; };
 		5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400E916AF32A700D5F659 /* MWTStockViewController.m */; };
 		5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400ED16AF33C700D5F659 /* MWTStockCell.m */; };
 		5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F016AF411600D5F659 /* MWTShortsViewController.m */; };
@@ -45,9 +46,12 @@
 		5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */; };
 		5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */; };
 		5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */; };
+		5DE2489616BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D241AB116BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingStopLossTransactionsViewController.h; sourceTree = "<group>"; };
+		5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingStopLossTransactionsViewController.m; sourceTree = "<group>"; };
 		5D6400E816AF32A700D5F659 /* MWTStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockViewController.h; sourceTree = "<group>"; };
 		5D6400E916AF32A700D5F659 /* MWTStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockViewController.m; sourceTree = "<group>"; };
 		5D6400EC16AF33C700D5F659 /* MWTStockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockCell.h; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 		5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolio.m; sourceTree = "<group>"; };
 		5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStock.h; sourceTree = "<group>"; };
 		5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStock.m; sourceTree = "<group>"; };
+		5DE2489416BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingDateTimeTransactionsViewController.h; sourceTree = "<group>"; };
+		5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingDateTimeTransactionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,10 @@
 				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
 				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
 				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
+				5DE2489416BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.h */,
+				5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */,
+				5D241AB116BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.h */,
+				5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */,
 				5D6400F616AF4BE100D5F659 /* Stocks */,
 				5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */,
 				5D6400F016AF411600D5F659 /* MWTShortsViewController.m */,
@@ -392,6 +402,8 @@
 				5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */,
 				5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */,
 				5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */,
+				5DE2489616BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m in Sources */,
+				5D241AB316BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
