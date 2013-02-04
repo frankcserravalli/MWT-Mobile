@@ -91,7 +91,11 @@
 
 - (void) parsePendingDateTimePositions:(NSData *)data
 {
+//    [self returnTypeOfJSONfrom:data];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSArray *pending = [parser objectWithData:data];
     
+    [self parseJSON:pending];
 }
 
 - (void) parsePendingStopLossPositions:(NSData *)data
@@ -109,6 +113,7 @@
 
 - (void) assignValuesFrom:(NSDictionary *)dictionary
 {
+    NSLog(@"Assigning values");
     _account_value = [dictionary objectForKey:@"account_value"];
     _cash = [dictionary objectForKey:@"cash"];
     _current_value = [dictionary objectForKey:@"current_value"];
@@ -127,9 +132,48 @@
     _stockSymbols = [[dictionary objectForKey:@"stocks"] allKeys];
 }
 
+- (void) parseJSON:(NSArray *)array
+{
+    NSDictionary *dict = [array objectAtIndex:1];
+    [self displayDictionary:dict];
+}
+
+- (NSDictionary *) retrieveDictFromJSON:(NSArray *)array At:(NSInteger)index
+{
+    return [array objectAtIndex:index];
+}
+
 - (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol
 {
     return [_stocks objectForKey:stockSymbol];
+}
+
+- (void) displayDictionary:(NSDictionary *)dictionary
+{
+    for (NSString *key in dictionary)
+    {
+        NSLog(@"Key: %@", key);
+        NSLog(@"Values: %@", [dictionary objectForKey:key]);
+    }
+}
+
+- (void) returnTypeOfJSONfrom:(NSData *)data
+{
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    id result = [parser objectWithData:data];
+    if ([result isKindOfClass:[NSArray class]])
+    {
+        NSLog(@"NSArray");
+        NSArray *array = (NSArray *)result;
+        for (int i = 0; i < array.count ; i++)
+        {
+            NSLog(@"%@", array[i]);
+        }
+    }
+    else if ([result isKindOfClass: [NSDictionary class]])
+    {
+        NSLog(@"NSDictionary");
+    }
 }
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWTPortfolioSingleton.h"
 
 @interface MWTPendingDateTimeTransactionsViewController : UITableViewController
+
+@property (strong, nonatomic) MWTPortfolioSingleton *portfolioSingleton;
 
 @end

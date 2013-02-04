@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,15 +54,17 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _portfolioSingleton.userPortfolio.pending_stop_loss_transactions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"PendingStopLossTransactionsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    NSDictionary *dictionaryAtIndex = [_portfolioSingleton.userPortfolio retrieveDictFromJSON:_portfolioSingleton.userPortfolio.pending_stop_loss_transactions At:indexPath.row];
+    cell.textLabel.text = [dictionaryAtIndex objectForKey:@"created_at"];
     
     return cell;
 }

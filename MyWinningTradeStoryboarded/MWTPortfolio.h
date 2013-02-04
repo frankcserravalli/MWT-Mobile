@@ -16,8 +16,8 @@
 @property (nonatomic, strong) NSNumber *percent_gain;
 @property (nonatomic, strong) NSNumber *purchase_value;
 
-@property (nonatomic, strong) NSDictionary *pending_date_time_transactions;
-@property (nonatomic, strong) NSDictionary *pending_stop_loss_transactions;
+@property (nonatomic, strong) NSArray *pending_date_time_transactions;
+@property (nonatomic, strong) NSArray *pending_stop_loss_transactions;
 @property (nonatomic, strong) NSDictionary *processed_date_time_transactions;
 @property (nonatomic, strong) NSDictionary *processed_stop_loss_transactions;
 
@@ -33,6 +33,10 @@
 - (void) parsePendingDateTimePositions:(NSData *)data;
 - (void) parsePendingStopLossPositions:(NSData *)data;
 - (void) assignValuesFrom:(NSDictionary*)dictionary;
+- (void) parseJSON:(NSArray *)array;
+- (NSDictionary *)retrieveDictFromJSON:(NSArray *)array At:(NSInteger)index;
 - (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol;
+- (void) displayDictionary:(NSDictionary *)dictionary;
+- (void) returnTypeOfJSONfrom:(NSData *)data;
 
 @end
