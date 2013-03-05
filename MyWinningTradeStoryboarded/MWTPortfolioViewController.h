@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWTPortfolio.h"
 
 @interface MWTPortfolioViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource>
 {
@@ -18,5 +19,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray *interfaceElements;
+@property (strong, nonatomic) NSArray *tableHeaders;
+
+@property (strong, nonatomic) MWTPortfolio *portfolio;
 
 @end

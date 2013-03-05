@@ -686,7 +686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuz-wc-0hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1277" y="-231"/>
+            <point key="canvasLocation" x="1301" y="-315"/>
         </scene>
         <!--Shorts View Controller-->
         <scene sceneID="P1Z-Ed-C17">
@@ -755,9 +755,6 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-ZP-KcN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="227" id="qni-zI-HDC"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PortfolioCell" id="43O-yL-tRW" customClass="MWTPortfolioCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -805,22 +802,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-EI-AdG">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="7pX-sK-ki6"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="baseline" secondItem="DKK-iS-5rb" secondAttribute="baseline" type="default" id="0BZ-R8-fb1"/>
-                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="7" id="1A1-e8-zPg"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="top" secondItem="KhQ-EI-AdG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6tA-Km-LPR"/>
+                            <constraint firstItem="KhQ-EI-AdG" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="CQr-6K-zPh"/>
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="EdQ-id-d3N"/>
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="baseline" secondItem="S3H-p2-ULc" secondAttribute="baseline" type="default" id="Gfw-oc-KDw"/>
                             <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="1gi-bl-Mum" secondAttribute="leading" type="default" id="IMg-qO-zkV"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="LGk-Uo-3um"/>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="N3w-N9-ZSO"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="trailing" secondItem="S3H-p2-ULc" secondAttribute="trailing" type="default" id="OeZ-wQ-ea4"/>
+                            <constraint firstItem="KhQ-EI-AdG" firstAttribute="top" secondItem="1gi-bl-Mum" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PIX-vP-sS9"/>
                             <constraint firstItem="DKK-iS-5rb" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="Qua-OZ-veO"/>
                             <constraint firstAttribute="trailing" secondItem="mX5-y2-iJP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S4k-be-3zm"/>
                             <constraint firstItem="1gi-bl-Mum" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XMh-dR-erN"/>
+                            <constraint firstItem="KhQ-EI-AdG" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="Xmj-IE-DkD"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="boc-bM-oeC"/>
                             <constraint firstItem="jUY-bp-2nK" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="egY-Kh-U4q"/>
+                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="7" id="gkc-Cv-oNQ"/>
                             <constraint firstItem="jUY-bp-2nK" firstAttribute="centerX" secondItem="mX5-y2-iJP" secondAttribute="centerX" type="default" id="gwu-eb-7Bc"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lTS-h0-S4C"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="baseline" secondItem="jUY-bp-2nK" secondAttribute="baseline" type="default" id="lgg-SR-ROR"/>
@@ -840,6 +847,7 @@
                         <segue destination="vcZ-Gi-IaW" kind="push" identifier="Shorts" id="HIV-SC-nTc"/>
                         <segue destination="VYz-Xx-rGr" kind="push" identifier="PendingDateTimeTransactions" id="jHD-YT-pU9"/>
                         <segue destination="u27-2O-d5O" kind="push" identifier="PendingStopLossTransactions" id="QO5-8f-oQR"/>
+                        <segue destination="T3f-zd-mwX" kind="push" identifier="StockDetails" id="djR-re-y7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -874,7 +882,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEN-ik-vTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="460"/>
+            <point key="canvasLocation" x="2167" y="600"/>
         </scene>
         <!--Pending Stop Loss Transactions View Controller-->
         <scene sceneID="355-yP-dNd">
@@ -925,126 +933,12 @@
             <point key="canvasLocation" x="-88" y="88"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MWTBuyStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTBuyStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cashAfterPurchaseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentCashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalPriceToBuyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login"/>
-                <relationship kind="action" name="login:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTPendingDateTimeTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingDateTimeTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPendingStopLossTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingStopLossTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPortfolioCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWTSellStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSellStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cashAfterTransactionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSettingsViewController.h"/>
-        </class>
-        <class className="MWTShortStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitButtonAction:"/>
-            </relationships>
-        </class>
-        <class className="MWTShortsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortsViewController.h"/>
-        </class>
-        <class className="MWTSignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSignUpViewController.h"/>
-        </class>
-        <class className="MWTStockCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="currentValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTStockDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buyButtonAction:"/>
-                <relationship kind="action" name="sellButtonAction:"/>
-                <relationship kind="action" name="shortButtonAction:"/>
-                <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTStockViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockViewController.h"/>
-        </class>
-        <class className="MWTTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTableViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="djR-re-y7K"/>
+    </inferredMetricsTieBreakers>
 </document>

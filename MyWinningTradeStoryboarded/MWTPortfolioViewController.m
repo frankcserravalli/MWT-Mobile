@@ -13,12 +13,18 @@
 #import "MWTPortfolioSingleton.h"
 #import "MWTPendingDateTimeTransactionsViewController.h"
 #import "MWTPendingStopLossTransactionsViewController.h"
+#import "MWTStockDetailViewController.h"
 
 @interface MWTPortfolioViewController ()
 
 @end
 
 @implementation MWTPortfolioViewController
+
+static const int STOCKS = 0;
+static const int SHORTS = 1;
+static const int DATE_TIME_POSITIONS = 2;
+static const int STOP_LOSS_POSITIONS = 3;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,13 +41,15 @@
 	// Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     
-    _interfaceElements = @[@"Stocks", @"Shorts", @"Pending Date Time Transactions", @"Pending Stop Loss Transactions"];
+    _interfaceElements = @[@"Stocks", @"Shorts", @"Date Time Positions", @"Stop Loss Positions"];
+    _tableHeaders = _interfaceElements;
         
     MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
     _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
     _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
     _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
     
+    _portfolio = [portfolioSingleton userPortfolio];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,18 +58,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table View
-
+#pragma mark - Table View Data Source
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //return _sections.count;
-    return 1;
+    return _tableHeaders.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _interfaceElements.count;
+    if (section == STOCKS)
+    {
+        return [[[_portfolio stocks] allKeys] count];
+    }
+    else if (section == SHORTS)
+    {
+        return [[[_portfolio shorts] allKeys] count];
+    }
+    else if (section == DATE_TIME_POSITIONS)
+    {
+        return [[_portfolio pending_date_time_transactions] count];
+    }
+    else if (section == STOP_LOSS_POSITIONS)
+    {
+        return [[_portfolio pending_stop_loss_transactions] count];
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,33 +95,81 @@
     MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.symbolLabel.text = _interfaceElements[indexPath.row];
+//    cell.symbolLabel.text = _interfaceElements[indexPath.row];
+    if (indexPath.section == STOCKS)
+    {
+        cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
+    }
+    else if (indexPath.section == SHORTS)
+    {
+        cell.symbolLabel.text = @"shorts";
+    }
+    else if (indexPath.section == DATE_TIME_POSITIONS)
+    {
+        NSDictionary *date_timeDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_date_time_transactions At:indexPath.row];
+        cell.symbolLabel.text = [date_timeDict objectForKey:@"created_at"];
+    }
+    else if (indexPath.section == STOP_LOSS_POSITIONS)
+    {
+        NSDictionary *stop_lossDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_stop_loss_transactions At:indexPath.row];
+        cell.symbolLabel.text = [stop_lossDict objectForKey:@"created_at"];
+    }
     
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return _tableHeaders[section];
+}
+
+#pragma mark - UITableView Delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Cell %i pressed", indexPath.row);
-    if (_interfaceElements[indexPath.row] == @"Stocks")
+//    if (_interfaceElements[indexPath.row] == @"Stocks")
+//    {
+//        [self performSegueWithIdentifier:@"Stocks" sender:self];
+//    }
+//    else if (_interfaceElements[indexPath.row] == @"Shorts")
+//    {
+//        [self performSegueWithIdentifier:@"Shorts" sender:self];
+//    }
+//    else if (_interfaceElements[indexPath.row] == @"Date Time Positions")
+//    {
+////        NSLog(_interfaceElements[indexPath.row]);
+//        [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
+//    }
+//    else if (_interfaceElements[indexPath.row] == @"Stop Loss Positions")
+//    {
+////        NSLog(_interfaceElements[indexPath.row]);
+//        [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
+//    }
+    
+    if (indexPath.section == STOCKS)
     {
-        [self performSegueWithIdentifier:@"Stocks" sender:self];
+        [self performSegueWithIdentifier:@"StockDetails" sender:self];
     }
-    else if (_interfaceElements[indexPath.row] == @"Shorts")
+    else if (indexPath.section == SHORTS)
     {
         [self performSegueWithIdentifier:@"Shorts" sender:self];
     }
-    else if (_interfaceElements[indexPath.row] == @"Pending Date Time Transactions")
+    else if (indexPath.section == DATE_TIME_POSITIONS)
     {
-//        NSLog(_interfaceElements[indexPath.row]);
         [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
     }
-    else if (_interfaceElements[indexPath.row] == @"Pending Stop Loss Transactions")
+    else if (indexPath.section == STOP_LOSS_POSITIONS)
     {
-//        NSLog(_interfaceElements[indexPath.row]);
         [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
     }
+    else
+    {
+        
+    }
 }
+
+#pragma mark - Segue
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -140,6 +213,15 @@
         NSInteger row = [indexPath row];
         
         detailViewController.title = _interfaceElements[row];
+    }
+    else if ([[segue identifier] isEqualToString:@"StockDetails"])
+    {
+        MWTStockDetailViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSString *stockSymbol = [[_portfolio stockSymbols] objectAtIndex:indexPath.row];
+        detailViewController.title = stockSymbol;
     }
     else
     {
