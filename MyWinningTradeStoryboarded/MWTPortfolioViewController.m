@@ -98,7 +98,13 @@ static const int STOP_LOSS_POSITIONS = 3;
 //    cell.symbolLabel.text = _interfaceElements[indexPath.row];
     if (indexPath.section == STOCKS)
     {
-        cell.symbolLabel.text = _portfolio.stockSymbols[indexPath.row];
+        NSString *currentStockSymbol = _portfolio.stockSymbols[indexPath.row];
+        NSDictionary *currentStockDictionary = [_portfolio getStockDictionaryFromStock:currentStockSymbol];
+        cell.symbolLabel.text = currentStockSymbol;
+        cell.percentGainLabel.text = [[currentStockDictionary objectForKey:@"percent_gain"] stringValue];
+        cell.sharesLabel.text = [[currentStockDictionary objectForKey:@"shares_owned"] stringValue];
+        cell.priceLabel.text = [[currentStockDictionary objectForKey:@"current_value"] stringValue];
+
     }
     else if (indexPath.section == SHORTS)
     {
@@ -108,11 +114,23 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         NSDictionary *date_timeDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_date_time_transactions At:indexPath.row];
         cell.symbolLabel.text = [date_timeDict objectForKey:@"created_at"];
+        
+        cell.percentGainLabel.hidden = YES;
+        cell.sharesLabel.hidden = YES;
+        cell.priceLabel.hidden = YES;
+        cell.sharesLabelText.hidden = YES;
+        
     }
     else if (indexPath.section == STOP_LOSS_POSITIONS)
     {
         NSDictionary *stop_lossDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_stop_loss_transactions At:indexPath.row];
         cell.symbolLabel.text = [stop_lossDict objectForKey:@"created_at"];
+        
+        cell.percentGainLabel.hidden = YES;
+        cell.sharesLabel.hidden = YES;
+        cell.priceLabel.hidden = YES;
+        cell.sharesLabelText.hidden = YES;
+
     }
     
     return cell;

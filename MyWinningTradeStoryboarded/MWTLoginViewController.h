@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *emailTextfield;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextfield;
 
-- (IBAction)login;
+- (IBAction)backgroundDismissKeyboard:(id)sender;
+- (IBAction)login:(id)sender;
 
 @end
