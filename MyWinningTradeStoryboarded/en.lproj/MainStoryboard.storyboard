@@ -461,7 +461,7 @@
             <objects>
                 <viewController id="T3f-zd-mwX" customClass="MWTStockDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UPe-Vg-aS7">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Qh-Y1e">
@@ -551,7 +551,7 @@
                                     <action selector="sellButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="LDQ-gA-Qbv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXi-8l-7FT">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXi-8l-7FT">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="LU6-19-8RD"/>
                                 </constraints>
@@ -567,40 +567,48 @@
                                     <action selector="shortButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="kcU-aX-y7z"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3p-yp-0Xz">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ONb-ps-f8w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="640-Yd-fDK"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="top" secondItem="2vC-hW-P8w" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8yj-SV-CdW"/>
-                            <constraint firstItem="HVb-LL-m79" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="230" id="9Kq-2e-Mbe"/>
                             <constraint firstItem="DnO-by-fzC" firstAttribute="baseline" secondItem="YF4-4j-4ci" secondAttribute="baseline" type="default" id="9ND-iG-1js"/>
+                            <constraint firstItem="H3p-yp-0Xz" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" type="default" id="B5i-1l-iIx"/>
                             <constraint firstAttribute="trailing" secondItem="WZq-0M-eYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BS7-yH-Ri7"/>
                             <constraint firstItem="YF4-4j-4ci" firstAttribute="top" secondItem="hUd-Rz-bwb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CGB-se-dgf"/>
                             <constraint firstAttribute="trailing" secondItem="p2o-pW-9Zy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="HbM-K2-sZt"/>
                             <constraint firstItem="UTa-w1-EqD" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ji6-2y-WA1"/>
                             <constraint firstItem="HVb-LL-m79" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MiB-V6-ToJ"/>
+                            <constraint firstAttribute="bottom" secondItem="HVb-LL-m79" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="S3K-oM-OjM"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SK7-6o-OjV"/>
                             <constraint firstItem="d02-fw-P4y" firstAttribute="baseline" secondItem="UTa-w1-EqD" secondAttribute="baseline" type="default" id="SvX-ss-ygE"/>
                             <constraint firstAttribute="trailing" secondItem="YXi-8l-7FT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TiD-iJ-UmF"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="20" symbolic="YES" type="default" id="VU5-us-8hf"/>
+                            <constraint firstAttribute="bottom" secondItem="HsN-XU-K9K" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="YKv-tu-bsv"/>
+                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="HsN-XU-K9K" secondAttribute="centerX" type="default" id="Zgi-mO-mLn"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="arB-lA-hdR"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="top" secondItem="UTa-w1-EqD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="c7h-74-hcK"/>
                             <constraint firstItem="WZq-0M-eYQ" firstAttribute="baseline" secondItem="2vC-hW-P8w" secondAttribute="baseline" type="default" id="dfq-kw-pCB"/>
-                            <constraint firstItem="HsN-XU-K9K" firstAttribute="baseline" secondItem="HVb-LL-m79" secondAttribute="baseline" type="default" id="dmL-36-xJW"/>
                             <constraint firstItem="p2o-pW-9Zy" firstAttribute="baseline" secondItem="ghC-pa-3cB" secondAttribute="baseline" type="default" id="ebP-BS-BB8"/>
                             <constraint firstAttribute="trailing" secondItem="DnO-by-fzC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ehJ-Wc-cyI"/>
                             <constraint firstItem="YF4-4j-4ci" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="giC-3L-eNH"/>
-                            <constraint firstItem="HsN-XU-K9K" firstAttribute="centerX" secondItem="IY5-Qh-Y1e" secondAttribute="centerX" type="default" id="lHd-6t-mfe"/>
+                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="H3p-yp-0Xz" secondAttribute="centerX" type="default" id="hJ6-Da-Opa"/>
+                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="H3p-yp-0Xz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="le7-1x-JYu"/>
+                            <constraint firstItem="HVb-LL-m79" firstAttribute="top" secondItem="YF4-4j-4ci" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n9G-wG-XSw"/>
+                            <constraint firstAttribute="bottom" secondItem="YXi-8l-7FT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="nk9-mz-VcW"/>
                             <constraint firstItem="ONb-ps-f8w" firstAttribute="baseline" secondItem="hUd-Rz-bwb" secondAttribute="baseline" type="default" id="oU8-Yj-Kni"/>
+                            <constraint firstItem="H3p-yp-0Xz" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" type="default" id="rhi-U3-0db"/>
                             <constraint firstAttribute="trailing" secondItem="d02-fw-P4y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tKZ-3z-oJU"/>
-                            <constraint firstItem="UTa-w1-EqD" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="42" id="tYT-1U-YXe"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="v3d-nh-Wms"/>
-                            <constraint firstItem="YXi-8l-7FT" firstAttribute="baseline" secondItem="HsN-XU-K9K" secondAttribute="baseline" type="default" id="wti-9b-n9h"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="UPe-Vg-aS7" secondAttribute="centerX" type="default" id="x1W-k6-f1v"/>
+                            <constraint firstItem="UTa-w1-EqD" firstAttribute="top" secondItem="IY5-Qh-Y1e" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="x3K-ge-PJg"/>
+                            <constraint firstItem="H3p-yp-0Xz" firstAttribute="trailing" secondItem="UPe-Vg-aS7" secondAttribute="trailing" type="default" id="yga-ET-zyt"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="top" secondItem="ghC-pa-3cB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zeL-qh-EA1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gO3-vh-VzY"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buyPriceLabel" destination="d02-fw-P4y" id="byD-tg-Q1p"/>
                         <outlet property="companyNameLabel" destination="IY5-Qh-Y1e" id="iYz-J5-gzD"/>
@@ -933,6 +941,122 @@
             <point key="canvasLocation" x="-88" y="88"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MWTBuyStockViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTBuyStockViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundDismissKeyboard:"/>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="action" name="submitButtonAction:"/>
+                <relationship kind="outlet" name="cashAfterPurchaseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentCashLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalPriceToBuyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MWTCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MWTLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login"/>
+                <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MWTPendingDateTimeTransactionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingDateTimeTransactionsViewController.h"/>
+        </class>
+        <class className="MWTPendingStopLossTransactionsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingStopLossTransactionsViewController.h"/>
+        </class>
+        <class className="MWTPortfolioCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MWTPortfolioViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MWTSellStockViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSellStockViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundDismissKeyboard:"/>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="action" name="submitButtonAction:"/>
+                <relationship kind="outlet" name="cashAfterTransactionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MWTSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSettingsViewController.h"/>
+        </class>
+        <class className="MWTShortStockViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortStockViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="submitButtonAction:"/>
+            </relationships>
+        </class>
+        <class className="MWTShortsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortsViewController.h"/>
+        </class>
+        <class className="MWTSignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSignUpViewController.h"/>
+        </class>
+        <class className="MWTStockCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MWTStockDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buyButtonAction:"/>
+                <relationship kind="action" name="sellButtonAction:"/>
+                <relationship kind="action" name="shortButtonAction:"/>
+                <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MWTStockViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockViewController.h"/>
+        </class>
+        <class className="MWTTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

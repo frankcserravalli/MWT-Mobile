@@ -38,5 +38,6 @@
 - (NSDictionary *)getStockDictionaryFromStock:(NSString *)stockSymbol;
 - (void) displayDictionary:(NSDictionary *)dictionary;
 - (void) returnTypeOfJSONfrom:(NSData *)data;
+- (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key;
 
 @end

@@ -176,4 +176,9 @@
     }
 }
 
+- (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key
+{
+    return [stocks sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:YES]]];
+}
+
 @end
