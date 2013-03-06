@@ -128,7 +128,7 @@
     
     _shorts = [dictionary objectForKey:@"shorts"];
     
-    _stocks = [dictionary objectForKey:@"stocks"];
+    _stocks = [dictionary objectForKey:@"stocks"];  
     _stockSymbols = [[dictionary objectForKey:@"stocks"] allKeys];
 }
 
@@ -176,9 +176,62 @@
     }
 }
 
-- (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key
+- (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key ascending:(BOOL)ascending
 {
-    return [stocks sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:YES]]];
+    return [stocks sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:ascending]]];
+}
+
+- (NSArray *) convertIntoArrayADictOf:(NSDictionary *)stocks
+{
+    NSMutableArray *stocksArray = [[NSMutableArray alloc] init];
+    
+    for (NSString *stockName in stocks)
+    {
+        NSDictionary *stockDict = [self getStockDictionaryFromStock:stockName];
+        NSMutableDictionary *mutableStockDict = [[NSMutableDictionary alloc] initWithDictionary:stockDict];
+        [mutableStockDict setObject:stockName forKey:@"symbol"];
+        [stocksArray addObject:mutableStockDict];
+    }
+    
+    return stocksArray;
+}
+
+- (void) displayStocksArraySortedBy:(NSString *)key
+{
+    _stocksArray = [[NSArray alloc] initWithArray:[self convertIntoArrayADictOf:_stocks]];
+    _stocksArray = [self sortArrayOf:_stocksArray by:key ascending:NO];
+    
+    for (int i = 0; i < _stocksArray.count; i++)
+    {
+        NSDictionary *stockAtIndex = [_stocksArray objectAtIndex:i];
+        NSString *logString = [stockAtIndex objectForKey:@"symbol"];
+        NSLog(logString);
+    }
+}
+
+- (void) sortStocksBasedOn:(NSString *)key
+{
+    _stocksArray = [[NSArray alloc] initWithArray:[self convertIntoArrayADictOf:_stocks]];
+    
+    if ([key isEqualToString:@"symbol"])
+    {
+        _stocksArray = [self sortArrayOf:_stocksArray by:key ascending:YES];
+
+    }
+    else
+    {
+        _stocksArray = [self sortArrayOf:_stocksArray by:key ascending:NO];
+    }
+
+    NSMutableArray *sortedSymbolsArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < _stocksArray.count; i++)
+    {
+        NSDictionary *stockAtIndex = [_stocksArray objectAtIndex:i];
+        NSString *symbol = [stockAtIndex objectForKey:@"symbol"];
+        [sortedSymbolsArray addObject:symbol];
+    }
+    
+    _stockSymbols = sortedSymbolsArray;
 }
 
 @end

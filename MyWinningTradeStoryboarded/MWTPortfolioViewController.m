@@ -247,4 +247,36 @@ static const int STOP_LOSS_POSITIONS = 3;
     }
 }
 
+- (IBAction)sort:(id)sender
+{
+    [_portfolio displayStocksArraySortedBy:@"shares_owned"];
+}
+
+- (IBAction)segmentedControlSorter:(id)sender
+{
+    switch (self.sorterSegmentedControl.selectedSegmentIndex) {
+        case 0:
+//            [_portfolio displayStocksArraySortedBy:@"symbol"];
+            [_portfolio sortStocksBasedOn:@"symbol"];
+            [self.tableView reloadData];
+            break;
+        case 1:
+//            [_portfolio displayStocksArraySortedBy:@"shares_owned"];
+            [_portfolio sortStocksBasedOn:@"shares_owned"];
+            [self.tableView reloadData];
+            break;
+        case 2:
+//            [_portfolio displayStocksArraySortedBy:@"percent_gain"];
+            [_portfolio sortStocksBasedOn:@"percent_gain"];
+            [self.tableView reloadData];
+            break;
+        case 3:
+//            [_portfolio displayStocksArraySortedBy:@"current_value"];
+            [_portfolio sortStocksBasedOn:@"current_value"];
+            [self.tableView reloadData];
+            break;
+        default:
+            break;
+    }
+}
 @end

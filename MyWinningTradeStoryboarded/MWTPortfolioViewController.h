@@ -17,10 +17,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *accountValueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cashLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *sorterSegmentedControl;
 
 @property (strong, nonatomic) NSArray *interfaceElements;
 @property (strong, nonatomic) NSArray *tableHeaders;
 
 @property (strong, nonatomic) MWTPortfolio *portfolio;
+- (IBAction)sort:(id)sender;
+- (IBAction)segmentedControlSorter:(id)sender;
 
 @end

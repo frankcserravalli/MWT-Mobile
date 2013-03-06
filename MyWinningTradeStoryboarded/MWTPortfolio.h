@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSDictionary *shorts;
 @property (nonatomic, strong) NSDictionary *stocks;
+@property (nonatomic, strong) NSArray *stocksArray;
 @property (nonatomic, strong) NSArray *stockSymbols;
 
 
@@ -39,5 +40,8 @@
 - (void) displayDictionary:(NSDictionary *)dictionary;
 - (void) returnTypeOfJSONfrom:(NSData *)data;
 - (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key;
+- (void) displayStocksArraySortedBy:(NSString *)key;
+- (void) sortStocksBasedOn:(NSString *)key;
+
 
 @end

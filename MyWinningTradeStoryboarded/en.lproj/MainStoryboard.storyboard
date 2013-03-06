@@ -632,7 +632,7 @@
             <objects>
                 <tableViewController id="PA1-Eu-enw" customClass="MWTStockViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aH1-qv-wcF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -703,7 +703,7 @@
             <objects>
                 <tableViewController id="vcZ-Gi-IaW" customClass="MWTShortsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9kO-9F-C6w">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -733,7 +733,7 @@
             <objects>
                 <viewController id="TMf-JY-xRO" customClass="MWTPortfolioViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3x-DK-8q9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-iS-5rb">
@@ -765,6 +765,9 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-ZP-KcN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="203" id="FTA-H0-cf7"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PortfolioCell" id="43O-yL-tRW" customClass="MWTPortfolioCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -815,7 +818,7 @@
                                             <constraint firstItem="tqw-Ol-4KW" firstAttribute="baseline" secondItem="pHp-kd-lzv" secondAttribute="baseline" type="default" id="hil-3i-eEZ"/>
                                             <constraint firstItem="6Xb-WV-mhY" firstAttribute="baseline" secondItem="iZT-P1-ZXc" secondAttribute="baseline" type="default" id="kFT-DP-4wB"/>
                                             <constraint firstItem="Y4r-p5-0uf" firstAttribute="bottom" secondItem="tqw-Ol-4KW" secondAttribute="bottom" type="default" id="lgQ-FN-o3p"/>
-                                            <constraint firstItem="Y4r-p5-0uf" firstAttribute="leading" secondItem="tqw-Ol-4KW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zgX-rr-yqT"/>
+                                            <constraint firstItem="Y4r-p5-0uf" firstAttribute="leading" secondItem="tqw-Ol-4KW" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="zgX-rr-yqT"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="percentGainLabel" destination="iZT-P1-ZXc" id="fTf-SZ-pjI"/>
@@ -851,43 +854,64 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-EI-AdG">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="7pX-sK-ki6"/>
+                                    <constraint firstAttribute="height" constant="135" id="njF-Qr-kVJ"/>
                                 </constraints>
                             </webView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-8G-Xg7">
+                                <segments>
+                                    <segment title="Symbol"/>
+                                    <segment title="Volume"/>
+                                    <segment title="Gain"/>
+                                    <segment title="Price"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlSorter:" destination="TMf-JY-xRO" eventType="valueChanged" id="ZiU-Sa-1lC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="baseline" secondItem="DKK-iS-5rb" secondAttribute="baseline" type="default" id="0BZ-R8-fb1"/>
-                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="top" secondItem="KhQ-EI-AdG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6tA-Km-LPR"/>
                             <constraint firstItem="KhQ-EI-AdG" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="CQr-6K-zPh"/>
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="EdQ-id-d3N"/>
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="baseline" secondItem="S3H-p2-ULc" secondAttribute="baseline" type="default" id="Gfw-oc-KDw"/>
+                            <constraint firstItem="KhQ-EI-AdG" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="42" id="GsD-RY-QOj"/>
                             <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="1gi-bl-Mum" secondAttribute="leading" type="default" id="IMg-qO-zkV"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="LGk-Uo-3um"/>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="N3w-N9-ZSO"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="trailing" secondItem="S3H-p2-ULc" secondAttribute="trailing" type="default" id="OeZ-wQ-ea4"/>
-                            <constraint firstItem="KhQ-EI-AdG" firstAttribute="top" secondItem="1gi-bl-Mum" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PIX-vP-sS9"/>
                             <constraint firstItem="DKK-iS-5rb" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="Qua-OZ-veO"/>
                             <constraint firstAttribute="trailing" secondItem="mX5-y2-iJP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S4k-be-3zm"/>
                             <constraint firstItem="1gi-bl-Mum" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XMh-dR-erN"/>
                             <constraint firstItem="KhQ-EI-AdG" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="Xmj-IE-DkD"/>
+                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="7" id="asD-Ja-3Hd"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="boc-bM-oeC"/>
                             <constraint firstItem="jUY-bp-2nK" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="egY-Kh-U4q"/>
-                            <constraint firstItem="DKK-iS-5rb" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="7" id="gkc-Cv-oNQ"/>
+                            <constraint firstItem="CiB-8G-Xg7" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="fud-9c-Bn6"/>
                             <constraint firstItem="jUY-bp-2nK" firstAttribute="centerX" secondItem="mX5-y2-iJP" secondAttribute="centerX" type="default" id="gwu-eb-7Bc"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lTS-h0-S4C"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="baseline" secondItem="jUY-bp-2nK" secondAttribute="baseline" type="default" id="lgg-SR-ROR"/>
                             <constraint firstItem="1gi-bl-Mum" firstAttribute="baseline" secondItem="0Ee-j9-ZDz" secondAttribute="baseline" type="default" id="nBd-i6-H6N"/>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nOZ-kL-Lkq"/>
+                            <constraint firstItem="tNc-ZP-KcN" firstAttribute="top" secondItem="CiB-8G-Xg7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nmo-9C-oCD"/>
+                            <constraint firstItem="CiB-8G-Xg7" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="ns4-0h-rln"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="bottom" secondItem="X3x-DK-8q9" secondAttribute="bottom" type="default" id="w0a-9J-eLe"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="wwV-T2-57j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EeT-Qn-2Ha"/>
+                    <navigationItem key="navigationItem" id="EeT-Qn-2Ha">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="bz2-GT-ovc">
+                            <connections>
+                                <action selector="sort:" destination="TMf-JY-xRO" id="U1T-wD-aAX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="accountValueLabel" destination="1gi-bl-Mum" id="67A-oI-JpD"/>
                         <outlet property="cashLabel" destination="0Ee-j9-ZDz" id="ClR-Nm-AJs"/>
                         <outlet property="portfolioValue" destination="jUY-bp-2nK" id="Oxl-nQ-qPl"/>
+                        <outlet property="sorterSegmentedControl" destination="CiB-8G-Xg7" id="Vlk-Iu-gnA"/>
                         <outlet property="tableView" destination="tNc-ZP-KcN" id="2zc-AF-qxB"/>
                         <segue destination="PA1-Eu-enw" kind="push" identifier="Stocks" id="ZJJ-b0-l7S"/>
                         <segue destination="vcZ-Gi-IaW" kind="push" identifier="Shorts" id="HIV-SC-nTc"/>
@@ -905,7 +929,7 @@
             <objects>
                 <tableViewController id="VYz-Xx-rGr" customClass="MWTPendingDateTimeTransactionsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="omw-zV-yhd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -935,7 +959,7 @@
             <objects>
                 <tableViewController id="u27-2O-d5O" customClass="MWTPendingStopLossTransactionsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="m1K-VB-iOR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1029,9 +1053,12 @@
         <class className="MWTPortfolioViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
             <relationships>
+                <relationship kind="action" name="segmentedControlSorter:"/>
+                <relationship kind="action" name="sort:"/>
                 <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sorterSegmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
