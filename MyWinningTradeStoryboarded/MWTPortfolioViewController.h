@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MWTPortfolio.h"
 
-@interface MWTPortfolioViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource>
+@interface MWTPortfolioViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 {
 
 }
@@ -21,8 +21,10 @@
 
 @property (strong, nonatomic) NSArray *interfaceElements;
 @property (strong, nonatomic) NSArray *tableHeaders;
+@property (strong, nonatomic) NSMutableArray *filteredList;
 
 @property (strong, nonatomic) MWTPortfolio *portfolio;
+
 - (IBAction)sort:(id)sender;
 - (IBAction)segmentedControlSorter:(id)sender;
 
