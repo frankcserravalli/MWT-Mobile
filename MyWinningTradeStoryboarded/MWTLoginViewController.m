@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //self.title = @"Login";
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:55/255.0f green:70/255.0f blue:87/255.0f alpha:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +64,104 @@
 //    {
 //        [self performSegueWithIdentifier:@"Login" sender:self];
 //    }
-    [self performSegueWithIdentifier:@"Login" sender:self];
+    [self setUpConnectionFor:_emailTextfield.text];
+}
+
+#pragma mark - Set Up Connection
+
+- (void) setUpConnectionFor:(NSString *)email
+{
+    NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/users/authenticate", serverURL]];
+    NSString *bodyString = [NSString stringWithFormat:@"email=%@", email];
+    
+    double timeOutInterval = 60.0;
+    
+    NSMutableData *POSTData = [NSMutableData data];
+    [POSTData appendData:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *POSTLength = [NSString stringWithFormat:@"%d", [POSTData length]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeOutInterval];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:POSTLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:POSTData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+#pragma mark - NSURLConnection Delegate Methods
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    _responseData = [[NSMutableData alloc] init];
+    [_responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    _responseData = nil;
+    NSLog(@"Connection failed, error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Connection successful! Received %d bytes of data", _responseData.length);
+    NSString *responseString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
+    NSLog(responseString);
+    
+    if (responseString.length > 30)
+    {
+        NSDictionary *userInfoDictionary = [self receiveJSON];
+//        NSString *user_id = [NSString stringWithFormat:@"%d", [userInfoDictionary objectForKey:@"user_id"]];
+        NSNumber *user_id = [NSNumber numberWithLongLong:[userInfoDictionary objectForKey:@"user_id"]];
+        
+        NSString *ios_token = [NSString stringWithFormat:[userInfoDictionary objectForKey:@"ios_token"]];
+
+        [self saveInUserDefaults:user_id withKey:@"user_id"];
+        [self saveInUserDefaults:ios_token withKey:@"ios_token"];
+        
+        [self performSegueWithIdentifier:@"Login" sender:self];
+    }
+    else
+    {
+        NSLog(@"Login unsuccessful");
+    }
+
+}
+
+#pragma mark - User Defaults
+- (void) saveInUserDefaults:(NSString *)string withKey:(NSString *)stringKey
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:string forKey:stringKey];
+    [defaults synchronize];
+    
+    NSLog([NSString stringWithFormat:@"Saved %@", string]);
+}
+
+#pragma mark - JSON
+- (NSDictionary *)receiveJSON
+{
+    NSError *JSONError = nil;
+    id JSONObject = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:&JSONError];
+    
+    if ([JSONObject isKindOfClass:[NSArray class]])
+    {
+        NSArray *JSONArray = (NSArray *)JSONObject;
+        return [NSDictionary dictionaryWithObject:JSONArray forKey:@"JSONArray"];
+    }
+    else
+    {
+        NSDictionary *JSONDictionary = (NSDictionary *)JSONObject;
+        return JSONDictionary;
+    }
 }
 
 @end

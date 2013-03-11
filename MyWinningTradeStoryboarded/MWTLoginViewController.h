@@ -15,4 +15,6 @@
 - (IBAction)backgroundDismissKeyboard:(id)sender;
 - (IBAction)login:(id)sender;
 
+@property (strong, nonatomic) NSMutableData *responseData;
+
 @end

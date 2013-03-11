@@ -46,6 +46,7 @@
 		5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */; };
 		5DA9A6EA16B0478400C67CEA /* MWTPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */; };
 		5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */; };
+		5DC50A5B16EAB7E2000E59CA /* segmentControl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DC50A5A16EAB7E2000E59CA /* segmentControl.jpg */; };
 		5DE2489616BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolio.m; sourceTree = "<group>"; };
 		5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStock.h; sourceTree = "<group>"; };
 		5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStock.m; sourceTree = "<group>"; };
+		5DC50A5A16EAB7E2000E59CA /* segmentControl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = segmentControl.jpg; sourceTree = "<group>"; };
 		5DE2489416BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingDateTimeTransactionsViewController.h; sourceTree = "<group>"; };
 		5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingDateTimeTransactionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 		5D7420AB16A8989D002E5CA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DC50A5816EAB7CF000E59CA /* Assets */,
 				5D7420AC16A8989D002E5CA3 /* MyWinningTradeStoryboarded-Info.plist */,
 				5D7420AD16A8989D002E5CA3 /* InfoPlist.strings */,
 				5D7420B016A8989D002E5CA3 /* main.m */,
@@ -305,6 +308,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		5DC50A5816EAB7CF000E59CA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5DC50A5A16EAB7E2000E59CA /* segmentControl.jpg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +374,7 @@
 				5D7420B916A8989D002E5CA3 /* Default@2x.png in Resources */,
 				5D7420BB16A8989D002E5CA3 /* Default-568h@2x.png in Resources */,
 				5D7420BE16A8989D002E5CA3 /* MainStoryboard.storyboard in Resources */,
+				5DC50A5B16EAB7E2000E59CA /* segmentControl.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
