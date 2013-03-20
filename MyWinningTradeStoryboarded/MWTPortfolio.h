@@ -26,6 +26,10 @@
 @property (nonatomic, strong) NSArray *stocksArray;
 @property (nonatomic, strong) NSArray *stockSymbols;
 
+@property (nonatomic, strong) NSMutableData *responseData;
+@property BOOL shouldParsePortfolio;
+@property BOOL shouldParsePendingStopLoss;
+@property BOOL shouldParsePendingDateTime;
 
 - (void) getPortfolio;
 - (void) parsePortfolio:(NSData*)data;

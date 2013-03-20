@@ -45,16 +45,26 @@ static const int STOP_LOSS_POSITIONS = 3;
     _tableHeaders = _interfaceElements;
         
     MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+    
     _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
     _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
     _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
     
     _portfolio = [portfolioSingleton userPortfolio];
     _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
+    
+    _sorterSegmentedControl.tintColor = [UIColor colorWithRed:155/255.0 green:160/255.0 blue:133/255.0 alpha:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
+    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+//
+//    _portfolio = [portfolioSingleton userPortfolio];
+//    _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
 }
 
 - (void) viewDidAppear:(BOOL)animated

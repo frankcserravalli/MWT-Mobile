@@ -8,6 +8,7 @@
 
 #import "MWTLoginViewController.h"
 #import "SBJson.h"
+#import "MWTPortfolioSingleton.h"
 
 @interface MWTLoginViewController ()
 
@@ -64,15 +65,15 @@
 //    {
 //        [self performSegueWithIdentifier:@"Login" sender:self];
 //    }
-    [self setUpConnectionFor:_emailTextfield.text];
+    [self setUpConnectionFor:_emailTextfield.text andPassword:_passwordTextfield.text];
 }
 
 #pragma mark - Set Up Connection
 
-- (void) setUpConnectionFor:(NSString *)email
+- (void) setUpConnectionFor:(NSString *)email andPassword:(NSString *)password
 {
     NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/users/authenticate", serverURL]];
-    NSString *bodyString = [NSString stringWithFormat:@"email=%@", email];
+    NSString *bodyString = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
     
     double timeOutInterval = 60.0;
     
@@ -119,14 +120,14 @@
     if (responseString.length > 30)
     {
         NSDictionary *userInfoDictionary = [self receiveJSON];
-//        NSString *user_id = [NSString stringWithFormat:@"%d", [userInfoDictionary objectForKey:@"user_id"]];
-        NSNumber *user_id = [NSNumber numberWithLongLong:[userInfoDictionary objectForKey:@"user_id"]];
-        
+        NSString *user_id = [NSString stringWithFormat:@"%i", [[userInfoDictionary objectForKey:@"user_id"] intValue]];        
         NSString *ios_token = [NSString stringWithFormat:[userInfoDictionary objectForKey:@"ios_token"]];
 
         [self saveInUserDefaults:user_id withKey:@"user_id"];
         [self saveInUserDefaults:ios_token withKey:@"ios_token"];
-        
+
+        MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+        sleep(3);
         [self performSegueWithIdentifier:@"Login" sender:self];
     }
     else
