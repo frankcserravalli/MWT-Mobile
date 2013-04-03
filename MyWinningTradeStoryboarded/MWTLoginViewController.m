@@ -127,14 +127,20 @@
         [self saveInUserDefaults:ios_token withKey:@"ios_token"];
 
         MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
-        sleep(3);
-        [self performSegueWithIdentifier:@"Login" sender:self];
+//        sleep(3);
+//        [self performSegueWithIdentifier:@"Login" sender:self];
+        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fireTimer:) userInfo:nil repeats:NO];
     }
     else
     {
         NSLog(@"Login unsuccessful");
     }
 
+}
+
+- (void) fireTimer:(NSTimer *)timer
+{
+    [self performSegueWithIdentifier:@"Login" sender:self];
 }
 
 #pragma mark - User Defaults
