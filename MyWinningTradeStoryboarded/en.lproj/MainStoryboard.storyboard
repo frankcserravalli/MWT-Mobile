@@ -573,11 +573,6 @@
                                     <action selector="shortButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="kcU-aX-y7z"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5G8-3p-pha">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="fED-D2-4c0"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA1-N1-Crh">
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Chart">
@@ -591,38 +586,44 @@
                                     <segue destination="Ssc-Q0-H0Y" kind="push" identifier="StockChart" id="eMB-Ia-LiX"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4D-Vm-DfD">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="Euo-fZ-usY"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DnO-by-fzC" firstAttribute="baseline" secondItem="YF4-4j-4ci" secondAttribute="baseline" type="default" id="0Gl-Ov-w30"/>
-                            <constraint firstItem="5G8-3p-pha" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" type="default" id="1bk-En-X8n"/>
                             <constraint firstAttribute="bottom" secondItem="YXi-8l-7FT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="25x-9y-EKD"/>
                             <constraint firstItem="YF4-4j-4ci" firstAttribute="top" secondItem="hUd-Rz-bwb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5Ne-FH-Nzo"/>
                             <constraint firstItem="UTa-w1-EqD" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5cz-3P-jZX"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="5G8-3p-pha" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6UL-f5-0l7"/>
                             <constraint firstAttribute="trailing" secondItem="d02-fw-P4y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7Ce-uf-DMi"/>
+                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="top" secondItem="NA1-N1-Crh" secondAttribute="top" type="default" id="DS9-we-P9W"/>
                             <constraint firstItem="HVb-LL-m79" firstAttribute="top" secondItem="YF4-4j-4ci" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HQE-eB-2SA"/>
                             <constraint firstItem="WZq-0M-eYQ" firstAttribute="baseline" secondItem="2vC-hW-P8w" secondAttribute="baseline" type="default" id="NgI-Ix-vTE"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="5G8-3p-pha" secondAttribute="centerX" type="default" id="PeL-El-T8W"/>
                             <constraint firstAttribute="trailing" secondItem="YXi-8l-7FT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pje-X9-8lc"/>
+                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="centerX" secondItem="IY5-Qh-Y1e" secondAttribute="centerX" type="default" id="RHH-8E-t1c"/>
                             <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="HsN-XU-K9K" secondAttribute="centerX" type="default" id="RX0-Jt-RsA"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="top" secondItem="ghC-pa-3cB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UGp-4V-fhZ"/>
                             <constraint firstAttribute="bottom" secondItem="HVb-LL-m79" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wig-ol-Cv0"/>
                             <constraint firstAttribute="trailing" secondItem="ONb-ps-f8w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wjd-BL-Age"/>
-                            <constraint firstItem="5G8-3p-pha" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" type="default" id="YUR-Yv-LUt"/>
+                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="p4D-Vm-DfD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YMq-VA-SQP"/>
                             <constraint firstItem="HVb-LL-m79" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YWn-Ls-D1y"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="a4K-AX-MKb"/>
-                            <constraint firstItem="5G8-3p-pha" firstAttribute="trailing" secondItem="UPe-Vg-aS7" secondAttribute="trailing" type="default" id="c1c-Ij-hAe"/>
                             <constraint firstAttribute="trailing" secondItem="WZq-0M-eYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dRR-GF-g4G"/>
                             <constraint firstAttribute="trailing" secondItem="p2o-pW-9Zy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="epX-Vx-4Of"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fAQ-x4-2kY"/>
                             <constraint firstItem="YF4-4j-4ci" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fU9-YZ-gOB"/>
+                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" type="default" id="gBh-MN-9Mc"/>
                             <constraint firstAttribute="bottom" secondItem="HsN-XU-K9K" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gn5-GE-WU1"/>
                             <constraint firstItem="ONb-ps-f8w" firstAttribute="baseline" secondItem="hUd-Rz-bwb" secondAttribute="baseline" type="default" id="huG-FP-V3V"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="top" secondItem="2vC-hW-P8w" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jLf-BQ-qh5"/>
+                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="-1" id="kqF-jj-CjC"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="top" secondItem="UTa-w1-EqD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ldh-z8-Jr2"/>
+                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="trailing" secondItem="UPe-Vg-aS7" secondAttribute="trailing" type="default" id="nry-Eg-PGq"/>
                             <constraint firstAttribute="trailing" secondItem="DnO-by-fzC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="obR-cM-XJE"/>
-                            <constraint firstItem="NA1-N1-Crh" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" type="default" id="qEf-sv-ifa"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="baseline" secondItem="p2o-pW-9Zy" secondAttribute="baseline" type="default" id="u6W-zR-Lgp"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xn0-Sp-3w6"/>
                             <constraint firstItem="UTa-w1-EqD" firstAttribute="baseline" secondItem="d02-fw-P4y" secondAttribute="baseline" type="default" id="y3M-Ki-8EF"/>
@@ -633,6 +634,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buyPriceLabel" destination="d02-fw-P4y" id="byD-tg-Q1p"/>
+                        <outlet property="chartView" destination="p4D-Vm-DfD" id="iHU-mD-ggb"/>
                         <outlet property="companyNameLabel" destination="IY5-Qh-Y1e" id="iYz-J5-gzD"/>
                         <outlet property="peRatioLabel" destination="ONb-ps-f8w" id="52s-2z-b0g"/>
                         <outlet property="percentChangeLabel" destination="p2o-pW-9Zy" id="6DE-3g-AfP"/>
@@ -1164,6 +1166,7 @@
                 <relationship kind="action" name="sellButtonAction:"/>
                 <relationship kind="action" name="shortButtonAction:"/>
                 <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chartView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
