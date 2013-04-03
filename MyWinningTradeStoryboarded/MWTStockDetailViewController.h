@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *peRatioLabel;
 @property (strong, nonatomic) IBOutlet UILabel *volumeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
+@property (strong, nonatomic) IBOutlet UIWebView *chartView;
 
 -(void)assignLabels;
 - (IBAction)buyButtonAction:(id)sender;

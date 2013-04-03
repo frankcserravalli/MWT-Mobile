@@ -33,6 +33,12 @@
 	// Do any additional setup after loading the view.
     _stock = [[MWTStock alloc] init];
     [_stock getStockDetailsForStock:self.title];
+    
+    NSString *URLString = [NSString stringWithFormat:@"https://www.tradingview.com/e/?symbol=%@", self.title];
+    
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_chartView loadRequest:request];
 
     [self assignLabels];
 }
