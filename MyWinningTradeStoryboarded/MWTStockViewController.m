@@ -30,12 +30,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGFloat red = 55/255.0f;
+    CGFloat green = 70/255.0f;
+    CGFloat blue = 87/255.0f;
+    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+
    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
 }
 
 -(void)viewWillAppear:(BOOL)animated

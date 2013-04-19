@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G0d-Q5-cvf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G0d-Q5-cvf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -72,7 +72,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix4-N6-TYW">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Log In!">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -88,11 +88,11 @@
                             <constraint firstAttribute="trailing" secondItem="uuE-LU-CCs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="1hM-6T-j8n"/>
                             <constraint firstItem="Ix4-N6-TYW" firstAttribute="centerX" secondItem="uuE-LU-CCs" secondAttribute="centerX" type="default" id="BYc-7Q-dST"/>
                             <constraint firstAttribute="trailing" secondItem="1pp-vS-dIU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MM9-hz-uu2"/>
-                            <constraint firstItem="uuE-LU-CCs" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="168" id="Rrf-j6-bZg"/>
-                            <constraint firstItem="1pp-vS-dIU" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="129" id="aGP-fR-C9w"/>
+                            <constraint firstItem="uuE-LU-CCs" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="59" id="QYh-Gu-UFc"/>
+                            <constraint firstItem="Ix4-N6-TYW" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="121" id="Vbs-So-chu"/>
                             <constraint firstItem="uuE-LU-CCs" firstAttribute="leading" secondItem="8Rn-oD-q1w" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bjE-SL-Vwg"/>
                             <constraint firstItem="1pp-vS-dIU" firstAttribute="leading" secondItem="8Rn-oD-q1w" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fI3-lJ-bQB"/>
-                            <constraint firstItem="Ix4-N6-TYW" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="230" id="zSt-zt-3DI"/>
+                            <constraint firstItem="1pp-vS-dIU" firstAttribute="top" secondItem="8Rn-oD-q1w" secondAttribute="top" constant="20" symbolic="YES" type="default" id="p6y-E2-2rt"/>
                         </constraints>
                         <connections>
                             <action selector="backgroundDismissKeyboard:" destination="kUa-aY-Xy3" eventType="touchDown" id="GJt-ka-CbU"/>
@@ -101,13 +101,14 @@
                     <navigationItem key="navigationItem" id="rXF-CO-bii"/>
                     <connections>
                         <outlet property="emailTextfield" destination="1pp-vS-dIU" id="WCX-Jj-wjT"/>
+                        <outlet property="loginButton" destination="Ix4-N6-TYW" id="a2Z-4o-oZC"/>
                         <outlet property="passwordTextfield" destination="uuE-LU-CCs" id="c6g-BZ-5od"/>
                         <segue destination="TMf-JY-xRO" kind="push" identifier="Login" id="0J0-Fb-UEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mby-7H-bGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="442"/>
+            <point key="canvasLocation" x="740" y="472"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WIb-2u-c1I">
@@ -155,7 +156,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbR-pb-rKn">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -228,7 +229,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Bw-piI">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -252,7 +253,6 @@
                             <constraint firstItem="xbR-pb-rKn" firstAttribute="trailing" secondItem="PXn-QM-P1Z" secondAttribute="trailing" type="default" id="LUV-IW-94e"/>
                             <constraint firstAttribute="trailing" secondItem="e7y-bh-hCy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NBD-Ep-lgu"/>
                             <constraint firstItem="GZ3-xX-UrT" firstAttribute="baseline" secondItem="6pX-LY-Gbv" secondAttribute="baseline" type="default" id="Odt-hd-wJg"/>
-                            <constraint firstItem="xbR-pb-rKn" firstAttribute="top" secondItem="r5Y-Bw-piI" secondAttribute="top" type="default" id="Uca-Ni-Kln"/>
                             <constraint firstItem="GZ3-xX-UrT" firstAttribute="leading" secondItem="6ug-dY-bOG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Y2n-dX-miS"/>
                             <constraint firstItem="e7y-bh-hCy" firstAttribute="leading" secondItem="r5Y-Bw-piI" secondAttribute="leading" type="default" id="ZBS-n8-aMw"/>
                             <constraint firstAttribute="trailing" secondItem="RYb-sp-1dj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zao-lx-dBg"/>
@@ -276,10 +276,12 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="r5Y-Bw-piI" id="KJO-nG-Iar"/>
                         <outlet property="cashAfterPurchaseLabel" destination="6pX-LY-Gbv" id="nXW-v0-hP1"/>
                         <outlet property="companyNameLabel" destination="AZY-ZY-Rxl" id="PYP-sG-Yks"/>
                         <outlet property="currentCashLabel" destination="RYb-sp-1dj" id="7rI-3R-aN0"/>
                         <outlet property="currentPriceLabel" destination="LZz-ST-cpt" id="qaI-ee-9u4"/>
+                        <outlet property="submitButton" destination="xbR-pb-rKn" id="ZAm-Zv-9Lf"/>
                         <outlet property="totalPriceToBuyLabel" destination="ndM-vT-EnX" id="vOn-iI-eQK"/>
                         <outlet property="volumeTextField" destination="e7y-bh-hCy" id="W3I-sJ-Yk7"/>
                     </connections>
@@ -304,7 +306,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-mo-Iee">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -317,7 +319,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHT-zB-jo0">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -394,7 +396,6 @@
                             <constraint firstItem="sDV-sx-jhI" firstAttribute="top" secondItem="GHQ-HU-eBC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tjh-Vu-Peu"/>
                             <constraint firstItem="seo-VY-aYa" firstAttribute="top" secondItem="Z4a-A2-D3u" secondAttribute="top" constant="20" symbolic="YES" type="default" id="WI2-Co-jpZ"/>
                             <constraint firstItem="7H0-Ut-n2n" firstAttribute="top" secondItem="Z4a-A2-D3u" secondAttribute="top" constant="19" id="Yqc-MS-wvC"/>
-                            <constraint firstItem="rHT-zB-jo0" firstAttribute="top" secondItem="sDV-sx-jhI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bx4-k0-F8h"/>
                             <constraint firstItem="rHT-zB-jo0" firstAttribute="baseline" secondItem="4hD-mo-Iee" secondAttribute="baseline" type="default" id="e38-VE-pwp"/>
                             <constraint firstItem="4hD-mo-Iee" firstAttribute="leading" secondItem="Z4a-A2-D3u" secondAttribute="leading" constant="62" id="jnu-K4-CdB"/>
                             <constraint firstItem="GHQ-HU-eBC" firstAttribute="top" secondItem="KkQ-I1-nPQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qw7-35-uZG"/>
@@ -411,9 +412,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="rHT-zB-jo0" id="crV-WM-Uj1"/>
                         <outlet property="cashAfterTransactionLabel" destination="AKD-t9-5k4" id="vhT-hf-Jhb"/>
                         <outlet property="companyNameLabel" destination="7H0-Ut-n2n" id="Faz-Pf-FUk"/>
                         <outlet property="currentPriceLabel" destination="EWI-fD-ecZ" id="B8k-4Z-S8K"/>
+                        <outlet property="submitButton" destination="4hD-mo-Iee" id="iXf-ww-7ct"/>
                         <outlet property="totalLabel" destination="gc0-GF-oVW" id="o8p-1z-jz3"/>
                         <outlet property="volumeTextField" destination="iys-EY-Gsa" id="DCL-F5-dH0"/>
                     </connections>
@@ -531,7 +534,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Buy">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -547,7 +550,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sell">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -559,7 +562,7 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXi-8l-7FT">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="jH3-22-P34"/>
+                                    <constraint firstAttribute="width" constant="70" id="Jth-lN-DTp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Short">
@@ -589,7 +592,7 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4D-Vm-DfD">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="Euo-fZ-usY"/>
+                                    <constraint firstAttribute="height" constant="170" id="68r-1P-cHQ"/>
                                 </constraints>
                             </webView>
                         </subviews>
@@ -600,16 +603,14 @@
                             <constraint firstItem="YF4-4j-4ci" firstAttribute="top" secondItem="hUd-Rz-bwb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5Ne-FH-Nzo"/>
                             <constraint firstItem="UTa-w1-EqD" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5cz-3P-jZX"/>
                             <constraint firstAttribute="trailing" secondItem="d02-fw-P4y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7Ce-uf-DMi"/>
-                            <constraint firstItem="p4D-Vm-DfD" firstAttribute="top" secondItem="NA1-N1-Crh" secondAttribute="top" type="default" id="DS9-we-P9W"/>
+                            <constraint firstItem="YXi-8l-7FT" firstAttribute="centerX" secondItem="IY5-Qh-Y1e" secondAttribute="centerX" type="default" id="8E5-Ei-fcd"/>
                             <constraint firstItem="HVb-LL-m79" firstAttribute="top" secondItem="YF4-4j-4ci" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HQE-eB-2SA"/>
+                            <constraint firstItem="NA1-N1-Crh" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="-2" id="IYR-3g-LNx"/>
                             <constraint firstItem="WZq-0M-eYQ" firstAttribute="baseline" secondItem="2vC-hW-P8w" secondAttribute="baseline" type="default" id="NgI-Ix-vTE"/>
-                            <constraint firstAttribute="trailing" secondItem="YXi-8l-7FT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pje-X9-8lc"/>
                             <constraint firstItem="p4D-Vm-DfD" firstAttribute="centerX" secondItem="IY5-Qh-Y1e" secondAttribute="centerX" type="default" id="RHH-8E-t1c"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="centerX" secondItem="HsN-XU-K9K" secondAttribute="centerX" type="default" id="RX0-Jt-RsA"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="top" secondItem="ghC-pa-3cB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UGp-4V-fhZ"/>
                             <constraint firstAttribute="bottom" secondItem="HVb-LL-m79" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wig-ol-Cv0"/>
                             <constraint firstAttribute="trailing" secondItem="ONb-ps-f8w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wjd-BL-Age"/>
-                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="p4D-Vm-DfD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YMq-VA-SQP"/>
                             <constraint firstItem="HVb-LL-m79" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YWn-Ls-D1y"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="a4K-AX-MKb"/>
                             <constraint firstAttribute="trailing" secondItem="WZq-0M-eYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dRR-GF-g4G"/>
@@ -621,9 +622,11 @@
                             <constraint firstItem="ONb-ps-f8w" firstAttribute="baseline" secondItem="hUd-Rz-bwb" secondAttribute="baseline" type="default" id="huG-FP-V3V"/>
                             <constraint firstItem="hUd-Rz-bwb" firstAttribute="top" secondItem="2vC-hW-P8w" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jLf-BQ-qh5"/>
                             <constraint firstItem="p4D-Vm-DfD" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="-1" id="kqF-jj-CjC"/>
+                            <constraint firstItem="IY5-Qh-Y1e" firstAttribute="top" secondItem="UPe-Vg-aS7" secondAttribute="top" constant="178" id="laO-La-FFh"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="top" secondItem="UTa-w1-EqD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ldh-z8-Jr2"/>
                             <constraint firstItem="p4D-Vm-DfD" firstAttribute="trailing" secondItem="UPe-Vg-aS7" secondAttribute="trailing" type="default" id="nry-Eg-PGq"/>
                             <constraint firstAttribute="trailing" secondItem="DnO-by-fzC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="obR-cM-XJE"/>
+                            <constraint firstAttribute="trailing" secondItem="HsN-XU-K9K" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="u4M-xq-nhg"/>
                             <constraint firstItem="ghC-pa-3cB" firstAttribute="baseline" secondItem="p2o-pW-9Zy" secondAttribute="baseline" type="default" id="u6W-zR-Lgp"/>
                             <constraint firstItem="2vC-hW-P8w" firstAttribute="leading" secondItem="UPe-Vg-aS7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xn0-Sp-3w6"/>
                             <constraint firstItem="UTa-w1-EqD" firstAttribute="baseline" secondItem="d02-fw-P4y" secondAttribute="baseline" type="default" id="y3M-Ki-8EF"/>
@@ -633,12 +636,14 @@
                     <navigationItem key="navigationItem" id="gO3-vh-VzY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buyButton" destination="HVb-LL-m79" id="GvV-bZ-kNc"/>
                         <outlet property="buyPriceLabel" destination="d02-fw-P4y" id="byD-tg-Q1p"/>
                         <outlet property="chartView" destination="p4D-Vm-DfD" id="iHU-mD-ggb"/>
                         <outlet property="companyNameLabel" destination="IY5-Qh-Y1e" id="iYz-J5-gzD"/>
                         <outlet property="peRatioLabel" destination="ONb-ps-f8w" id="52s-2z-b0g"/>
                         <outlet property="percentChangeLabel" destination="p2o-pW-9Zy" id="6DE-3g-AfP"/>
                         <outlet property="pointChangeLabel" destination="WZq-0M-eYQ" id="Kph-8u-3ZM"/>
+                        <outlet property="sellButton" destination="HsN-XU-K9K" id="Fmb-2P-Msa"/>
                         <outlet property="volumeLabel" destination="DnO-by-fzC" id="oCI-AD-8PA"/>
                         <segue destination="Y6D-TF-SqT" kind="modal" identifier="BuyStock" id="jf7-1T-4e0"/>
                         <segue destination="bih-vL-2Su" kind="modal" identifier="SellStock" id="Etl-q2-4Z0"/>
@@ -677,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNe-Be-bpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2253" y="-870"/>
+            <point key="canvasLocation" x="2263" y="-815"/>
         </scene>
         <!--Stock View Controller-->
         <scene sceneID="A9f-Fg-9MG">
@@ -1064,10 +1069,12 @@
                 <relationship kind="action" name="cancelButtonAction:"/>
                 <relationship kind="action" name="dismissKeyboard:"/>
                 <relationship kind="action" name="submitButtonAction:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cashAfterPurchaseLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="currentCashLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="totalPriceToBuyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
             </relationships>
@@ -1084,6 +1091,7 @@
                 <relationship kind="action" name="backgroundDismissKeyboard:"/>
                 <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
             </relationships>
         </class>
@@ -1122,9 +1130,11 @@
                 <relationship kind="action" name="cancelButtonAction:"/>
                 <relationship kind="action" name="dismissKeyboard:"/>
                 <relationship kind="action" name="submitButtonAction:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cashAfterTransactionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
             </relationships>
@@ -1165,12 +1175,14 @@
                 <relationship kind="action" name="buyButtonAction:"/>
                 <relationship kind="action" name="sellButtonAction:"/>
                 <relationship kind="action" name="shortButtonAction:"/>
+                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="chartView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

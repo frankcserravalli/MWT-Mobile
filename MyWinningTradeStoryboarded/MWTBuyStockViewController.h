@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentCashLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cashAfterPurchaseLabel;
 @property (strong, nonatomic) IBOutlet UITextField *volumeTextField;
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, nonatomic) NSString *stockSymbol;
 @property float volume;
 

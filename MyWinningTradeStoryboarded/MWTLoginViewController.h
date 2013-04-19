@@ -11,6 +11,7 @@
 @interface MWTLoginViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *emailTextfield;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextfield;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
 - (IBAction)backgroundDismissKeyboard:(id)sender;
 - (IBAction)login:(id)sender;

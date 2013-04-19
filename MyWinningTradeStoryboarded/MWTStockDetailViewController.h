@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *volumeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *companyNameLabel;
 @property (strong, nonatomic) IBOutlet UIWebView *chartView;
+@property (strong, nonatomic) IBOutlet UIButton *buyButton;
+@property (strong, nonatomic) IBOutlet UIButton *sellButton;
 
 -(void)assignLabels;
 - (IBAction)buyButtonAction:(id)sender;

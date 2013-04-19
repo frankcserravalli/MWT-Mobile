@@ -31,6 +31,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
+    
+    UIImage *resizableButton = [[UIImage imageNamed:@"button.png" ] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 6, 12, 6)];
+    [_buyButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    [_sellButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    
     _stock = [[MWTStock alloc] init];
     [_stock getStockDetailsForStock:self.title];
     

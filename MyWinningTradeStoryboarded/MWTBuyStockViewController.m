@@ -29,6 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
+    
+    UIImage *resizableButton = [[UIImage imageNamed:@"button.png" ] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 6, 12, 6)];
+    [_submitButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    [_cancelButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    
 	// Do any additional setup after loading the view.
     _companyNameLabel.text = _stockSymbol;
     MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];

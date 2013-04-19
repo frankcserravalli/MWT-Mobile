@@ -38,7 +38,15 @@ static const int STOP_LOSS_POSITIONS = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGFloat red = 55/255.0f;
+    CGFloat green = 70/255.0f;
+    CGFloat blue = 87/255.0f;
+    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
 	// Do any additional setup after loading the view.
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
+    
     self.tableView.dataSource = self;
     
     _interfaceElements = @[@"Stocks", @"Shorts", @"Date Time Positions", @"Stop Loss Positions"];
@@ -54,6 +62,8 @@ static const int STOP_LOSS_POSITIONS = 3;
     _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
     
     _sorterSegmentedControl.tintColor = [UIColor colorWithRed:155/255.0 green:160/255.0 blue:133/255.0 alpha:1];
+    
+    self.navigationItem.backBarButtonItem.title = @"Logout";
 }
 
 - (void)viewWillAppear:(BOOL)animated
