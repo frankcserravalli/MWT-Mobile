@@ -18,4 +18,7 @@
 
 @property (strong, nonatomic) NSMutableData *responseData;
 
+@property float animatedDistance;
+
+
 @end

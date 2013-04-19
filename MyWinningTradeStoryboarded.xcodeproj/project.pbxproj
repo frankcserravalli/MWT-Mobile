@@ -45,6 +45,9 @@
 		5D935FC61721D99900AEB465 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC41721D99900AEB465 /* background@2x.png */; };
 		5D935FC71721D99900AEB465 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC51721D99900AEB465 /* background.png */; };
 		5D935FD61721E25B00AEB465 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FD51721E25B00AEB465 /* button.png */; };
+		5D935FD81721F08500AEB465 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FD71721F08500AEB465 /* logo.png */; };
+		5D935FDB1721F29600AEB465 /* graphOpaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FD91721F29600AEB465 /* graphOpaque.png */; };
+		5D935FDC1721F29600AEB465 /* graphTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FDA1721F29600AEB465 /* graphTransparent.png */; };
 		5DA753D916B1D3A7004A648E /* MWTBuyStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */; };
 		5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DB16B1D3B8004A648E /* MWTSellStockViewController.m */; };
 		5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA753DE16B1D3C9004A648E /* MWTShortStockViewController.m */; };
@@ -124,6 +127,9 @@
 		5D935FC41721D99900AEB465 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		5D935FC51721D99900AEB465 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		5D935FD51721E25B00AEB465 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		5D935FD71721F08500AEB465 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5D935FD91721F29600AEB465 /* graphOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphOpaque.png; sourceTree = "<group>"; };
+		5D935FDA1721F29600AEB465 /* graphTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphTransparent.png; sourceTree = "<group>"; };
 		5DA753D716B1D3A7004A648E /* MWTBuyStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTBuyStockViewController.h; sourceTree = "<group>"; };
 		5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTBuyStockViewController.m; sourceTree = "<group>"; };
 		5DA753DA16B1D3B8004A648E /* MWTSellStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSellStockViewController.h; sourceTree = "<group>"; };
@@ -322,6 +328,9 @@
 		5DC50A5816EAB7CF000E59CA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5D935FD91721F29600AEB465 /* graphOpaque.png */,
+				5D935FDA1721F29600AEB465 /* graphTransparent.png */,
+				5D935FD71721F08500AEB465 /* logo.png */,
 				5D935FD51721E25B00AEB465 /* button.png */,
 				5D935FC41721D99900AEB465 /* background@2x.png */,
 				5D935FC51721D99900AEB465 /* background.png */,
@@ -392,6 +401,9 @@
 				5D935FC61721D99900AEB465 /* background@2x.png in Resources */,
 				5D935FC71721D99900AEB465 /* background.png in Resources */,
 				5D935FD61721E25B00AEB465 /* button.png in Resources */,
+				5D935FD81721F08500AEB465 /* logo.png in Resources */,
+				5D935FDB1721F29600AEB465 /* graphOpaque.png in Resources */,
+				5D935FDC1721F29600AEB465 /* graphTransparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,10 +525,14 @@
 		5D7420C516A8989D002E5CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (V45776U728)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (V45776U728)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -524,10 +540,14 @@
 		5D7420C616A8989D002E5CA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (V45776U728)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (V45776U728)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
