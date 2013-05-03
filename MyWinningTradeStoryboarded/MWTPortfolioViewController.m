@@ -54,9 +54,12 @@ static const int STOP_LOSS_POSITIONS = 3;
         
     MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
     
-    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
-    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
-    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+//    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
+//    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+//    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
+    _portfolioValue.text = [self abbreviate:[portfolioSingleton userPortfolio].current_value];
+    _accountValueLabel.text = [self abbreviate:[portfolioSingleton userPortfolio].account_value];
+    _cashLabel.text = [self abbreviate:[portfolioSingleton userPortfolio].account_value];
     
     _portfolio = [portfolioSingleton userPortfolio];
     _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
@@ -89,13 +92,38 @@ static const int STOP_LOSS_POSITIONS = 3;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UI Text Label methods
+- (NSString *) abbreviate:(NSNumber *)value
+{
+    const int thousand = 1000;
+    const int million = 1000000;
+    NSString * roundedValueString = @"";
+    
+    if (value.doubleValue > thousand)
+    {
+        int roundedValue = value.intValue / thousand;
+        roundedValueString  = [NSString stringWithFormat:@"%i k", roundedValue];
+    }
+    else if (value.doubleValue > million)
+    {
+        int roundedValue = value.intValue / million;
+        roundedValueString = [NSString stringWithFormat:@"%i m", roundedValue];
+    }
+    else
+    {
+        roundedValueString = [NSString stringWithFormat:@"%i", value];
+    }
+    
+    return roundedValueString;
+}
+
 #pragma mark - Table View Data Source
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        return 1;
+        return 2;
     }
     else
     {
@@ -103,11 +131,37 @@ static const int STOP_LOSS_POSITIONS = 3;
     }
 }
 
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        if (section == 0)
+        {
+            return @"Your stocks";
+        }
+        else
+        {
+            return @"Purchase stock";
+        }
+    }
+    else
+    {
+        return _tableHeaders[section];
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        return [self.filteredList count];
+        if (section == 0)
+        {
+            return [self.filteredList count];
+        }
+        else
+        {
+            return 1;
+        }
     }
     else
     {
@@ -143,11 +197,22 @@ static const int STOP_LOSS_POSITIONS = 3;
     // Configure the cell...
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
+        if (indexPath.section == 0)
+        {
         cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
         cell.percentGainLabel.hidden = YES;
         cell.sharesLabel.hidden = YES;
         cell.sharesLabelText.hidden = YES;
         cell.priceLabel.hidden = YES;
+        }
+        else
+        {
+            cell.symbolLabel.text = self.searchDisplayController.searchBar.text;
+            cell.percentGainLabel.hidden = YES;
+            cell.sharesLabel.hidden = YES;
+            cell.sharesLabelText.hidden = YES;
+            cell.priceLabel.hidden = YES;
+        }
     }
     else
     {
@@ -191,11 +256,6 @@ static const int STOP_LOSS_POSITIONS = 3;
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return _tableHeaders[section];
-}
-
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -221,9 +281,17 @@ static const int STOP_LOSS_POSITIONS = 3;
 //    }
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
-        NSLog(cell.symbolLabel.text);
+        if (indexPath.section == 0)
+        {
+            MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
+            NSLog(cell.symbolLabel.text);
+        }
+        else if (indexPath.section == 1)
+        {
+            MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
+        }
     }
     else
     {
@@ -356,7 +424,7 @@ static const int STOP_LOSS_POSITIONS = 3;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", searchText];
     
-    _filteredList = [_portfolio.stockSymbols filteredArrayUsingPredicate:predicate];
+    _filteredList = [_portfolio.stockSymbols filteredArrayUsingPredicate:predicate];    
 }
 
 #pragma mark - UISearchDisplayController Delegate
