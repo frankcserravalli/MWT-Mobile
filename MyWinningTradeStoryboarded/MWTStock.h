@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SBJson.h"
-
 @interface MWTStock : NSObject
 
 @property (strong, nonatomic) NSDictionary *stockDetails;

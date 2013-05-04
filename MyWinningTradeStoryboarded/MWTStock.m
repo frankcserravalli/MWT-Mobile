@@ -27,8 +27,8 @@
 
 - (void) parseStock:(NSData *)data
 {
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSDictionary *stockJSON = [parser objectWithData:data];
+    NSError *error;
+    NSDictionary *stockJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     NSDictionary *stockDetails = [stockJSON objectForKey:@"table"];
     _stockDetails = stockDetails;
 }
