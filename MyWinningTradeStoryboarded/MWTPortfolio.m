@@ -9,7 +9,6 @@
 #warning NEEDS REFACTORING
 
 #import "MWTPortfolio.h"
-#import "SBJson.h"
 
 @implementation MWTPortfolio
 
@@ -118,8 +117,8 @@
 - (void) parsePendingDateTimePositions:(NSData *)data
 {
 //    [self returnTypeOfJSONfrom:data];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSArray *pending = [parser objectWithData:data];
+    NSError *error;
+    NSArray *pending = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     
     [self parseJSON:pending];
 }
@@ -131,8 +130,8 @@
 
 - (void) parsePortfolio:(NSData *)data
 {
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSDictionary *portfolio = [parser objectWithData:data];
+    NSError *error;
+    NSDictionary *portfolio = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     
     [self assignValuesFrom:portfolio];
 }
@@ -185,8 +184,8 @@
 
 - (void) returnTypeOfJSONfrom:(NSData *)data
 {
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    id result = [parser objectWithData:data];
+    NSError *error;
+    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     if ([result isKindOfClass:[NSArray class]])
     {
         NSLog(@"NSArray");
