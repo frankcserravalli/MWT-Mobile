@@ -31,16 +31,6 @@
 		5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */; };
 		5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */; };
 		5D8EBA6016FA671F00B8EF9C /* MWTStockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8EBA5F16FA671F00B8EF9C /* MWTStockChartViewController.m */; };
-		5D8FE29616ADBDCE0094F9B0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */; };
-		5D8FE29716ADBDCE0094F9B0 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28516ADBDCE0094F9B0 /* SBJsonStreamParser.m */; };
-		5D8FE29816ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28716ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m */; };
-		5D8FE29916ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28916ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.m */; };
-		5D8FE29A16ADBDCE0094F9B0 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28B16ADBDCE0094F9B0 /* SBJsonStreamParserState.m */; };
-		5D8FE29B16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28D16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.m */; };
-		5D8FE29C16ADBDCE0094F9B0 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE28F16ADBDCE0094F9B0 /* SBJsonStreamWriter.m */; };
-		5D8FE29D16ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29116ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m */; };
-		5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */; };
-		5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */; };
 		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
 		5D935FC61721D99900AEB465 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC41721D99900AEB465 /* background@2x.png */; };
 		5D935FC71721D99900AEB465 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC51721D99900AEB465 /* background.png */; };
@@ -69,7 +59,7 @@
 		5D6400F316AF4BD500D5F659 /* MWTStockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockDetailViewController.h; sourceTree = "<group>"; };
 		5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockDetailViewController.m; sourceTree = "<group>"; };
 		5D6400F716AF6A7E00D5F659 /* MWTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTConstants.h; sourceTree = "<group>"; };
-		5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWinningTradeStoryboarded.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D7420A016A8989D002E5CA3 /* My Winning Trade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Winning Trade.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7420A416A8989D002E5CA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D7420A616A8989D002E5CA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,27 +91,6 @@
 		5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioSingleton.m; sourceTree = "<group>"; };
 		5D8EBA5E16FA671F00B8EF9C /* MWTStockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockChartViewController.h; sourceTree = "<group>"; };
 		5D8EBA5F16FA671F00B8EF9C /* MWTStockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockChartViewController.m; sourceTree = "<group>"; };
-		5D8FE28116ADBDCE0094F9B0 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
-		5D8FE28216ADBDCE0094F9B0 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		5D8FE28416ADBDCE0094F9B0 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		5D8FE28516ADBDCE0094F9B0 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
-		5D8FE28616ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
-		5D8FE28716ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
-		5D8FE28816ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		5D8FE28916ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		5D8FE28A16ADBDCE0094F9B0 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		5D8FE28B16ADBDCE0094F9B0 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		5D8FE28C16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamTokeniser.h; sourceTree = "<group>"; };
-		5D8FE28D16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamTokeniser.m; sourceTree = "<group>"; };
-		5D8FE28E16ADBDCE0094F9B0 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		5D8FE28F16ADBDCE0094F9B0 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
-		5D8FE29016ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
-		5D8FE29116ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
-		5D8FE29216ADBDCE0094F9B0 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
-		5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
-		5D8FE29416ADBDCE0094F9B0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioCell.h; sourceTree = "<group>"; };
 		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
 		5D935FC41721D99900AEB465 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
@@ -205,7 +174,7 @@
 		5D7420A116A8989D002E5CA3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */,
+				5D7420A016A8989D002E5CA3 /* My Winning Trade.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,7 +182,6 @@
 		5D7420A316A8989D002E5CA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5D8FE28016ADBDCE0094F9B0 /* JSON */,
 				5D7420A416A8989D002E5CA3 /* UIKit.framework */,
 				5D7420A616A8989D002E5CA3 /* Foundation.framework */,
 				5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */,
@@ -272,35 +240,6 @@
 			name = "Interface View Controllers";
 			sourceTree = "<group>";
 		};
-		5D8FE28016ADBDCE0094F9B0 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				5D8FE28116ADBDCE0094F9B0 /* SBJson.h */,
-				5D8FE28216ADBDCE0094F9B0 /* SBJsonParser.h */,
-				5D8FE28316ADBDCE0094F9B0 /* SBJsonParser.m */,
-				5D8FE28416ADBDCE0094F9B0 /* SBJsonStreamParser.h */,
-				5D8FE28516ADBDCE0094F9B0 /* SBJsonStreamParser.m */,
-				5D8FE28616ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.h */,
-				5D8FE28716ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m */,
-				5D8FE28816ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.h */,
-				5D8FE28916ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.m */,
-				5D8FE28A16ADBDCE0094F9B0 /* SBJsonStreamParserState.h */,
-				5D8FE28B16ADBDCE0094F9B0 /* SBJsonStreamParserState.m */,
-				5D8FE28C16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.h */,
-				5D8FE28D16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.m */,
-				5D8FE28E16ADBDCE0094F9B0 /* SBJsonStreamWriter.h */,
-				5D8FE28F16ADBDCE0094F9B0 /* SBJsonStreamWriter.m */,
-				5D8FE29016ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.h */,
-				5D8FE29116ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m */,
-				5D8FE29216ADBDCE0094F9B0 /* SBJsonStreamWriterState.h */,
-				5D8FE29316ADBDCE0094F9B0 /* SBJsonStreamWriterState.m */,
-				5D8FE29416ADBDCE0094F9B0 /* SBJsonWriter.h */,
-				5D8FE29516ADBDCE0094F9B0 /* SBJsonWriter.m */,
-			);
-			name = JSON;
-			path = objc;
-			sourceTree = "<group>";
-		};
 		5DA753D516B1D374004A648E /* Operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,9 +281,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D74209F16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
+		5D74209F16A8989D002E5CA3 /* My Winning Trade */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "MyWinningTradeStoryboarded" */;
+			buildConfigurationList = 5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "My Winning Trade" */;
 			buildPhases = (
 				5D74209C16A8989D002E5CA3 /* Sources */,
 				5D74209D16A8989D002E5CA3 /* Frameworks */,
@@ -354,9 +293,9 @@
 			);
 			dependencies = (
 			);
-			name = MyWinningTradeStoryboarded;
+			name = "My Winning Trade";
 			productName = MyWinningTradeStoryboarded;
-			productReference = 5D7420A016A8989D002E5CA3 /* MyWinningTradeStoryboarded.app */;
+			productReference = 5D7420A016A8989D002E5CA3 /* My Winning Trade.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -382,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5D74209F16A8989D002E5CA3 /* MyWinningTradeStoryboarded */,
+				5D74209F16A8989D002E5CA3 /* My Winning Trade */,
 			);
 		};
 /* End PBXProject section */
@@ -423,16 +362,6 @@
 				5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */,
 				5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */,
 				5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */,
-				5D8FE29616ADBDCE0094F9B0 /* SBJsonParser.m in Sources */,
-				5D8FE29716ADBDCE0094F9B0 /* SBJsonStreamParser.m in Sources */,
-				5D8FE29816ADBDCE0094F9B0 /* SBJsonStreamParserAccumulator.m in Sources */,
-				5D8FE29916ADBDCE0094F9B0 /* SBJsonStreamParserAdapter.m in Sources */,
-				5D8FE29A16ADBDCE0094F9B0 /* SBJsonStreamParserState.m in Sources */,
-				5D8FE29B16ADBDCE0094F9B0 /* SBJsonStreamTokeniser.m in Sources */,
-				5D8FE29C16ADBDCE0094F9B0 /* SBJsonStreamWriter.m in Sources */,
-				5D8FE29D16ADBDCE0094F9B0 /* SBJsonStreamWriterAccumulator.m in Sources */,
-				5D8FE29E16ADBDCE0094F9B0 /* SBJsonStreamWriterState.m in Sources */,
-				5D8FE29F16ADBDCE0094F9B0 /* SBJsonWriter.m in Sources */,
 				5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */,
 				5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */,
 				5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */,
@@ -564,7 +493,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "MyWinningTradeStoryboarded" */ = {
+		5D7420C416A8989D002E5CA3 /* Build configuration list for PBXNativeTarget "My Winning Trade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D7420C516A8989D002E5CA3 /* Debug */,

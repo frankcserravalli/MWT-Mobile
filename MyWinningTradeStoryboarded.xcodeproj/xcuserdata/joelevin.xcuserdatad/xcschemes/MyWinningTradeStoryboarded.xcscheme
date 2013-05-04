@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D74209F16A8989D002E5CA3"
-               BuildableName = "MyWinningTradeStoryboarded.app"
-               BlueprintName = "MyWinningTradeStoryboarded"
+               BuildableName = "My Winning Trade.app"
+               BlueprintName = "My Winning Trade"
                ReferencedContainer = "container:MyWinningTradeStoryboarded.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D74209F16A8989D002E5CA3"
-            BuildableName = "MyWinningTradeStoryboarded.app"
-            BlueprintName = "MyWinningTradeStoryboarded"
+            BuildableName = "My Winning Trade.app"
+            BlueprintName = "My Winning Trade"
             ReferencedContainer = "container:MyWinningTradeStoryboarded.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D74209F16A8989D002E5CA3"
-            BuildableName = "MyWinningTradeStoryboarded.app"
-            BlueprintName = "MyWinningTradeStoryboarded"
+            BuildableName = "My Winning Trade.app"
+            BlueprintName = "My Winning Trade"
             ReferencedContainer = "container:MyWinningTradeStoryboarded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D74209F16A8989D002E5CA3"
-            BuildableName = "MyWinningTradeStoryboarded.app"
-            BlueprintName = "MyWinningTradeStoryboarded"
+            BuildableName = "My Winning Trade.app"
+            BlueprintName = "My Winning Trade"
             ReferencedContainer = "container:MyWinningTradeStoryboarded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
