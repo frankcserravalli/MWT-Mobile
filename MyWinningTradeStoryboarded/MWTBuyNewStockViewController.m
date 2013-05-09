@@ -25,7 +25,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [SVProgressHUD showWithStatus:@"Fetching stock information"];
     [self fetchStockDetail];
 }
 
@@ -101,6 +100,7 @@
 
 - (void) fetchStockDetail
 {
+    [SVProgressHUD showWithStatus:@"Fetching stock information"];
     NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
     NSString *symbol = _companyName.text;
     NSString *postPath = @"/api/v1/stocks/details";
@@ -122,6 +122,7 @@
                                              [SVProgressHUD showSuccessWithStatus:@"Details downloaded"];
                                          }
                                          failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             [SVProgressHUD showErrorWithStatus:@"Server error"];
                                              NSLog(@"%@", error);
                                          }];
     [operation start];
