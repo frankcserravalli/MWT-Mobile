@@ -58,7 +58,7 @@
             <objects>
                 <viewController id="kUa-aY-Xy3" customClass="MWTLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Rn-oD-q1w" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1pp-vS-dIU">
@@ -107,6 +107,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="rXF-CO-bii"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="emailTextfield" destination="1pp-vS-dIU" id="WCX-Jj-wjT"/>
                         <outlet property="loginButton" destination="Ix4-N6-TYW" id="a2Z-4o-oZC"/>
@@ -296,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfU-ep-kX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="-1455"/>
+            <point key="canvasLocation" x="1298" y="-1011"/>
         </scene>
         <!--Sell Stock View Controller-->
         <scene sceneID="c2T-3R-dIv">
@@ -487,6 +488,155 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRS-OB-PHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2253" y="-1547"/>
+        </scene>
+        <!--Buy New Stock View Controller-->
+        <scene sceneID="yL1-J2-HRv">
+            <objects>
+                <viewController id="TmW-Dc-N2y" customClass="MWTBuyNewStockViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pEm-Bn-Hzm" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSH-Pv-mjj">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-bh-EL1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="Y6D-TF-SqT" eventType="touchUpInside" id="5MU-BP-HVa"/>
+                                    <action selector="submitPurchase:" destination="TmW-Dc-N2y" eventType="touchUpInside" id="nF2-M3-0fe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16T-VO-I27">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Volume to Buy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydg-7k-2BQ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Price to Buy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tp-2v-RQV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your current cash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otM-BE-Q88">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cash after purchase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe6-nR-nTD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Company Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-df-n0q">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ba-Lb-nrn">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toe-XH-BdT">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2b-8D-R11">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSQ-f1-Cct">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Volume" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Coi-qm-NCy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="AK6-kV-bWO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNq-eM-2gn">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="Y6D-TF-SqT" eventType="touchUpInside" id="qhj-FS-n0T"/>
+                                    <action selector="cancelPurchase:" destination="TmW-Dc-N2y" eventType="touchUpInside" id="E5W-5k-U6W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9ba-Lb-nrn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2WY-z2-N1c"/>
+                            <constraint firstItem="Coi-qm-NCy" firstAttribute="top" secondItem="9ba-Lb-nrn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3qY-Rc-GuW"/>
+                            <constraint firstItem="4Tp-2v-RQV" firstAttribute="leading" secondItem="pEm-Bn-Hzm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4iW-JS-w08"/>
+                            <constraint firstItem="fe6-nR-nTD" firstAttribute="baseline" secondItem="rSQ-f1-Cct" secondAttribute="baseline" type="default" id="4jW-iJ-xZZ"/>
+                            <constraint firstItem="9ba-Lb-nrn" firstAttribute="baseline" secondItem="16T-VO-I27" secondAttribute="baseline" type="default" id="5T7-hb-3a4"/>
+                            <constraint firstItem="Coi-qm-NCy" firstAttribute="leading" secondItem="XNq-eM-2gn" secondAttribute="leading" type="default" id="5xJ-hx-1DL"/>
+                            <constraint firstItem="4Tp-2v-RQV" firstAttribute="baseline" secondItem="toe-XH-BdT" secondAttribute="baseline" type="default" id="Ax1-mN-L5A"/>
+                            <constraint firstItem="Ydg-7k-2BQ" firstAttribute="leading" secondItem="pEm-Bn-Hzm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Bp9-Uq-6CU"/>
+                            <constraint firstItem="oSH-Pv-mjj" firstAttribute="top" secondItem="pEm-Bn-Hzm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ChB-AS-fJW"/>
+                            <constraint firstAttribute="trailing" secondItem="Coi-qm-NCy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="DgS-EN-2ur"/>
+                            <constraint firstAttribute="trailing" secondItem="toe-XH-BdT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Gsk-F3-S8p"/>
+                            <constraint firstItem="Ydg-7k-2BQ" firstAttribute="top" secondItem="16T-VO-I27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HfF-g5-aDD"/>
+                            <constraint firstItem="B8B-df-n0q" firstAttribute="top" secondItem="pEm-Bn-Hzm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="KYn-ug-KAG"/>
+                            <constraint firstItem="ELd-bh-EL1" firstAttribute="top" secondItem="pEm-Bn-Hzm" secondAttribute="top" constant="241" id="NvW-LV-5Kb"/>
+                            <constraint firstItem="16T-VO-I27" firstAttribute="leading" secondItem="pEm-Bn-Hzm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RZO-2s-zTX"/>
+                            <constraint firstItem="fe6-nR-nTD" firstAttribute="leading" secondItem="pEm-Bn-Hzm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uwl-Nw-FfX"/>
+                            <constraint firstItem="toe-XH-BdT" firstAttribute="top" secondItem="Coi-qm-NCy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Yr3-dR-E2x"/>
+                            <constraint firstItem="otM-BE-Q88" firstAttribute="top" secondItem="4Tp-2v-RQV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Z3e-Hs-V2K"/>
+                            <constraint firstItem="oSH-Pv-mjj" firstAttribute="leading" secondItem="ELd-bh-EL1" secondAttribute="leading" type="default" id="c92-hg-bXE"/>
+                            <constraint firstAttribute="trailing" secondItem="rSQ-f1-Cct" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dsQ-MG-TO1"/>
+                            <constraint firstItem="o2b-8D-R11" firstAttribute="baseline" secondItem="otM-BE-Q88" secondAttribute="baseline" type="default" id="dxY-pK-PoK"/>
+                            <constraint firstItem="otM-BE-Q88" firstAttribute="leading" secondItem="pEm-Bn-Hzm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eXg-og-B4K"/>
+                            <constraint firstItem="fe6-nR-nTD" firstAttribute="top" secondItem="otM-BE-Q88" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hsK-CZ-SBh"/>
+                            <constraint firstItem="B8B-df-n0q" firstAttribute="leading" secondItem="oSH-Pv-mjj" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nNO-al-Ihe"/>
+                            <constraint firstItem="ELd-bh-EL1" firstAttribute="trailing" secondItem="otM-BE-Q88" secondAttribute="trailing" type="default" id="o6g-tz-yI5"/>
+                            <constraint firstAttribute="trailing" secondItem="o2b-8D-R11" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w8I-Uj-bhS"/>
+                            <constraint firstItem="ELd-bh-EL1" firstAttribute="baseline" secondItem="XNq-eM-2gn" secondAttribute="baseline" type="default" id="wQ6-vP-yLs"/>
+                            <constraint firstItem="16T-VO-I27" firstAttribute="top" secondItem="pEm-Bn-Hzm" secondAttribute="top" constant="86" id="yVQ-Ui-gVg"/>
+                        </constraints>
+                        <connections>
+                            <action selector="dismissKeyboard:" destination="TmW-Dc-N2y" eventType="touchDown" id="4kd-qP-qpP"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="XNq-eM-2gn" id="VTi-gx-aFb"/>
+                        <outlet property="cash" destination="o2b-8D-R11" id="GI6-bf-q3L"/>
+                        <outlet property="companyName" destination="B8B-df-n0q" id="lBN-Ys-tOV"/>
+                        <outlet property="currentPrice" destination="9ba-Lb-nrn" id="XTT-y5-Ee1"/>
+                        <outlet property="postPurchaseCash" destination="rSQ-f1-Cct" id="fqM-L9-PzQ"/>
+                        <outlet property="submit" destination="ELd-bh-EL1" id="cPR-i7-vwd"/>
+                        <outlet property="totalPrice" destination="toe-XH-BdT" id="8Vc-57-wd2"/>
+                        <outlet property="volumeTextField" destination="Coi-qm-NCy" id="L0d-n2-Iz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWv-T3-Efp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298" y="-341"/>
         </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="EJd-pn-a1q">
@@ -706,77 +856,6 @@
             </objects>
             <point key="canvasLocation" x="2263" y="-815"/>
         </scene>
-        <!--Stock View Controller-->
-        <scene sceneID="A9f-Fg-9MG">
-            <objects>
-                <tableViewController id="PA1-Eu-enw" customClass="MWTStockViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aH1-qv-wcF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StockCell" id="tEl-Pk-L9H" customClass="MWTStockCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5d-Oz-fDe">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-Ng-LHU">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-GF-1OE">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shares" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNC-PS-Xnw">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="LNC-PS-Xnw" firstAttribute="baseline" secondItem="MCH-Ng-LHU" secondAttribute="baseline" type="default" id="1Or-6t-G10"/>
-                                    <constraint firstItem="e5d-Oz-fDe" firstAttribute="leading" secondItem="tEl-Pk-L9H" secondAttribute="leading" constant="20" type="default" id="7Vv-EO-Rdm"/>
-                                    <constraint firstItem="7KB-GF-1OE" firstAttribute="baseline" secondItem="LNC-PS-Xnw" secondAttribute="baseline" type="default" id="9qg-qa-nKA"/>
-                                    <constraint firstItem="e5d-Oz-fDe" firstAttribute="top" secondItem="tEl-Pk-L9H" secondAttribute="top" constant="11" id="9xk-eK-kWc"/>
-                                    <constraint firstItem="MCH-Ng-LHU" firstAttribute="leading" secondItem="tEl-Pk-L9H" secondAttribute="leading" constant="64" id="dAo-I0-SL8"/>
-                                    <constraint firstAttribute="trailing" secondItem="7KB-GF-1OE" secondAttribute="trailing" constant="20" type="default" id="jcr-zg-Qf1"/>
-                                    <constraint firstAttribute="trailing" secondItem="LNC-PS-Xnw" secondAttribute="trailing" constant="80" id="nLC-oK-dzZ"/>
-                                    <constraint firstItem="e5d-Oz-fDe" firstAttribute="baseline" secondItem="MCH-Ng-LHU" secondAttribute="baseline" type="default" id="sxZ-du-uMo"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="currentValueLabel" destination="7KB-GF-1OE" id="Ehl-I8-ALp"/>
-                                    <outlet property="percentGainLabel" destination="e5d-Oz-fDe" id="hiP-uv-YjR"/>
-                                    <outlet property="sharesLabel" destination="LNC-PS-Xnw" id="WHK-9N-dlB"/>
-                                    <outlet property="symbolLabel" destination="MCH-Ng-LHU" id="hC1-Xb-gaU"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PA1-Eu-enw" id="5nG-IT-Q5Y"/>
-                            <outlet property="delegate" destination="PA1-Eu-enw" id="kL7-p6-Peg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="pUZ-Hl-1v7"/>
-                    <connections>
-                        <segue destination="T3f-zd-mwX" kind="push" identifier="StockDetails" id="uae-ug-5BP"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vuz-wc-0hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1301" y="-315"/>
-        </scene>
         <!--Shorts View Controller-->
         <scene sceneID="P1Z-Ed-C17">
             <objects>
@@ -847,7 +926,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-ZP-KcN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" text="Search for stocks or companies" id="n7g-TY-i5f">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for stocks or companies" id="n7g-TY-i5f">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -903,9 +982,9 @@
                                             <constraint firstItem="pHp-kd-lzv" firstAttribute="top" secondItem="43O-yL-tRW" secondAttribute="top" constant="11" id="Y7P-1w-IjB"/>
                                             <constraint firstItem="pHp-kd-lzv" firstAttribute="leading" secondItem="43O-yL-tRW" secondAttribute="leading" constant="20" type="default" id="gHP-Dg-Zvm"/>
                                             <constraint firstItem="Y4r-p5-0uf" firstAttribute="bottom" secondItem="tqw-Ol-4KW" secondAttribute="bottom" type="default" id="hYe-Y1-yHu"/>
-                                            <constraint firstAttribute="trailing" secondItem="iZT-P1-ZXc" secondAttribute="trailing" constant="106" id="icS-XU-APy"/>
                                             <constraint firstItem="tqw-Ol-4KW" firstAttribute="baseline" secondItem="pHp-kd-lzv" secondAttribute="baseline" type="default" id="rpW-CT-EEj"/>
                                             <constraint firstItem="tqw-Ol-4KW" firstAttribute="baseline" secondItem="iZT-P1-ZXc" secondAttribute="baseline" type="default" id="tgF-ia-2C3"/>
+                                            <constraint firstAttribute="trailing" secondItem="iZT-P1-ZXc" secondAttribute="trailing" constant="119" id="u8o-ia-ZkC"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="percentGainLabel" destination="iZT-P1-ZXc" id="fTf-SZ-pjI"/>
@@ -954,7 +1033,6 @@
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="trailing" secondItem="0Ee-j9-ZDz" secondAttribute="trailing" type="default" id="1PM-w9-gQ7"/>
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="baseline" secondItem="S3H-p2-ULc" secondAttribute="baseline" type="default" id="54p-HW-wGm"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="top" secondItem="CiB-8G-Xg7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7tG-NP-okx"/>
-                            <constraint firstItem="CiB-8G-Xg7" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" type="default" id="8fd-sA-yfz"/>
                             <constraint firstItem="1gi-bl-Mum" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="leading" type="default" id="8sS-ay-bEd"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="CYh-WF-rr7"/>
                             <constraint firstItem="DKK-iS-5rb" firstAttribute="top" secondItem="X3x-DK-8q9" secondAttribute="top" type="default" id="Fi3-c6-0ME"/>
@@ -970,9 +1048,10 @@
                             <constraint firstItem="mX5-y2-iJP" firstAttribute="centerX" secondItem="jUY-bp-2nK" secondAttribute="centerX" type="default" id="fwI-Cn-bC2"/>
                             <constraint firstItem="CiB-8G-Xg7" firstAttribute="top" secondItem="1gi-bl-Mum" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lPb-tW-wPL"/>
                             <constraint firstItem="S3H-p2-ULc" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nGY-8F-b2O"/>
-                            <constraint firstItem="CiB-8G-Xg7" firstAttribute="trailing" secondItem="X3x-DK-8q9" secondAttribute="trailing" type="default" id="nQw-2b-Eev"/>
                             <constraint firstItem="tNc-ZP-KcN" firstAttribute="bottom" secondItem="X3x-DK-8q9" secondAttribute="bottom" type="default" id="pPi-SO-jNV"/>
                             <constraint firstItem="0Ee-j9-ZDz" firstAttribute="leading" secondItem="DKK-iS-5rb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qEK-AH-eWD"/>
+                            <constraint firstAttribute="trailing" secondItem="CiB-8G-Xg7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sWO-KE-0Ec"/>
+                            <constraint firstItem="CiB-8G-Xg7" firstAttribute="leading" secondItem="X3x-DK-8q9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tP7-Sy-SCe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="EeT-Qn-2Ha"/>
@@ -984,11 +1063,11 @@
                         <outlet property="searchDisplayController" destination="O71-oe-lep" id="NnU-RX-mv3"/>
                         <outlet property="sorterSegmentedControl" destination="CiB-8G-Xg7" id="Vlk-Iu-gnA"/>
                         <outlet property="tableView" destination="tNc-ZP-KcN" id="2zc-AF-qxB"/>
-                        <segue destination="PA1-Eu-enw" kind="push" identifier="Stocks" id="ZJJ-b0-l7S"/>
                         <segue destination="vcZ-Gi-IaW" kind="push" identifier="Shorts" id="HIV-SC-nTc"/>
                         <segue destination="VYz-Xx-rGr" kind="push" identifier="PendingDateTimeTransactions" id="jHD-YT-pU9"/>
                         <segue destination="u27-2O-d5O" kind="push" identifier="PendingStopLossTransactions" id="QO5-8f-oQR"/>
                         <segue destination="T3f-zd-mwX" kind="push" identifier="StockDetails" id="djR-re-y7K"/>
+                        <segue destination="TmW-Dc-N2y" kind="modal" identifier="BuyNewStock" id="5Wu-Ux-GSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1087,149 +1166,12 @@
         <image name="graphOpaque.png" width="320" height="170"/>
         <image name="logo.png" width="560" height="280"/>
     </resources>
-    <classes>
-        <class className="MWTBuyStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTBuyStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cashAfterPurchaseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentCashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalPriceToBuyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTPendingDateTimeTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingDateTimeTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPendingStopLossTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingStopLossTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPortfolioCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabelText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmentedControlSorter:"/>
-                <relationship kind="action" name="sort:"/>
-                <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sorterSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWTSellStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSellStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cashAfterTransactionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeHeld" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSettingsViewController.h"/>
-        </class>
-        <class className="MWTShortStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitButtonAction:"/>
-            </relationships>
-        </class>
-        <class className="MWTShortsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortsViewController.h"/>
-        </class>
-        <class className="MWTSignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSignUpViewController.h"/>
-        </class>
-        <class className="MWTStockCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="currentValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTStockChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockChartViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MWTStockDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buyButtonAction:"/>
-                <relationship kind="action" name="sellButtonAction:"/>
-                <relationship kind="action" name="shortButtonAction:"/>
-                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chartView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTStockViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockViewController.h"/>
-        </class>
-        <class className="MWTTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTableViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="djR-re-y7K"/>
         <segue reference="cAq-5o-awd"/>
     </inferredMetricsTieBreakers>
 </document>
