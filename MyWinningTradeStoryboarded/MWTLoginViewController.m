@@ -7,7 +7,6 @@
 //
 
 #import "MWTLoginViewController.h"
-#import "MWTPortfolioSingleton.h"
 
 @interface MWTLoginViewController ()
 
@@ -164,84 +163,126 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 //    {
 //        [self performSegueWithIdentifier:@"Login" sender:self];
 //    }
-    [self setUpConnectionFor:_emailTextfield.text andPassword:_passwordTextfield.text];
-}
-
-#pragma mark - Set Up Connection
-
-- (void) setUpConnectionFor:(NSString *)email andPassword:(NSString *)password
-{
-    NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/users/authenticate", serverURL]];
-    NSString *bodyString = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
     
-    double timeOutInterval = 60.0;
     
-    NSMutableData *POSTData = [NSMutableData data];
-    [POSTData appendData:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-    NSString *POSTLength = [NSString stringWithFormat:@"%d", [POSTData length]];
+//    [self setUpConnectionFor:_emailTextfield.text andPassword:_passwordTextfield.text];
+    [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
+    [SVProgressHUD showWithStatus:@"Logging in"];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeOutInterval];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:POSTLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:POSTData];
+    NSString *email = _emailTextfield.text;
+    NSString *password = _passwordTextfield.text;
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            email, @"email",
+                            password, @"password",
+                            nil];
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-}
-
-#pragma mark - NSURLConnection Delegate Methods
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    _responseData = [[NSMutableData alloc] init];
-    [_responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [_responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    _responseData = nil;
-    NSLog(@"Connection failed, error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"Connection successful! Received %d bytes of data", _responseData.length);
-    NSString *responseString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
-    NSLog(responseString);
+    NSString *postPath = @"/api/v1/users/authenticate";
     
-    if (responseString.length > 30)
-    {
-        NSDictionary *userInfoDictionary = [self receiveJSON];
-        NSString *user_id = [NSString stringWithFormat:@"%i", [[userInfoDictionary objectForKey:@"user_id"] intValue]];        
-        NSString *ios_token = [NSString stringWithFormat:[userInfoDictionary objectForKey:@"ios_token"]];
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
 
-        [self saveInUserDefaults:user_id withKey:@"user_id"];
-        [self saveInUserDefaults:ios_token withKey:@"ios_token"];
-
-        MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
-//        sleep(3);
-//        [self performSegueWithIdentifier:@"Login" sender:self];
-        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fireTimer:) userInfo:nil repeats:NO];
-    }
-    else
-    {
-        NSLog(@"Login unsuccessful");
-    }
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             [self completeLoginWith:JSON];
+                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+                                             [SVProgressHUD showSuccessWithStatus:@"Logged in!"];
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+                                             [SVProgressHUD showErrorWithStatus:@"Server error"];
+                                         }];
+    [operation start];
 
 }
 
-- (void) fireTimer:(NSTimer *)timer
+- (void) completeLoginWith:(id)JSON
 {
+    NSString *user_id = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"user_id"]];
+    NSString *ios_token = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"ios_token"]];
+    [self saveInUserDefaults:user_id withKey:@"user_id"];
+    [self saveInUserDefaults:ios_token withKey:@"ios_token"];
+    
     [self performSegueWithIdentifier:@"Login" sender:self];
 }
 
+//#pragma mark - Set Up Connection
+//
+//- (void) setUpConnectionFor:(NSString *)email andPassword:(NSString *)password
+//{
+//    NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/users/authenticate", serverURL]];
+//    NSString *bodyString = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
+//    
+//    double timeOutInterval = 60.0;
+//    
+//    NSMutableData *POSTData = [NSMutableData data];
+//    [POSTData appendData:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+//    NSString *POSTLength = [NSString stringWithFormat:@"%d", [POSTData length]];
+//    
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeOutInterval];
+//    [request setHTTPMethod:@"POST"];
+//    [request setValue:POSTLength forHTTPHeaderField:@"Content-Length"];
+//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//    [request setHTTPBody:POSTData];
+//    
+//    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//}
+//
+//#pragma mark - NSURLConnection Delegate Methods
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+//{
+//    _responseData = [[NSMutableData alloc] init];
+//    [_responseData setLength:0];
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+//{
+//    [_responseData appendData:data];
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+//{
+//    _responseData = nil;
+//    NSLog(@"Connection failed, error - %@ %@",
+//          [error localizedDescription],
+//          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+//
+//}
+//
+//- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+//{
+//    NSLog(@"Connection successful! Received %d bytes of data", _responseData.length);
+//    NSString *responseString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
+//    NSLog(responseString);
+//    
+//    if (responseString.length > 30)
+//    {
+//        NSDictionary *userInfoDictionary = [self receiveJSON];
+//        NSString *user_id = [NSString stringWithFormat:@"%i", [[userInfoDictionary objectForKey:@"user_id"] intValue]];        
+//        NSString *ios_token = [NSString stringWithFormat:[userInfoDictionary objectForKey:@"ios_token"]];
+//
+//        [self saveInUserDefaults:user_id withKey:@"user_id"];
+//        [self saveInUserDefaults:ios_token withKey:@"ios_token"];
+//
+////        MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+////        sleep(3);
+////        [self performSegueWithIdentifier:@"Login" sender:self];
+//        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fireTimer:) userInfo:nil repeats:NO];
+//    }
+//    else
+//    {
+//        NSLog(@"Login unsuccessful");
+//    }
+//
+//}
+//
+//- (void) fireTimer:(NSTimer *)timer
+//{
+//    [self performSegueWithIdentifier:@"Login" sender:self];
+//}
+//
 #pragma mark - User Defaults
 - (void) saveInUserDefaults:(NSString *)string withKey:(NSString *)stringKey
 {
@@ -252,22 +293,22 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     NSLog([NSString stringWithFormat:@"Saved %@", string]);
 }
 
-#pragma mark - JSON
-- (NSDictionary *)receiveJSON
-{
-    NSError *JSONError = nil;
-    id JSONObject = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:&JSONError];
-    
-    if ([JSONObject isKindOfClass:[NSArray class]])
-    {
-        NSArray *JSONArray = (NSArray *)JSONObject;
-        return [NSDictionary dictionaryWithObject:JSONArray forKey:@"JSONArray"];
-    }
-    else
-    {
-        NSDictionary *JSONDictionary = (NSDictionary *)JSONObject;
-        return JSONDictionary;
-    }
-}
+//#pragma mark - JSON
+//- (NSDictionary *)receiveJSON
+//{
+//    NSError *JSONError = nil;
+//    id JSONObject = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:&JSONError];
+//    
+//    if ([JSONObject isKindOfClass:[NSArray class]])
+//    {
+//        NSArray *JSONArray = (NSArray *)JSONObject;
+//        return [NSDictionary dictionaryWithObject:JSONArray forKey:@"JSONArray"];
+//    }
+//    else
+//    {
+//        NSDictionary *JSONDictionary = (NSDictionary *)JSONObject;
+//        return JSONDictionary;
+//    }
+//}
 
 @end
