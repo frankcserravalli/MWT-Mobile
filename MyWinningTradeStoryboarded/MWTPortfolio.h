@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MWTStock.h"
 
 @interface MWTPortfolio : NSObject
 
@@ -16,13 +17,13 @@
 @property (nonatomic, strong) NSNumber *percent_gain;
 @property (nonatomic, strong) NSNumber *purchase_value;
 
-@property (nonatomic, strong) NSArray *pending_date_time_transactions;
-@property (nonatomic, strong) NSArray *pending_stop_loss_transactions;
-@property (nonatomic, strong) NSDictionary *processed_date_time_transactions;
-@property (nonatomic, strong) NSDictionary *processed_stop_loss_transactions;
+@property (nonatomic, strong) NSArray *pending_date_time_transactions; //
+@property (nonatomic, strong) NSArray *pending_stop_loss_transactions; //
+@property (nonatomic, strong) NSDictionary *processed_date_time_transactions; //
+@property (nonatomic, strong) NSDictionary *processed_stop_loss_transactions; //
 
-@property (nonatomic, strong) NSDictionary *shorts;
-@property (nonatomic, strong) NSDictionary *stocks;
+@property (nonatomic, strong) NSDictionary *shorts; //
+//@property (nonatomic, strong) NSDictionary *stocks;
 @property (nonatomic, strong) NSArray *stocksArray;
 @property (nonatomic, strong) NSArray *stockSymbols;
 
@@ -46,6 +47,11 @@
 - (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key;
 - (void) displayStocksArraySortedBy:(NSString *)key;
 - (void) sortStocksBasedOn:(NSString *)key;
+
+
+- (id) initWith:(NSDictionary *)dictionary;
+
+
 
 
 @end
