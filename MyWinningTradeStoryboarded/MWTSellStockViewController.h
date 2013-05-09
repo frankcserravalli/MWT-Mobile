@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWTPortfolioSingleton.h"
+#import "MWTStockDetail.h"
+#import "MWTStock.h"
+#import "MWTPortfolio.h"
+#import "AFNetworking.h"
+#import "MWTAPIClient.h"
 
 @interface MWTSellStockViewController : UIViewController
 - (void) assignValues;
@@ -28,5 +32,11 @@
 @property float volume;
 @property (strong, nonatomic) NSString *stockSymbol;
 @property (strong, nonatomic) NSNumber *cash;
+
+
+@property (strong, nonatomic) MWTStock *stock;
+@property (strong, nonatomic) MWTStockDetail *stockDetail;
+@property (strong, nonatomic) MWTPortfolio *portfolio;
+
 
 @end
