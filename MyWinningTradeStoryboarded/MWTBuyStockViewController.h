@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWTPortfolioSingleton.h"
+#import "MWTStock.h"
+#import "MWTStockDetail.h"
+#import "MWTPortfolio.h"
+#import "AFNetworking.h"
+#import "MWTAPIClient.h"
 
 @interface MWTBuyStockViewController : UIViewController
 - (IBAction)submitButtonAction:(id)sender;
@@ -24,7 +28,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *volumeTextField;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UIButton *cancelButton;
-@property (strong, nonatomic) NSString *stockSymbol;
 @property float volume;
+
+@property (strong, nonatomic) MWTStock *stock;
+@property (strong, nonatomic) MWTStockDetail *stockDetail;
+@property (strong, nonatomic) MWTPortfolio *portfolio;
 
 @end
