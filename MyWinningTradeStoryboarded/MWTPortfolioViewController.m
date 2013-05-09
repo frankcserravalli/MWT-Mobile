@@ -8,7 +8,6 @@
 
 #import "MWTPortfolioViewController.h"
 #import "MWTPortfolioCell.h"
-#import "MWTStockViewController.h"
 #import "MWTShortsViewController.h"
 #import "MWTPendingDateTimeTransactionsViewController.h"
 #import "MWTPendingStopLossTransactionsViewController.h"
@@ -332,18 +331,7 @@ static const int STOP_LOSS_POSITIONS = 3;
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"Stocks"])
-    {
-        NSLog(@"Segue performed");
-        MWTStockViewController *detailViewController = [segue destinationViewController];
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        NSInteger row = [indexPath row];
-        
-        detailViewController.title = _interfaceElements[row];
-    }
-    else if ([[segue identifier] isEqualToString:@"Shorts"])
+    if ([[segue identifier] isEqualToString:@"Shorts"])
     {
         MWTShortsViewController *detailViewController = [segue destinationViewController];
         
