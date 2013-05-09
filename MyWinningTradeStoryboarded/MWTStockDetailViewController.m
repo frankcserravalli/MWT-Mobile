@@ -9,7 +9,7 @@
 #import "MWTStockDetailViewController.h"
 #import "MWTBuyStockViewController.h"
 #import "MWTSellStockViewController.h"
-
+#import "MWTStockDetail.h"
 #import "MWTStockChartViewController.h"
 
 @interface MWTStockDetailViewController ()
@@ -38,16 +38,38 @@
     [_buyButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     [_sellButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     
-    _stock = [[MWTStock alloc] init];
-    [_stock getStockDetailsForStock:self.title];
+//    _stock = [[MWTStock alloc] init];
+//    [_stock getStockDetailsForStock:self.title];
     
     NSString *URLString = [NSString stringWithFormat:@"https://www.tradingview.com/e/?symbol=%@", self.title];
     
     NSURL *url = [NSURL URLWithString:URLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_chartView loadRequest:request];
+    NSURLRequest *chartRequest = [NSURLRequest requestWithURL:url];
+    [_chartView loadRequest:chartRequest];
 
-    [self assignLabels];
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSString *symbol = _stock.symbol;
+    NSString *postPath = @"/api/v1/stocks/details";
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            symbol, @"symbol",
+                            ios_token, @"ios_token",
+                            nil];
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             NSLog(@"%@", JSON);
+                                             NSDictionary *stockDetails = [JSON objectForKey:@"table"];
+                                             _stockDeetz = [[MWTStockDetail alloc] initWith:stockDetails];
+                                             [self assignLabels];
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                         }];
+    [operation start];
+    [self fetchPortfolio];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,14 +80,38 @@
 
 - (void) assignLabels
 {
-    NSDictionary *stockDetails = [_stock stockDetails];
+    _companyNameLabel.text = _stock.name;
+    _buyPriceLabel.text = [_stock.current_price stringValue];
+    _percentChangeLabel.text = [_stock.percent_gain stringValue];
+    _pointChangeLabel.text = _stockDeetz.point_change;
+    _peRatioLabel.text = _stockDeetz.pe_ratio;
+    _volumeLabel.text = _stockDeetz.volume;
+}
+
+- (void) fetchPortfolio
+{
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            user_id, @"user_id",
+                            ios_token, @"ios_token",
+                            nil];
+    NSString *postPath = @"/api/v1/users/portfolio";
     
-    self.companyNameLabel.text = [stockDetails objectForKey:@"name"];
-    self.buyPriceLabel.text = [stockDetails objectForKey:@"current_price"];
-    self.percentChangeLabel.text = [[stockDetails objectForKey:@"percent_change"] stringValue];
-    self.pointChangeLabel.text = [stockDetails objectForKey:@"point_change"];
-    self.peRatioLabel.text = [stockDetails objectForKey:@"pe_ratio"];
-    self.volumeLabel.text = [stockDetails objectForKey:@"volume"];
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             NSLog(@"%@", JSON);
+                                             _portfolio = [[MWTPortfolio alloc] initWith:JSON];
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                         }];
+    
+    [operation start];
 }
 
 - (IBAction)buyButtonAction:(id)sender
@@ -90,15 +136,18 @@
 {
     if ([[segue identifier] isEqualToString:@"BuyStock"])
     {
-        NSLog(@"Pass buy data");
         MWTBuyStockViewController *destinationController = [segue destinationViewController];
-        destinationController.stockSymbol = self.title;
+        destinationController.stock = _stock;
+        destinationController.stockDetail = _stockDeetz;
+        destinationController.portfolio = _portfolio;
     }
     else if ([[segue identifier] isEqualToString:@"SellStock"])
     {
-        NSLog(@"Pass sell data");
         MWTSellStockViewController *destinationController = [segue destinationViewController];
         destinationController.stockSymbol = self.title;
+        destinationController.stock = _stock;
+        destinationController.stockDetail = _stockDeetz;
+        destinationController.portfolio = _portfolio;
 
     }
     else if ([[segue identifier] isEqualToString:@"ShortStock"])

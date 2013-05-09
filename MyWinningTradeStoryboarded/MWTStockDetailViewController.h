@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MWTStock.h"
+#import "AFNetworking.h"
+#import "MWTAPIClient.h"
+#import "MWTStockDetail.h"
+#import "MWTPortfolio.h"
 
 @interface MWTStockDetailViewController : UIViewController
 
 @property (strong, nonatomic) MWTStock *stock;
+@property (strong, nonatomic) MWTStockDetail *stockDeetz;
+@property (strong, nonatomic) MWTPortfolio *portfolio;
 
 @property (strong, nonatomic) IBOutlet UILabel *buyPriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *percentChangeLabel;
@@ -27,5 +33,6 @@
 - (IBAction)buyButtonAction:(id)sender;
 - (IBAction)sellButtonAction:(id)sender;
 - (IBAction)shortButtonAction:(id)sender;
+- (void) fetchPortfolio;
 
 @end
