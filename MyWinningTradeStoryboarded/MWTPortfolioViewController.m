@@ -10,10 +10,10 @@
 #import "MWTPortfolioCell.h"
 #import "MWTStockViewController.h"
 #import "MWTShortsViewController.h"
-#import "MWTPortfolioSingleton.h"
 #import "MWTPendingDateTimeTransactionsViewController.h"
 #import "MWTPendingStopLossTransactionsViewController.h"
 #import "MWTStockDetailViewController.h"
+#import "MWTBuyNewStockViewController.h"
 
 @interface MWTPortfolioViewController ()
 
@@ -26,15 +26,6 @@ static const int SHORTS = 1;
 static const int DATE_TIME_POSITIONS = 2;
 static const int STOP_LOSS_POSITIONS = 3;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,47 +34,57 @@ static const int STOP_LOSS_POSITIONS = 3;
     CGFloat green = 70/255.0f;
     CGFloat blue = 87/255.0f;
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
-	// Do any additional setup after loading the view.
+
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.view.backgroundColor = background;
+        
+    _sorterSegmentedControl.tintColor = [UIColor colorWithRed:155/255.0 green:160/255.0 blue:133/255.0 alpha:1];
     
-    self.tableView.dataSource = self;
+    self.navigationItem.backBarButtonItem.title = @"Logout";
     
     _interfaceElements = @[@"Stocks", @"Shorts", @"Date Time Positions", @"Stop Loss Positions"];
     _tableHeaders = _interfaceElements;
         
-    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            user_id, @"user_id",
+                            ios_token, @"ios_token",
+                            nil];
+    NSString *postPath = @"/api/v1/users/portfolio";
     
-//    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
-//    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
-//    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
-    _portfolioValue.text = [self abbreviate:[portfolioSingleton userPortfolio].current_value];
-    _accountValueLabel.text = [self abbreviate:[portfolioSingleton userPortfolio].account_value];
-    _cashLabel.text = [self abbreviate:[portfolioSingleton userPortfolio].account_value];
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
     
-    _portfolio = [portfolioSingleton userPortfolio];
-    _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             NSLog(@"%@", JSON);
+                                             _portfolio = [[MWTPortfolio alloc] initWith:JSON];
+                                             
+                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
+                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
+                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+                                             
+                                             [_tableView reloadData];
+                                             
+                                             _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stocksArray.count];
+
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                         }];
     
-    _sorterSegmentedControl.tintColor = [UIColor colorWithRed:155/255.0 green:160/255.0 blue:133/255.0 alpha:1];
+    [operation start];
     
-    self.navigationItem.backBarButtonItem.title = @"Logout";
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
-    _portfolioValue.text = [[[portfolioSingleton userPortfolio] current_value] stringValue];
-    _accountValueLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
-    _cashLabel.text = [[[portfolioSingleton userPortfolio] account_value] stringValue];
-//
-//    _portfolio = [portfolioSingleton userPortfolio];
-//    _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stockSymbols.count];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-//    _tableView.bounds = CGRectMake(0, self.searchDisplayController.searchBar.frame.size.height, 320, self.tableView.frame.size.height);
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,7 +168,7 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         if (section == STOCKS)
         {
-            return [[[_portfolio stocks] allKeys] count];
+            return _portfolio.stocksArray.count;
         }
         else if (section == SHORTS)
         {
@@ -191,23 +192,21 @@ static const int STOP_LOSS_POSITIONS = 3;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PortfolioCell";
-//    MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"PortfolioCell"];
+    MWTPortfolioCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
         if (indexPath.section == 0)
         {
-        cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
-        cell.percentGainLabel.hidden = YES;
-        cell.sharesLabel.hidden = YES;
-        cell.sharesLabelText.hidden = YES;
-        cell.priceLabel.hidden = YES;
+            cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
+            cell.percentGainLabel.hidden = YES;
+            cell.sharesLabel.hidden = YES;
+            cell.sharesLabelText.hidden = YES;
+            cell.priceLabel.hidden = YES;
         }
         else
         {
-            cell.symbolLabel.text = self.searchDisplayController.searchBar.text;
+            cell.symbolLabel.text = self.searchDisplayController.searchBar.text.uppercaseString;
             cell.percentGainLabel.hidden = YES;
             cell.sharesLabel.hidden = YES;
             cell.sharesLabelText.hidden = YES;
@@ -217,13 +216,13 @@ static const int STOP_LOSS_POSITIONS = 3;
     else
     {
         if (indexPath.section == STOCKS)
-        {
-            NSString *currentStockSymbol = _portfolio.stockSymbols[indexPath.row];
-            NSDictionary *currentStockDictionary = [_portfolio getStockDictionaryFromStock:currentStockSymbol];
-            cell.symbolLabel.text = currentStockSymbol;
-            cell.percentGainLabel.text = [[currentStockDictionary objectForKey:@"percent_gain"] stringValue];
-            cell.sharesLabel.text = [[currentStockDictionary objectForKey:@"shares_owned"] stringValue];
-            cell.priceLabel.text = [[currentStockDictionary objectForKey:@"current_value"] stringValue];
+        {            
+            MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
+
+            cell.symbolLabel.text = stockAtIndexPath.symbol;
+            cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
+            cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
+            cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
 
         }
         else if (indexPath.section == SHORTS)
@@ -283,23 +282,32 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         if (indexPath.section == 0)
         {
-            MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
-            NSLog(cell.symbolLabel.text);
+            MWTPortfolioCell *cell = (MWTPortfolioCell *)[tableView cellForRowAtIndexPath:indexPath];
+            NSString *stockSymbol = cell.symbolLabel.text.uppercaseString;
+            NSLog(stockSymbol);
+
+//            [self performSegueWithIdentifier:@"StockDetails" sender:stockSymbol];
         }
         else if (indexPath.section == 1)
         {
-            MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
+            MWTPortfolioCell *cell = (MWTPortfolioCell *)[tableView cellForRowAtIndexPath:indexPath];
+            NSString *stockSymbol = cell.symbolLabel.text.uppercaseString;
+            [self performSegueWithIdentifier:@"BuyNewStock" sender:stockSymbol];
         }
     }
     else
     {
         if (indexPath.section == STOCKS)
         {
-            MWTPortfolioCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
-            [self performSegueWithIdentifier:@"StockDetails" sender:cell.symbolLabel.text];
+//            MWTPortfolioCell *cell = (MWTPortfolioCell *)[tableView cellForRowAtIndexPath:indexPath];
+//            
+//            NSString *stockSymbol = cell.symbolLabel.text;
+//            
+//
+//            [self performSegueWithIdentifier:@"StockDetails" sender:stockSymbol];
+            MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
+            
+            [self performSegueWithIdentifier:@"StockDetails" sender:stockAtIndexPath];
         }
         else if (indexPath.section == SHORTS)
         {
@@ -369,11 +377,22 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         MWTStockDetailViewController *detailViewController = [segue destinationViewController];
                         
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            
-            NSString *stockSymbol = [[_portfolio stockSymbols] objectAtIndex:indexPath.row];
-//            detailViewController.title = stockSymbol;
-        detailViewController.title = sender;
+        MWTStock *stock = (MWTStock *)sender;
+        detailViewController.title = stock.symbol;
+        detailViewController.stock = stock;
+    }
+    else if ([segue.identifier isEqualToString:@"BuyNewStock"])
+    {
+        MWTBuyNewStockViewController *destinationViewController = segue.destinationViewController;
+        NSString *stockSymbol = (NSString *)sender;
+        destinationViewController.title = stockSymbol;
+        destinationViewController.portfolio = _portfolio;
+        
+        if (destinationViewController.view)
+        {
+            destinationViewController.companyName.text = stockSymbol;
+            destinationViewController.cash.text = [_portfolio.cash stringValue];
+        }
     }
     else
     {

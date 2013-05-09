@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MWTPortfolio.h"
+#import "AFNetworking.h"
+#import "MWTAPIClient.h"
 
 @interface MWTPortfolioViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 {
