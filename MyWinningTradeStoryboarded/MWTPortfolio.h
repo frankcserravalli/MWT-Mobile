@@ -50,6 +50,7 @@
 
 
 - (id) initWith:(NSDictionary *)dictionary;
+- (MWTStock *) fetchStockFromSymbol:(NSString *)symbol;
 
 
 

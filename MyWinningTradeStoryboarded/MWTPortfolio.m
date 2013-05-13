@@ -372,5 +372,17 @@
     return [stocks sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:ascending]]];
 }
 
+- (MWTStock *) fetchStockFromSymbol:(NSString *)symbol
+{
+    for (NSUInteger i = 0; i < _stocksArray.count; i++)
+    {
+        MWTStock *stockAtIterator = [_stocksArray objectAtIndex:i];
+        if ([stockAtIterator.symbol isEqualToString:symbol])
+        {
+            return stockAtIterator;
+        }
+    }
+}
+
 
 @end
