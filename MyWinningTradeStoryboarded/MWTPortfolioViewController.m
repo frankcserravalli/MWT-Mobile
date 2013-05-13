@@ -111,7 +111,7 @@ static const int STOP_LOSS_POSITIONS = 3;
     }
     else
     {
-        roundedValueString = [NSString stringWithFormat:@"%i", value];
+        roundedValueString = [NSString stringWithFormat:@"%@", value];
     }
     
     return roundedValueString;
@@ -175,6 +175,7 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else if (section == DATE_TIME_POSITIONS)
         {
+//            if (_portfolio.pending_date_time_transactions.count == 0) return 1;
             return [[_portfolio pending_date_time_transactions] count];
         }
         else if (section == STOP_LOSS_POSITIONS)
@@ -230,14 +231,21 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else if (indexPath.section == DATE_TIME_POSITIONS)
         {
-            NSDictionary *date_timeDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_date_time_transactions At:indexPath.row];
-            cell.symbolLabel.text = [date_timeDict objectForKey:@"created_at"];
-            
+//            NSDictionary *date_timeDict = [_portfolio retrieveDictFromJSON:_portfolio.pending_date_time_transactions At:indexPath.row];
+//            cell.symbolLabel.text = [date_timeDict objectForKey:@"created_at"];
+            if (_portfolio.pending_date_time_transactions.count == 0)
+            {
+//                cell.symbolLabel.textColor = [UIColor grayColor];
+                cell.symbolLabel.text = @"No pending date time positions";
+            }
+            else
+            {
+                cell.symbolLabel.text =  @"Test";
+            }
             cell.percentGainLabel.hidden = YES;
             cell.sharesLabel.hidden = YES;
             cell.priceLabel.hidden = YES;
             cell.sharesLabelText.hidden = YES;
-            
         }
         else if (indexPath.section == STOP_LOSS_POSITIONS)
         {
