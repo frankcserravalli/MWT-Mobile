@@ -283,9 +283,10 @@ static const int STOP_LOSS_POSITIONS = 3;
         {
             MWTPortfolioCell *cell = (MWTPortfolioCell *)[tableView cellForRowAtIndexPath:indexPath];
             NSString *stockSymbol = cell.symbolLabel.text.uppercaseString;
-            NSLog(stockSymbol);
-
-//            [self performSegueWithIdentifier:@"StockDetails" sender:stockSymbol];
+            MWTStock *stockForSymbol = [_portfolio fetchStockFromSymbol:stockSymbol];
+//            NSLog(@"%@", stockForSymbol.name);
+            
+            [self performSegueWithIdentifier:@"StockDetails" sender:stockForSymbol];
         }
         else if (indexPath.section == 1)
         {
