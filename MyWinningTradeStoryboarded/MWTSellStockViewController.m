@@ -34,20 +34,10 @@
     [_submitButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     [_cancelButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     
-	// Do any additional setup after loading the view.
-//    _companyNameLabel.text = _stockSymbol;
-////    MWTPortfolioSingleton *portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
-////    NSDictionary *stockDict = [[portfolioSingleton userPortfolio] getStockDictionaryFromStock:_stockSymbol];
-////    NSNumber *currentPriceOfStock = [stockDict objectForKey:@"current_price"];
-////    _cash = [portfolioSingleton.userPortfolio cash];
-////    
-//    _companyNameLabel.text = [stockDict objectForKey:@"name"];
-//    _currentPriceLabel.text = [currentPriceOfStock stringValue];
-//    _volumeHeld.text = [stockDict objectForKey:@""];
- 
+	// Do any additional setup after loading the view. 
     _companyNameLabel.text = _stock.symbol;
     _currentPriceLabel.text = [_stock.current_price stringValue];
-    _volumeHeld.text = [_stockDetail.volume stringValue];
+    _volumeHeld.text = [NSString stringWithFormat:@"%@", _stockDetail.volume];
     _cash = _portfolio.cash;
 }
 
