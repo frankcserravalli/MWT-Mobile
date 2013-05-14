@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MWTStock.h"
+#import "MWTStopLossTransaction.h"
+#import "MWTDateTimeTransaction.h"
 
 @interface MWTPortfolio : NSObject
 

@@ -340,10 +340,12 @@
         _stockSymbols = [[dictionary objectForKey:@"stocks"] allKeys];
         
         
-        _pending_date_time_transactions = [dictionary objectForKey:@"pending_date_time_transactions"];
+//        _pending_date_time_transactions = [dictionary objectForKey:@"pending_date_time_transactions"];
+        _pending_date_time_transactions = [self compilePendingDateTimeTransactionsFromJSON:[dictionary objectForKey:@"pending_date_time_transactions"]];
         _processed_date_time_transactions = [dictionary objectForKey:@"processed_date_time_transactions"];
         
-        _pending_stop_loss_transactions = [dictionary objectForKey:@"pending_stop_loss_transactions"];
+//        _pending_stop_loss_transactions = [dictionary objectForKey:@"pending_stop_loss_transactions"];
+        _pending_stop_loss_transactions = [self compilePendingStopLossTransactionsFromJSON:[dictionary objectForKey:@"pending_stop_loss_transactions"]];
         _processed_stop_loss_transactions = [dictionary objectForKey:@"processed_stop_loss_transactions"];
         
         _shorts = [dictionary objectForKey:@"shorts"];
@@ -365,6 +367,32 @@
     }
     
     return (NSArray *)stocks;
+}
+
+- (NSArray *) compilePendingStopLossTransactionsFromJSON:(NSArray *)JSONArray
+{
+    NSMutableArray *pendingStopLossTransactions = [NSMutableArray array];
+    
+    for (NSUInteger i = 0; i < JSONArray.count; i++)
+    {
+        MWTStopLossTransaction *stopLossTransaction = [[MWTStopLossTransaction alloc] initWith:[JSONArray objectAtIndex:i]];
+        [pendingStopLossTransactions addObject:stopLossTransaction];
+    }
+    
+    return pendingStopLossTransactions;
+}
+
+- (NSArray *) compilePendingDateTimeTransactionsFromJSON:(NSArray *)JSONArray
+{
+    NSMutableArray *pendingDateTimeTransactions = [NSMutableArray array];
+    
+    for (NSUInteger i = 0; i < JSONArray.count; i++)
+    {
+        MWTDateTimeTransaction *dateTimeTransaction = [[MWTDateTimeTransaction alloc] initWith:[JSONArray objectAtIndex:i]];
+        [pendingDateTimeTransactions addObject:dateTimeTransaction];
+    }
+    
+    return pendingDateTimeTransactions;
 }
 
 - (NSArray *) sortArrayOf:(NSMutableArray *)stocks by:(NSString *)key ascending:(BOOL)ascending
