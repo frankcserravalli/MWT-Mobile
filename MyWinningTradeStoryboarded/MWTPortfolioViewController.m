@@ -172,6 +172,7 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         if (section == STOCKS)
         {
+            if (_portfolio.stocksArray.count == 0) return 1;
             return _portfolio.stocksArray.count;
         }
         else if (section == SHORTS)
@@ -272,15 +273,32 @@ static const int STOP_LOSS_POSITIONS = 3;
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
         static NSString *CellIdentifier = @"PortfolioStockCell";
-        MWTPortfolioStockCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        MWTPortfolioStockCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         if (indexPath.section == 0)
         {
-            cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
+            if (_portfolio.stocksArray.count == 0)
+            {
+                cell.symbolLabel.text = @"Your portfolio is empty";
+            }
+            else
+            {
+                cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
+                cell.sharesAttributeLabel.hidden = YES;
+                cell.sharesLabel.hidden = YES;
+                cell.priceLabel.hidden = YES;
+                cell.sharesLabelText.hidden = YES;
+                cell.percentGainLabel.hidden = YES;
+            }
         }
         else
         {
             cell.symbolLabel.text = self.searchDisplayController.searchBar.text.uppercaseString;
+            cell.sharesAttributeLabel.hidden = YES;
+            cell.sharesLabel.hidden = YES;
+            cell.priceLabel.hidden = YES;
+            cell.sharesLabelText.hidden = YES;
+            cell.percentGainLabel.hidden = YES;
         }
             
         return cell;
@@ -292,12 +310,27 @@ static const int STOP_LOSS_POSITIONS = 3;
             static NSString *CellIdentifier = @"PortfolioStockCell";
             MWTPortfolioStockCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
-            MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
-            
-            cell.symbolLabel.text = stockAtIndexPath.symbol;
-            cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
-            cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
-            cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
+//            if (_portfolio.stocksArray.count == 0)
+//            {
+//                cell.symbolLabel.textColor = [UIColor grayColor];
+//                cell.symbolLabel.text = @"No stocks in your portfolio";
+//                
+//                cell.percentGainLabel.hidden = YES;
+//                cell.sharesLabel.hidden = YES;
+//                cell.priceLabel.hidden = YES;
+//                cell.sharesAttributeLabel.hidden = YES;
+//                
+//            }
+//            else
+//            {
+                MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
+                
+                cell.symbolLabel.text = stockAtIndexPath.symbol;
+                cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
+                cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
+                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
+
+//            }
             
             return cell;
         }
@@ -359,25 +392,6 @@ static const int STOP_LOSS_POSITIONS = 3;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Cell %i pressed", indexPath.row);
-//    if (_interfaceElements[indexPath.row] == @"Stocks")
-//    {
-//        [self performSegueWithIdentifier:@"Stocks" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Shorts")
-//    {
-//        [self performSegueWithIdentifier:@"Shorts" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Date Time Positions")
-//    {
-////        NSLog(_interfaceElements[indexPath.row]);
-//        [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
-//    }
-//    else if (_interfaceElements[indexPath.row] == @"Stop Loss Positions")
-//    {
-////        NSLog(_interfaceElements[indexPath.row]);
-//        [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
-//    }
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
         if (indexPath.section == 0)
@@ -385,7 +399,6 @@ static const int STOP_LOSS_POSITIONS = 3;
             MWTPortfolioStockCell *cell = (MWTPortfolioStockCell *)[tableView cellForRowAtIndexPath:indexPath];
             NSString *stockSymbol = cell.symbolLabel.text.uppercaseString;
             MWTStock *stockForSymbol = [_portfolio fetchStockFromSymbol:stockSymbol];
-//            NSLog(@"%@", stockForSymbol.name);
             
             [self performSegueWithIdentifier:@"StockDetails" sender:stockForSymbol];
         }
@@ -400,15 +413,12 @@ static const int STOP_LOSS_POSITIONS = 3;
     {
         if (indexPath.section == STOCKS)
         {
-//            MWTPortfolioCell *cell = (MWTPortfolioCell *)[tableView cellForRowAtIndexPath:indexPath];
-//            
-//            NSString *stockSymbol = cell.symbolLabel.text;
-//            
-//
-//            [self performSegueWithIdentifier:@"StockDetails" sender:stockSymbol];
-            MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
-            
-            [self performSegueWithIdentifier:@"StockDetails" sender:stockAtIndexPath];
+            MWTStock *stockAtIndexPath = nil;
+            if (_portfolio.stocksArray.count > 0)
+            {
+                stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
+                [self performSegueWithIdentifier:@"StockDetails" sender:stockAtIndexPath];
+            }
         }
         else if (indexPath.section == SHORTS)
         {
