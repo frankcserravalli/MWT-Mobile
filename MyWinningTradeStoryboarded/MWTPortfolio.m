@@ -348,7 +348,7 @@
         _pending_stop_loss_transactions = [self compilePendingStopLossTransactionsFromJSON:[dictionary objectForKey:@"pending_stop_loss_transactions"]];
         _processed_stop_loss_transactions = [dictionary objectForKey:@"processed_stop_loss_transactions"];
         
-        _shorts = [dictionary objectForKey:@"shorts"];
+        _shortsArray = [self compileShortsFromDictionary:[dictionary objectForKey:@"shorts"]];
     }
     
     return self;
@@ -367,6 +367,21 @@
     }
     
     return (NSArray *)stocks;
+}
+
+- (NSArray *) compileShortsFromDictionary:(NSDictionary *)dictionary
+{
+    NSMutableArray *shorts = [NSMutableArray array];
+    
+    for (NSString *key in dictionary)
+    {
+        NSDictionary *shortDict = [dictionary objectForKey:key];
+        MWTShort *theShort = [[MWTShort alloc] initWith:shortDict];
+        theShort.symbol = key;
+        [shorts addObject:theShort];
+    }
+    
+    return shorts;
 }
 
 - (NSArray *) compilePendingStopLossTransactionsFromJSON:(NSArray *)JSONArray

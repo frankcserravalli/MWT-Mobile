@@ -10,6 +10,7 @@
 #import "MWTStock.h"
 #import "MWTStopLossTransaction.h"
 #import "MWTDateTimeTransaction.h"
+#import "MWTShort.h"
 
 @interface MWTPortfolio : NSObject
 
@@ -19,12 +20,13 @@
 @property (nonatomic, strong) NSNumber *percent_gain;
 @property (nonatomic, strong) NSNumber *purchase_value;
 
-@property (nonatomic, strong) NSArray *pending_date_time_transactions; //
-@property (nonatomic, strong) NSArray *pending_stop_loss_transactions; //
+@property (nonatomic, strong) NSArray *pending_date_time_transactions;
+@property (nonatomic, strong) NSArray *pending_stop_loss_transactions; 
 @property (nonatomic, strong) NSDictionary *processed_date_time_transactions; //
 @property (nonatomic, strong) NSDictionary *processed_stop_loss_transactions; //
 
 @property (nonatomic, strong) NSDictionary *shorts; //
+@property (strong, nonatomic) NSArray *shortsArray;
 //@property (nonatomic, strong) NSDictionary *stocks;
 @property (nonatomic, strong) NSArray *stocksArray;
 @property (nonatomic, strong) NSArray *stockSymbols;
