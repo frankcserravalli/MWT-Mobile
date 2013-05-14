@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *sharesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sharesLabelText;
+@property (strong, nonatomic) IBOutlet UILabel *sharesAttributeLabel;
 
 @end
