@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+#import "MWTAPIClient.h"
 
-@interface MWTSignUpViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITextField *username;
+@interface MWTSignUpViewController : UIViewController <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *lastName;
+@property (strong, nonatomic) IBOutlet UITextField *firstName;
+@property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UITextField *confirmPassword;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
@@ -17,6 +22,7 @@
 
 - (IBAction)register:(id)sender;
 - (IBAction)cancel:(id)sender;
+- (IBAction)backgroundTouched:(id)sender;
 
 
 @end
