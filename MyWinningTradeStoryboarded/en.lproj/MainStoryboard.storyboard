@@ -157,21 +157,30 @@
         <scene sceneID="Ew3-aL-b1j">
             <objects>
                 <viewController id="aqo-Jv-DcD" customClass="MWTSignUpViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lud-eS-Ld8">
+                    <view key="view" contentMode="scaleToFill" id="lud-eS-Ld8" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcR-0T-Pvf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcR-0T-Pvf">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aqo-Jv-DcD" id="rBa-9h-54K"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OR8-Dl-Nj5">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aqo-Jv-DcD" id="XS8-AY-CgE"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tn4-cF-vNR">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aqo-Jv-DcD" id="DY1-JG-deS"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGf-fc-KTQ">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -202,37 +211,63 @@
                                     <action selector="cancel:" destination="aqo-Jv-DcD" eventType="touchUpInside" id="qO6-Om-Bxn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQG-7M-qsX">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aqo-Jv-DcD" id="bfp-wx-n7U"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7Q-6U-3qL">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aqo-Jv-DcD" id="DqH-9G-hAM"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tn4-cF-vNR" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1I1-g9-cVE"/>
+                            <constraint firstAttribute="trailing" secondItem="rQG-7M-qsX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8dA-28-YSu"/>
+                            <constraint firstItem="rQG-7M-qsX" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="APU-A0-GKx"/>
                             <constraint firstItem="YcR-0T-Pvf" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ebm-YL-9qO"/>
                             <constraint firstItem="OR8-Dl-Nj5" firstAttribute="top" secondItem="YcR-0T-Pvf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FEB-d2-OUc"/>
+                            <constraint firstItem="rQG-7M-qsX" firstAttribute="top" secondItem="j7Q-6U-3qL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Fe0-7a-kbX"/>
                             <constraint firstAttribute="trailing" secondItem="OR8-Dl-Nj5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Hbo-B6-0CX"/>
+                            <constraint firstItem="YcR-0T-Pvf" firstAttribute="top" secondItem="rQG-7M-qsX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ko6-Ly-TCb"/>
                             <constraint firstItem="tn4-cF-vNR" firstAttribute="top" secondItem="OR8-Dl-Nj5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L9B-62-SjH"/>
+                            <constraint firstAttribute="trailing" secondItem="j7Q-6U-3qL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ncc-A2-bZh"/>
                             <constraint firstAttribute="trailing" secondItem="YcR-0T-Pvf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OTw-Gu-5fM"/>
+                            <constraint firstItem="j7Q-6U-3qL" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qd0-ms-5Y2"/>
                             <constraint firstAttribute="trailing" secondItem="OmT-zE-SUg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VTV-hN-xce"/>
+                            <constraint firstItem="j7Q-6U-3qL" firstAttribute="top" secondItem="lud-eS-Ld8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Wj7-hv-qRy"/>
                             <constraint firstItem="YGf-fc-KTQ" firstAttribute="top" secondItem="tn4-cF-vNR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cak-gZ-RS3"/>
                             <constraint firstItem="OmT-zE-SUg" firstAttribute="baseline" secondItem="YGf-fc-KTQ" secondAttribute="baseline" type="default" id="iPT-fD-PQR"/>
                             <constraint firstItem="OR8-Dl-Nj5" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kBM-3U-GNR"/>
-                            <constraint firstItem="YcR-0T-Pvf" firstAttribute="top" secondItem="lud-eS-Ld8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="opp-kc-WDI"/>
                             <constraint firstItem="OmT-zE-SUg" firstAttribute="leading" secondItem="YGf-fc-KTQ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="p1N-kM-5OZ"/>
                             <constraint firstAttribute="trailing" secondItem="tn4-cF-vNR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qXi-aH-auu"/>
                             <constraint firstItem="YGf-fc-KTQ" firstAttribute="leading" secondItem="lud-eS-Ld8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vOG-vI-Erh"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTouched:" destination="aqo-Jv-DcD" eventType="touchDown" id="7Kk-xk-BNW"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="qkr-z2-c5M"/>
                     <connections>
                         <outlet property="cancelButton" destination="OmT-zE-SUg" id="DNa-Z1-htE"/>
                         <outlet property="confirmPassword" destination="tn4-cF-vNR" id="Npa-KB-If8"/>
+                        <outlet property="email" destination="YcR-0T-Pvf" id="yMa-6x-taK"/>
+                        <outlet property="firstName" destination="j7Q-6U-3qL" id="PWZ-cp-81C"/>
+                        <outlet property="lastName" destination="rQG-7M-qsX" id="Q7X-fN-iwn"/>
                         <outlet property="password" destination="OR8-Dl-Nj5" id="hUH-7C-2Xr"/>
                         <outlet property="submitButton" destination="YGf-fc-KTQ" id="Uxz-kJ-aPV"/>
-                        <outlet property="username" destination="YcR-0T-Pvf" id="muh-01-w44"/>
+                        <segue destination="TMf-JY-xRO" kind="push" identifier="RegisterToPortfolio" id="vw0-Us-hfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8iR-yx-R1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="1152"/>
+            <point key="canvasLocation" x="1002" y="1152"/>
         </scene>
         <!--Buy Stock View Controller-->
         <scene sceneID="R7s-9M-YYY">
@@ -1327,7 +1362,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0J0-Fb-UEi"/>
         <segue reference="Xuo-IA-M18"/>
+        <segue reference="vw0-Us-hfc"/>
     </inferredMetricsTieBreakers>
 </document>
