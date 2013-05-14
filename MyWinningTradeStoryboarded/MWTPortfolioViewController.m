@@ -34,6 +34,8 @@ static const int STOP_LOSS_POSITIONS = 3;
 {
     [super viewDidLoad];
     
+    self.navigationItem.hidesBackButton = YES;
+    
     CGFloat red = 55/255.0f;
     CGFloat green = 70/255.0f;
     CGFloat blue = 87/255.0f;
@@ -85,6 +87,37 @@ static const int STOP_LOSS_POSITIONS = 3;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            user_id, @"user_id",
+                            ios_token, @"ios_token",
+                            nil];
+    NSString *postPath = @"/api/v1/users/portfolio";
+    
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             NSLog(@"%@", JSON);
+                                             _portfolio = [[MWTPortfolio alloc] initWith:JSON];
+                                             
+                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
+                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
+                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+                                             
+                                             [_tableView reloadData];
+                                             
+                                             _filteredList = [[NSMutableArray alloc] initWithCapacity:_portfolio.stocksArray.count];
+                                             
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                         }];
+    
+    [operation start];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -310,19 +343,19 @@ static const int STOP_LOSS_POSITIONS = 3;
             static NSString *CellIdentifier = @"PortfolioStockCell";
             MWTPortfolioStockCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
-//            if (_portfolio.stocksArray.count == 0)
-//            {
-//                cell.symbolLabel.textColor = [UIColor grayColor];
-//                cell.symbolLabel.text = @"No stocks in your portfolio";
-//                
-//                cell.percentGainLabel.hidden = YES;
-//                cell.sharesLabel.hidden = YES;
-//                cell.priceLabel.hidden = YES;
-//                cell.sharesAttributeLabel.hidden = YES;
-//                
-//            }
-//            else
-//            {
+            if (_portfolio.stocksArray.count == 0)
+            {
+                cell.symbolLabel.textColor = [UIColor grayColor];
+                cell.symbolLabel.text = @"No stocks in your portfolio";
+                
+                cell.percentGainLabel.hidden = YES;
+                cell.sharesLabel.hidden = YES;
+                cell.priceLabel.hidden = YES;
+                cell.sharesAttributeLabel.hidden = YES;
+                
+            }
+            else
+            {
                 MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
                 
                 cell.symbolLabel.text = stockAtIndexPath.symbol;
@@ -330,7 +363,7 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
                 cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
 
-//            }
+            }
             
             return cell;
         }
