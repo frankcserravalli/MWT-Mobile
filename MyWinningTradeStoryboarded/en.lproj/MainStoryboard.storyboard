@@ -1011,7 +1011,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-ZP-KcN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for stocks or companies" id="n7g-TY-i5f">
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search for stocks or companies" id="n7g-TY-i5f">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -1020,11 +1020,11 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PortfolioStockCell" id="43O-yL-tRW" customClass="MWTPortfolioStockCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PortfolioStockCell" id="43O-yL-tRW" customClass="MWTPortfolioStockCell">
                                         <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Symb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-kd-lzv">
@@ -1074,6 +1074,7 @@
                                         <connections>
                                             <outlet property="percentGainLabel" destination="iZT-P1-ZXc" id="fTf-SZ-pjI"/>
                                             <outlet property="priceLabel" destination="6Xb-WV-mhY" id="P8i-T3-qpi"/>
+                                            <outlet property="sharesAttributeLabel" destination="Y4r-p5-0uf" id="l5o-41-iRX"/>
                                             <outlet property="sharesLabel" destination="tqw-Ol-4KW" id="2jk-AU-SzQ"/>
                                             <outlet property="sharesLabelText" destination="Y4r-p5-0uf" id="QlR-YX-pu9"/>
                                             <outlet property="symbolLabel" destination="pHp-kd-lzv" id="h9e-NW-t4L"/>
@@ -1320,173 +1321,6 @@
         <image name="graphOpaque.png" width="320" height="170"/>
         <image name="logo.png" width="560" height="280"/>
     </resources>
-    <classes>
-        <class className="MWTBuyNewStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTBuyNewStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPurchase:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitPurchase:"/>
-                <relationship kind="outlet" name="cancel" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cash" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPrice" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postPurchaseCash" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submit" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalPrice" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTBuyStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTBuyStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cashAfterPurchaseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentCashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalPriceToBuyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="emailTextfield" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="passwordTextfield" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTPendingDateTimeTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingDateTimeTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPendingStopLossTransactionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPendingStopLossTransactionsViewController.h"/>
-        </class>
-        <class className="MWTPortfolioDateTimeCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioDateTimeCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioShortCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioShortCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioStockCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioStockCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="percentGainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sharesLabelText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="symbolLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioStopLossCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioStopLossCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTPortfolioViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTPortfolioViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmentedControlSorter:"/>
-                <relationship kind="action" name="sort:"/>
-                <relationship kind="outlet" name="accountValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cashLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="portfolioValue" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sorterSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWTSellStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSellStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundDismissKeyboard:"/>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="submitButtonAction:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cashAfterTransactionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeHeld" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSettingsViewController.h"/>
-        </class>
-        <class className="MWTShortStockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortStockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitButtonAction:"/>
-            </relationships>
-        </class>
-        <class className="MWTShortsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTShortsViewController.h"/>
-        </class>
-        <class className="MWTSignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSignUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="register:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MWTStockChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockChartViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MWTStockDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTStockDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buyButtonAction:"/>
-                <relationship kind="action" name="sellButtonAction:"/>
-                <relationship kind="action" name="shortButtonAction:"/>
-                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chartView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MWTTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTTableViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
