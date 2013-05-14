@@ -210,8 +210,8 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else if (section == SHORTS)
         {
-            if (_portfolio.shorts.allKeys.count == 0) return 1;
-            return [[[_portfolio shorts] allKeys] count];
+            if (_portfolio.shortsArray.count == 0) return 1;
+            return _portfolio.shortsArray.count;
         }
         else if (section == DATE_TIME_POSITIONS)
         {
@@ -379,14 +379,17 @@ static const int STOP_LOSS_POSITIONS = 3;
             static NSString *CellIdentifier = @"PortfolioShortCell";
             MWTPortfolioShortCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
-            if (_portfolio.shorts.allKeys.count == 0)
+            if (_portfolio.shortsArray.count == 0)
             {
                 cell.cellTitle.textColor = [UIColor grayColor];
                 cell.cellTitle.text = @"No shorts";
             }
             else
             {
-                cell.cellTitle.text = @"Short";
+                MWTShort *shortAtIndexPath = [_portfolio.shortsArray objectAtIndex:indexPath.row];
+                
+                cell.cellTitle.textColor = [UIColor blackColor];
+                cell.cellTitle.text = shortAtIndexPath.symbol;
             }
             
             return cell;
@@ -468,15 +471,15 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else if (indexPath.section == SHORTS)
         {
-            [self performSegueWithIdentifier:@"Shorts" sender:self];
+//            [self performSegueWithIdentifier:@"Shorts" sender:self];
         }
         else if (indexPath.section == DATE_TIME_POSITIONS)
         {
-            [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
+//            [self performSegueWithIdentifier:@"PendingDateTimeTransactions" sender:self];
         }
         else if (indexPath.section == STOP_LOSS_POSITIONS)
         {
-            [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
+//            [self performSegueWithIdentifier:@"PendingStopLossTransactions" sender:self];
         }
         else
         {
