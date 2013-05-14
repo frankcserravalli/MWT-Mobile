@@ -216,12 +216,12 @@ static const int STOP_LOSS_POSITIONS = 3;
         else if (section == DATE_TIME_POSITIONS)
         {
             if (_portfolio.pending_date_time_transactions.count == 0) return 1;
-            return [[_portfolio pending_date_time_transactions] count];
+            return _portfolio.pending_date_time_transactions.count;
         }
         else if (section == STOP_LOSS_POSITIONS)
         {
             if (_portfolio.pending_stop_loss_transactions.count == 0) return 1;
-            return [[_portfolio pending_stop_loss_transactions] count];
+            return _portfolio.pending_stop_loss_transactions.count;
         }
         else
         {
@@ -403,7 +403,10 @@ static const int STOP_LOSS_POSITIONS = 3;
             }
             else
             {
-                cell.cellTitle.text =  @"Date Time Position";
+                MWTDateTimeTransaction *dateTimeAtIndexPath = [_portfolio.pending_date_time_transactions objectAtIndex:indexPath.row];
+                
+                cell.cellTitle.textColor = [UIColor blackColor];
+                cell.cellTitle.text =  dateTimeAtIndexPath.created_at;
             }
 
             return cell;
@@ -420,7 +423,10 @@ static const int STOP_LOSS_POSITIONS = 3;
             }
             else
             {
-                cell.cellTitle.text = @"Stop Loss Position";
+                MWTStopLossTransaction *stopLossAtIndexPath = [_portfolio.pending_stop_loss_transactions objectAtIndex:indexPath.row];
+                cell.cellTitle.text = stopLossAtIndexPath.created_at;
+                cell.cellTitle.textColor = [UIColor blackColor];
+
             }
             
             return cell;
