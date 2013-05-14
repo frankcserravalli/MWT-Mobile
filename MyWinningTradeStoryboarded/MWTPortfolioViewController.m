@@ -362,6 +362,13 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
                 cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
+                
+                cell.symbolLabel.textColor = [UIColor blackColor];
+                cell.percentGainLabel.hidden = NO;
+                cell.sharesLabel.hidden = NO;
+                cell.priceLabel.hidden = NO;
+                cell.sharesAttributeLabel.hidden = NO;
+                
 
             }
             
