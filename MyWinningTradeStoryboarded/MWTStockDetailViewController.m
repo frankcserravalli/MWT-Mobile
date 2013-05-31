@@ -11,6 +11,7 @@
 #import "MWTSellStockViewController.h"
 #import "MWTStockDetail.h"
 #import "MWTStockChartViewController.h"
+#import "MWTShortStockViewController.h"
 
 @interface MWTStockDetailViewController ()
 
@@ -152,7 +153,10 @@
     }
     else if ([[segue identifier] isEqualToString:@"ShortStock"])
     {
-        NSLog(@"Pass short data");
+        MWTShortStockViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.stockDetail = _stockDeetz;
+        destinationViewController.portfolio = _portfolio;
+        destinationViewController.stock = _stock;
     }
     else if ([[segue identifier] isEqualToString:@"StockChart"])
     {
