@@ -87,6 +87,7 @@ static const int STOP_LOSS_POSITIONS = 3;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -101,6 +102,7 @@ static const int STOP_LOSS_POSITIONS = 3;
     AFJSONRequestOperation *operation = [AFJSONRequestOperation
                                          JSONRequestOperationWithRequest:request
                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
                                              NSLog(@"%@", JSON);
                                              _portfolio = [[MWTPortfolio alloc] initWith:JSON];
                                              
@@ -114,6 +116,7 @@ static const int STOP_LOSS_POSITIONS = 3;
                                              
                                          }
                                          failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
                                              NSLog(@"%@", error);
                                          }];
     
