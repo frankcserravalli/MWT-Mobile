@@ -50,7 +50,7 @@
 - (IBAction)submitButtonAction:(id)sender
 {
     [self connectToAPIPath:@"/api/v1/sells" toSell:[_volumeTextField.text integerValue] ofStock:_stockSymbol];
-    [self cancelButtonAction:sender];
+//    [self cancelButtonAction:sender];
 }
 
 - (IBAction)cancelButtonAction:(id)sender
