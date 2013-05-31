@@ -10,6 +10,8 @@
 
 @interface MWTShortStockViewController ()
 
+- (void) connectToAPIPath:(NSString *)pathToAPI toShort:(NSInteger)amountOfShares ofStock:(NSString *)stockSymbol;
+
 @end
 
 @implementation MWTShortStockViewController
@@ -19,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _volume = 0.0f;
     }
     return self;
 }
@@ -32,14 +35,110 @@
     self.view.backgroundColor = background;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self updateUI];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBActions
 - (IBAction)submitButtonAction:(id)sender
+{
+    NSString *postPath = @"api/v1/short_sell_borrows";
+    NSInteger shortVolume = _volume;
+    NSString *stockSymbol = _stockDetail.symbol;
+    
+    [self connectToAPIPath:postPath toShort:shortVolume ofStock:stockSymbol];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)backgroundPressed:(id)sender
+{
+    [_volumeField resignFirstResponder];
+    [self computeBorrowTotal];
+}
+
+- (IBAction)cancel:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - UITextfield Delegate
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    [self computeBorrowTotal];
+    return YES;
+}
+
+#pragma mark - UI
+- (void) updateUI
+{
+    _companyName.text = _stockDetail.name;
+    _currentPrice.text = _stockDetail.current_price;
+    _volumeField.text = @"";
+    _borrowTotal.text = @"0.0";
+}
+
+- (void) computeBorrowTotal
+{
+    _volume = 0.0f;
+    _volume = [_volumeField.text floatValue];
+    float totalPriceToBorrow = _volume * [_currentPrice.text floatValue];
+    NSString *totalPriceToBorrowString = [NSString stringWithFormat:@"%f", totalPriceToBorrow];
+    _borrowTotal.text = totalPriceToBorrowString;
+}
+
+#pragma mark - AFNetworking
+- (void) connectToAPIPath:(NSString *)pathToAPI toShort:(NSInteger)amountOfShares ofStock:(NSString *)stockSymbol
+{
+    [[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
+    [SVProgressHUD showWithStatus:@"Shorting stock..."];
+    
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSNumber *volume = [NSNumber numberWithInt:amountOfShares];
+    NSString *stock_id = stockSymbol;
+    
+    NSString *when = @"At Market";
+    NSString *measure = @"Above";
+    NSString *price_target = _stockDetail.current_price;
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            ios_token, @"ios_token",
+                            user_id, @"user_id",
+                            volume, @"volume",
+                            stock_id, @"stock_id",
+                            when, @"when",
+                            measure, @"measure",
+                            price_target, @"price_target",
+                            nil];
+    NSString *postPath = pathToAPI;
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+                                             if ([[(NSDictionary *)JSON objectForKey:@"status"] isEqualToString:@"Order placed."])
+                                             {
+                                                 [SVProgressHUD showSuccessWithStatus:@"Short successful"];
+                                                 NSLog(@"%@", JSON);
+                                                 [self dismissViewControllerAnimated:YES completion:nil];
+                                             }
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+                                             [SVProgressHUD showErrorWithStatus:@"Server error"];
+                                             NSLog(@"%@", error);
+                                         }];
+    [operation start];
+}
+
 @end
