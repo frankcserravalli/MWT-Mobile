@@ -185,9 +185,19 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     AFJSONRequestOperation *operation = [AFJSONRequestOperation
                                          JSONRequestOperationWithRequest:request
                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                             [self completeLoginWith:JSON];
-                                             [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
-                                             [SVProgressHUD showSuccessWithStatus:@"Logged in!"];
+                                             NSLog(@"%@", JSON);
+                                             NSDictionary *JSONDict = (NSDictionary *)JSON;
+                                             if ([[JSONDict objectForKey:@"status"] isEqualToString:@"Password incorrect."] ||
+                                                 [[JSONDict objectForKey:@"status"] isEqualToString:@"Account doesn't exist."])
+                                             {
+                                                 [SVProgressHUD showErrorWithStatus:@"Invalid credentials!"];
+                                             }
+                                             else
+                                             {
+                                                 [self completeLoginWith:JSON];
+                                                 [[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+                                                 [SVProgressHUD showSuccessWithStatus:@"Logged in!"];
+                                             }
                                          }
                                          failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                              NSLog(@"%@", error);
