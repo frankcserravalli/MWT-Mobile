@@ -28,6 +28,7 @@
 @property (strong, nonatomic) MWTPortfolio *portfolio;
 @property float volume;
 
+@property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
 
 
 @end

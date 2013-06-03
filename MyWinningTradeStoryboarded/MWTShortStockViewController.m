@@ -33,6 +33,10 @@
     
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.view.backgroundColor = background;
+    
+    _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
+    [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -80,7 +84,9 @@
 - (void) updateUI
 {
     _companyName.text = _stockDetail.name;
-    _currentPrice.text = _stockDetail.current_price;
+    
+    NSNumber *currentPriceNumber = [NSNumber numberWithFloat:[_stockDetail.current_price floatValue]];
+    _currentPrice.text = [_numberToCurrencyConverter stringFromNumber:currentPriceNumber];
     _volumeField.text = @"";
     _borrowTotal.text = @"0.0";
 }
@@ -89,8 +95,11 @@
 {
     _volume = 0.0f;
     _volume = [_volumeField.text floatValue];
-    float totalPriceToBorrow = _volume * [_currentPrice.text floatValue];
-    NSString *totalPriceToBorrowString = [NSString stringWithFormat:@"%f", totalPriceToBorrow];
+    
+    float currentPrice = [_stockDetail.current_price floatValue];
+    float totalPriceToBorrow = _volume * currentPrice;
+    NSNumber *totalPriceToBorrowNumber = [NSNumber numberWithFloat:totalPriceToBorrow];
+    NSString *totalPriceToBorrowString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBorrowNumber];
     _borrowTotal.text = totalPriceToBorrowString;
 }
 
