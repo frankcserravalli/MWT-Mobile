@@ -28,7 +28,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *volumeTextField;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UIButton *cancelButton;
+
 @property float volume;
+@property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
 
 @property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDetail;

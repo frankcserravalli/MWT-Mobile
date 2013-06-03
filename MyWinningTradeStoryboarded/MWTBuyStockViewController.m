@@ -35,9 +35,14 @@
     [_submitButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     [_cancelButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     
+    _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
+    [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
     _companyNameLabel.text = _stock.name;
-    _currentPriceLabel.text = [_stock.current_price stringValue];
-    _currentCashLabel.text = [_portfolio.cash stringValue];
+//    _currentPriceLabel.text = [_stock.current_price stringValue];
+    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:_stock.current_price];
+//    _currentCashLabel.text = [_portfolio.cash stringValue];
+    _currentCashLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.cash];
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,27 +123,37 @@
 - (IBAction)dismissKeyboard:(id)sender
 {
     [sender resignFirstResponder];
+    
     _volume = 0.0f;
     _volume = [[_volumeTextField text] floatValue];
-    float totalPriceToBuy = _volume * [_currentPriceLabel.text floatValue];
-    NSString *totalPriceToBuyString = [NSString stringWithFormat:@"%f", totalPriceToBuy];
+    
+    float totalPriceToBuy = _volume * [_stock.current_price floatValue];
+    NSNumber *totalPriceToBuyNumber = [NSNumber numberWithFloat:totalPriceToBuy];
+    NSString *totalPriceToBuyString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBuyNumber];
     _totalPriceToBuyLabel.text = totalPriceToBuyString;
-    float cash = [_currentCashLabel.text floatValue];
+    
+    float cash = [_portfolio.cash floatValue];
     float cashAfterPurchase = cash - totalPriceToBuy;
-    _cashAfterPurchaseLabel.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
+    NSNumber *cashAfterPurchaseNumber = [NSNumber numberWithFloat:cashAfterPurchase];
+    _cashAfterPurchaseLabel.text = [_numberToCurrencyConverter stringFromNumber:cashAfterPurchaseNumber];
 }
 
 - (IBAction)backgroundDismissKeyboard:(id)sender
 {
     [_volumeTextField resignFirstResponder];
+
     _volume = 0.0f;
-      _volume = [[_volumeTextField text] floatValue];
-    float totalPriceToBuy = _volume * [_currentPriceLabel.text floatValue];
-    NSString *totalPriceToBuyString = [NSString stringWithFormat:@"%f", totalPriceToBuy];
+    _volume = [[_volumeTextField text] floatValue];
+    
+    float totalPriceToBuy = _volume * [_stock.current_price floatValue];
+    NSNumber *totalPriceToBuyNumber = [NSNumber numberWithFloat:totalPriceToBuy];
+    NSString *totalPriceToBuyString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBuyNumber];
     _totalPriceToBuyLabel.text = totalPriceToBuyString;
-    float cash = [_currentCashLabel.text floatValue];
+    
+    float cash = [_portfolio.cash floatValue];
     float cashAfterPurchase = cash - totalPriceToBuy;
-    _cashAfterPurchaseLabel.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
+    NSNumber *cashAfterPurchaseNumber = [NSNumber numberWithFloat:cashAfterPurchase];
+    _cashAfterPurchaseLabel.text = [_numberToCurrencyConverter stringFromNumber:cashAfterPurchaseNumber];
 }
 
 @end
