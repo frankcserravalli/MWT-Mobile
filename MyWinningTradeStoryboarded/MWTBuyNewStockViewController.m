@@ -39,6 +39,8 @@
     [_submit setBackgroundImage:resizableButton forState:UIControlStateNormal];
     [_cancel setBackgroundImage:resizableButton forState:UIControlStateNormal];
 
+    _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
+    [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,12 +54,18 @@
     [sender resignFirstResponder];
     _volume = 0.0f;
     _volume = [[_volumeTextField text] floatValue];
+    
+    
     float totalPriceToBuy = _volume * [_currentPrice.text floatValue];
-    NSString *totalPriceToBuyString = [NSString stringWithFormat:@"%f", totalPriceToBuy];
+    NSNumber *totalPriceToBuyNumber = [NSNumber numberWithFloat:totalPriceToBuy];
+    NSString *totalPriceToBuyString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBuyNumber];
     _totalPrice.text = totalPriceToBuyString;
+    
+    
     float cash = [_cash.text floatValue];
     float cashAfterPurchase = cash - totalPriceToBuy;
-    _postPurchaseCash.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
+    NSNumber *cashAfterPurchaseNumber = [NSNumber numberWithFloat:cashAfterPurchase];
+    _postPurchaseCash.text = [_numberToCurrencyConverter stringFromNumber:cashAfterPurchaseNumber];
 }
 
 - (IBAction)submitPurchase:(id)sender

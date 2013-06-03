@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *cancel;
 
 @property float volume;
+@property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
 
 @property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDeetz;
