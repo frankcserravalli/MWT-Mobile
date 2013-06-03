@@ -8,7 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		5D241AB316BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */; };
-		5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400E916AF32A700D5F659 /* MWTStockViewController.m */; };
+		5D57BEBE1739AFB8004267F9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEAC1739AFB8004267F9 /* AFHTTPClient.m */; };
+		5D57BEBF1739AFB8004267F9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEAE1739AFB8004267F9 /* AFHTTPRequestOperation.m */; };
+		5D57BEC01739AFB8004267F9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEB01739AFB8004267F9 /* AFImageRequestOperation.m */; };
+		5D57BEC11739AFB8004267F9 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEB21739AFB8004267F9 /* AFJSONRequestOperation.m */; };
+		5D57BEC21739AFB8004267F9 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEB41739AFB8004267F9 /* AFNetworkActivityIndicatorManager.m */; };
+		5D57BEC31739AFB8004267F9 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEB71739AFB8004267F9 /* AFPropertyListRequestOperation.m */; };
+		5D57BEC41739AFB8004267F9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEB91739AFB8004267F9 /* AFURLConnectionOperation.m */; };
+		5D57BEC51739AFB8004267F9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEBB1739AFB8004267F9 /* AFXMLRequestOperation.m */; };
+		5D57BEC61739AFB8004267F9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEBD1739AFB8004267F9 /* UIImageView+AFNetworking.m */; };
+		5D57BEC91739B010004267F9 /* MWTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEC81739B010004267F9 /* MWTAPIClient.m */; };
+		5D57BED41739B8C7004267F9 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D57BED11739B8C7004267F9 /* SVProgressHUD.bundle */; };
+		5D57BED51739B8C7004267F9 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BED31739B8C7004267F9 /* SVProgressHUD.m */; };
+		5D57BED71739B8E8004267F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D57BED61739B8E8004267F9 /* QuartzCore.framework */; };
+		5D57BEDA173A1CFA004267F9 /* MWTStockDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BED9173A1CFA004267F9 /* MWTStockDetail.m */; };
+		5D57BEDD173C4E11004267F9 /* MWTBuyNewStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEDC173C4E11004267F9 /* MWTBuyNewStockViewController.m */; };
+		5D57BEE117417D1C004267F9 /* MWTPortfolioShortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEE017417D1C004267F9 /* MWTPortfolioShortCell.m */; };
+		5D57BEE417417D2D004267F9 /* MWTPortfolioDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEE317417D2D004267F9 /* MWTPortfolioDateTimeCell.m */; };
+		5D57BEE717417D39004267F9 /* MWTPortfolioStopLossCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEE617417D39004267F9 /* MWTPortfolioStopLossCell.m */; };
+		5D57BEEE1742D956004267F9 /* MWTStopLossTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEED1742D956004267F9 /* MWTStopLossTransaction.m */; };
+		5D57BEF11742DFB9004267F9 /* MWTDateTimeTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEF01742DFB8004267F9 /* MWTDateTimeTransaction.m */; };
+		5D57BEF41742E37A004267F9 /* MWTShort.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEF31742E37A004267F9 /* MWTShort.m */; };
+		5D5BEC61175D222200962AC5 /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC5F175D222200962AC5 /* chart@2x.png */; };
+		5D5BEC62175D222200962AC5 /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC60175D222200962AC5 /* chart.png */; };
 		5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400ED16AF33C700D5F659 /* MWTStockCell.m */; };
 		5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F016AF411600D5F659 /* MWTShortsViewController.m */; };
 		5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */; };
@@ -29,9 +51,8 @@
 		5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420D816A8A334002E5CA3 /* MWTSignUpViewController.m */; };
 		5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */; };
 		5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */; };
-		5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */; };
 		5D8EBA6016FA671F00B8EF9C /* MWTStockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8EBA5F16FA671F00B8EF9C /* MWTStockChartViewController.m */; };
-		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */; };
+		5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioStockCell.m */; };
 		5D935FC61721D99900AEB465 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC41721D99900AEB465 /* background@2x.png */; };
 		5D935FC71721D99900AEB465 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FC51721D99900AEB465 /* background.png */; };
 		5D935FD61721E25B00AEB465 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D935FD51721E25B00AEB465 /* button.png */; };
@@ -50,8 +71,49 @@
 /* Begin PBXFileReference section */
 		5D241AB116BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingStopLossTransactionsViewController.h; sourceTree = "<group>"; };
 		5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingStopLossTransactionsViewController.m; sourceTree = "<group>"; };
-		5D6400E816AF32A700D5F659 /* MWTStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockViewController.h; sourceTree = "<group>"; };
-		5D6400E916AF32A700D5F659 /* MWTStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockViewController.m; sourceTree = "<group>"; };
+		5D57BEAB1739AFB8004267F9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		5D57BEAC1739AFB8004267F9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		5D57BEAD1739AFB8004267F9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		5D57BEAE1739AFB8004267F9 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		5D57BEAF1739AFB8004267F9 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		5D57BEB01739AFB8004267F9 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		5D57BEB11739AFB8004267F9 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		5D57BEB21739AFB8004267F9 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		5D57BEB31739AFB8004267F9 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		5D57BEB41739AFB8004267F9 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		5D57BEB51739AFB8004267F9 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		5D57BEB61739AFB8004267F9 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		5D57BEB71739AFB8004267F9 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		5D57BEB81739AFB8004267F9 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		5D57BEB91739AFB8004267F9 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		5D57BEBA1739AFB8004267F9 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		5D57BEBB1739AFB8004267F9 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		5D57BEBC1739AFB8004267F9 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		5D57BEBD1739AFB8004267F9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		5D57BEC71739B010004267F9 /* MWTAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTAPIClient.h; sourceTree = "<group>"; };
+		5D57BEC81739B010004267F9 /* MWTAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTAPIClient.m; sourceTree = "<group>"; };
+		5D57BED11739B8C7004267F9 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		5D57BED21739B8C7004267F9 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		5D57BED31739B8C7004267F9 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		5D57BED61739B8E8004267F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5D57BED8173A1CFA004267F9 /* MWTStockDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockDetail.h; sourceTree = "<group>"; };
+		5D57BED9173A1CFA004267F9 /* MWTStockDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockDetail.m; sourceTree = "<group>"; };
+		5D57BEDB173C4E10004267F9 /* MWTBuyNewStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTBuyNewStockViewController.h; sourceTree = "<group>"; };
+		5D57BEDC173C4E11004267F9 /* MWTBuyNewStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTBuyNewStockViewController.m; sourceTree = "<group>"; };
+		5D57BEDF17417D1C004267F9 /* MWTPortfolioShortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioShortCell.h; sourceTree = "<group>"; };
+		5D57BEE017417D1C004267F9 /* MWTPortfolioShortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioShortCell.m; sourceTree = "<group>"; };
+		5D57BEE217417D2D004267F9 /* MWTPortfolioDateTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioDateTimeCell.h; sourceTree = "<group>"; };
+		5D57BEE317417D2D004267F9 /* MWTPortfolioDateTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioDateTimeCell.m; sourceTree = "<group>"; };
+		5D57BEE517417D39004267F9 /* MWTPortfolioStopLossCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioStopLossCell.h; sourceTree = "<group>"; };
+		5D57BEE617417D39004267F9 /* MWTPortfolioStopLossCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioStopLossCell.m; sourceTree = "<group>"; };
+		5D57BEEC1742D955004267F9 /* MWTStopLossTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStopLossTransaction.h; sourceTree = "<group>"; };
+		5D57BEED1742D956004267F9 /* MWTStopLossTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStopLossTransaction.m; sourceTree = "<group>"; };
+		5D57BEEF1742DFB8004267F9 /* MWTDateTimeTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTDateTimeTransaction.h; sourceTree = "<group>"; };
+		5D57BEF01742DFB8004267F9 /* MWTDateTimeTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTDateTimeTransaction.m; sourceTree = "<group>"; };
+		5D57BEF21742E379004267F9 /* MWTShort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShort.h; sourceTree = "<group>"; };
+		5D57BEF31742E37A004267F9 /* MWTShort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTShort.m; sourceTree = "<group>"; };
+		5D5BEC5F175D222200962AC5 /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
+		5D5BEC60175D222200962AC5 /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
 		5D6400EC16AF33C700D5F659 /* MWTStockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockCell.h; sourceTree = "<group>"; };
 		5D6400ED16AF33C700D5F659 /* MWTStockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockCell.m; sourceTree = "<group>"; };
 		5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShortsViewController.h; sourceTree = "<group>"; };
@@ -87,12 +149,10 @@
 		5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioViewController.m; sourceTree = "<group>"; };
 		5D7420F016A8A6E9002E5CA3 /* MWTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSettingsViewController.h; sourceTree = "<group>"; };
 		5D7420F116A8A6E9002E5CA3 /* MWTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSettingsViewController.m; sourceTree = "<group>"; };
-		5D7E32AB16B84795008BADB0 /* MWTPortfolioSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioSingleton.h; sourceTree = "<group>"; };
-		5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioSingleton.m; sourceTree = "<group>"; };
 		5D8EBA5E16FA671F00B8EF9C /* MWTStockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockChartViewController.h; sourceTree = "<group>"; };
 		5D8EBA5F16FA671F00B8EF9C /* MWTStockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockChartViewController.m; sourceTree = "<group>"; };
-		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioCell.h; sourceTree = "<group>"; };
-		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioCell.m; sourceTree = "<group>"; };
+		5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioStockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPortfolioStockCell.h; sourceTree = "<group>"; };
+		5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioStockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPortfolioStockCell.m; sourceTree = "<group>"; };
 		5D935FC41721D99900AEB465 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		5D935FC51721D99900AEB465 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		5D935FD51721E25B00AEB465 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
@@ -119,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D57BED71739B8E8004267F9 /* QuartzCore.framework in Frameworks */,
 				5D7420A516A8989D002E5CA3 /* UIKit.framework in Frameworks */,
 				5D7420A716A8989D002E5CA3 /* Foundation.framework in Frameworks */,
 				5D7420A916A8989D002E5CA3 /* CoreGraphics.framework in Frameworks */,
@@ -128,13 +189,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D57BEAA1739AFB8004267F9 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				5D57BEAB1739AFB8004267F9 /* AFHTTPClient.h */,
+				5D57BEAC1739AFB8004267F9 /* AFHTTPClient.m */,
+				5D57BEAD1739AFB8004267F9 /* AFHTTPRequestOperation.h */,
+				5D57BEAE1739AFB8004267F9 /* AFHTTPRequestOperation.m */,
+				5D57BEAF1739AFB8004267F9 /* AFImageRequestOperation.h */,
+				5D57BEB01739AFB8004267F9 /* AFImageRequestOperation.m */,
+				5D57BEB11739AFB8004267F9 /* AFJSONRequestOperation.h */,
+				5D57BEB21739AFB8004267F9 /* AFJSONRequestOperation.m */,
+				5D57BEB31739AFB8004267F9 /* AFNetworkActivityIndicatorManager.h */,
+				5D57BEB41739AFB8004267F9 /* AFNetworkActivityIndicatorManager.m */,
+				5D57BEB51739AFB8004267F9 /* AFNetworking.h */,
+				5D57BEB61739AFB8004267F9 /* AFPropertyListRequestOperation.h */,
+				5D57BEB71739AFB8004267F9 /* AFPropertyListRequestOperation.m */,
+				5D57BEB81739AFB8004267F9 /* AFURLConnectionOperation.h */,
+				5D57BEB91739AFB8004267F9 /* AFURLConnectionOperation.m */,
+				5D57BEBA1739AFB8004267F9 /* AFXMLRequestOperation.h */,
+				5D57BEBB1739AFB8004267F9 /* AFXMLRequestOperation.m */,
+				5D57BEBC1739AFB8004267F9 /* UIImageView+AFNetworking.h */,
+				5D57BEBD1739AFB8004267F9 /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		5D57BED01739B8C7004267F9 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				5D57BED11739B8C7004267F9 /* SVProgressHUD.bundle */,
+				5D57BED21739B8C7004267F9 /* SVProgressHUD.h */,
+				5D57BED31739B8C7004267F9 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		5D57BEDE17417D00004267F9 /* Portfolio Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioStockCell.h */,
+				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioStockCell.m */,
+				5D57BEDF17417D1C004267F9 /* MWTPortfolioShortCell.h */,
+				5D57BEE017417D1C004267F9 /* MWTPortfolioShortCell.m */,
+				5D57BEE217417D2D004267F9 /* MWTPortfolioDateTimeCell.h */,
+				5D57BEE317417D2D004267F9 /* MWTPortfolioDateTimeCell.m */,
+				5D57BEE517417D39004267F9 /* MWTPortfolioStopLossCell.h */,
+				5D57BEE617417D39004267F9 /* MWTPortfolioStopLossCell.m */,
+			);
+			name = "Portfolio Cells";
+			sourceTree = "<group>";
+		};
 		5D6400F216AF412200D5F659 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
 				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
 				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
-				5D8FE2A016ADE3E30094F9B0 /* MWTPortfolioCell.h */,
-				5D8FE2A116ADE3E30094F9B0 /* MWTPortfolioCell.m */,
+				5D57BEDE17417D00004267F9 /* Portfolio Cells */,
 				5DE2489416BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.h */,
 				5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */,
 				5D241AB116BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.h */,
@@ -152,8 +263,6 @@
 				5DA753D516B1D374004A648E /* Operations */,
 				5D6400F316AF4BD500D5F659 /* MWTStockDetailViewController.h */,
 				5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */,
-				5D6400E816AF32A700D5F659 /* MWTStockViewController.h */,
-				5D6400E916AF32A700D5F659 /* MWTStockViewController.m */,
 				5D6400EC16AF33C700D5F659 /* MWTStockCell.h */,
 				5D6400ED16AF33C700D5F659 /* MWTStockCell.m */,
 				5D8EBA5E16FA671F00B8EF9C /* MWTStockChartViewController.h */,
@@ -182,6 +291,9 @@
 		5D7420A316A8989D002E5CA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D57BED01739B8C7004267F9 /* SVProgressHUD */,
+				5D57BEAA1739AFB8004267F9 /* AFNetworking */,
+				5D57BED61739B8E8004267F9 /* QuartzCore.framework */,
 				5D7420A416A8989D002E5CA3 /* UIKit.framework */,
 				5D7420A616A8989D002E5CA3 /* Foundation.framework */,
 				5D7420A816A8989D002E5CA3 /* CoreGraphics.framework */,
@@ -192,8 +304,8 @@
 		5D7420AA16A8989D002E5CA3 /* MyWinningTradeStoryboarded */ = {
 			isa = PBXGroup;
 			children = (
-				5D7E32AB16B84795008BADB0 /* MWTPortfolioSingleton.h */,
-				5D7E32AC16B84795008BADB0 /* MWTPortfolioSingleton.m */,
+				5D57BEC71739B010004267F9 /* MWTAPIClient.h */,
+				5D57BEC81739B010004267F9 /* MWTAPIClient.m */,
 				5DA9A6E616B0475C00C67CEA /* Models */,
 				5D7420B316A8989D002E5CA3 /* MWTAppDelegate.h */,
 				5D7420B416A8989D002E5CA3 /* MWTAppDelegate.m */,
@@ -243,6 +355,8 @@
 		5DA753D516B1D374004A648E /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				5D57BEDB173C4E10004267F9 /* MWTBuyNewStockViewController.h */,
+				5D57BEDC173C4E11004267F9 /* MWTBuyNewStockViewController.m */,
 				5DA753D716B1D3A7004A648E /* MWTBuyStockViewController.h */,
 				5DA753D816B1D3A7004A648E /* MWTBuyStockViewController.m */,
 				5DA753DA16B1D3B8004A648E /* MWTSellStockViewController.h */,
@@ -256,10 +370,18 @@
 		5DA9A6E616B0475C00C67CEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5D57BED8173A1CFA004267F9 /* MWTStockDetail.h */,
+				5D57BED9173A1CFA004267F9 /* MWTStockDetail.m */,
 				5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */,
 				5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */,
 				5DA9A6E816B0478400C67CEA /* MWTPortfolio.h */,
 				5DA9A6E916B0478400C67CEA /* MWTPortfolio.m */,
+				5D57BEEF1742DFB8004267F9 /* MWTDateTimeTransaction.h */,
+				5D57BEF01742DFB8004267F9 /* MWTDateTimeTransaction.m */,
+				5D57BEEC1742D955004267F9 /* MWTStopLossTransaction.h */,
+				5D57BEED1742D956004267F9 /* MWTStopLossTransaction.m */,
+				5D57BEF21742E379004267F9 /* MWTShort.h */,
+				5D57BEF31742E37A004267F9 /* MWTShort.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -267,6 +389,8 @@
 		5DC50A5816EAB7CF000E59CA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BEC5F175D222200962AC5 /* chart@2x.png */,
+				5D5BEC60175D222200962AC5 /* chart.png */,
 				5D935FD91721F29600AEB465 /* graphOpaque.png */,
 				5D935FDA1721F29600AEB465 /* graphTransparent.png */,
 				5D935FD71721F08500AEB465 /* logo.png */,
@@ -343,6 +467,9 @@
 				5D935FD81721F08500AEB465 /* logo.png in Resources */,
 				5D935FDB1721F29600AEB465 /* graphOpaque.png in Resources */,
 				5D935FDC1721F29600AEB465 /* graphTransparent.png in Resources */,
+				5D57BED41739B8C7004267F9 /* SVProgressHUD.bundle in Resources */,
+				5D5BEC61175D222200962AC5 /* chart@2x.png in Resources */,
+				5D5BEC62175D222200962AC5 /* chart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +489,7 @@
 				5D7420D916A8A334002E5CA3 /* MWTSignUpViewController.m in Sources */,
 				5D7420DD16A8A656002E5CA3 /* MWTPortfolioViewController.m in Sources */,
 				5D7420F216A8A6E9002E5CA3 /* MWTSettingsViewController.m in Sources */,
-				5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioCell.m in Sources */,
-				5D6400EA16AF32A700D5F659 /* MWTStockViewController.m in Sources */,
+				5D8FE2A216ADE3E30094F9B0 /* MWTPortfolioStockCell.m in Sources */,
 				5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */,
 				5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */,
 				5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */,
@@ -372,10 +498,28 @@
 				5DA753D916B1D3A7004A648E /* MWTBuyStockViewController.m in Sources */,
 				5DA753DC16B1D3B8004A648E /* MWTSellStockViewController.m in Sources */,
 				5DA753DF16B1D3C9004A648E /* MWTShortStockViewController.m in Sources */,
-				5D7E32AD16B84795008BADB0 /* MWTPortfolioSingleton.m in Sources */,
 				5DE2489616BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m in Sources */,
 				5D241AB316BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m in Sources */,
 				5D8EBA6016FA671F00B8EF9C /* MWTStockChartViewController.m in Sources */,
+				5D57BEBE1739AFB8004267F9 /* AFHTTPClient.m in Sources */,
+				5D57BEBF1739AFB8004267F9 /* AFHTTPRequestOperation.m in Sources */,
+				5D57BEC01739AFB8004267F9 /* AFImageRequestOperation.m in Sources */,
+				5D57BEC11739AFB8004267F9 /* AFJSONRequestOperation.m in Sources */,
+				5D57BEC21739AFB8004267F9 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				5D57BEC31739AFB8004267F9 /* AFPropertyListRequestOperation.m in Sources */,
+				5D57BEC41739AFB8004267F9 /* AFURLConnectionOperation.m in Sources */,
+				5D57BEC51739AFB8004267F9 /* AFXMLRequestOperation.m in Sources */,
+				5D57BEC61739AFB8004267F9 /* UIImageView+AFNetworking.m in Sources */,
+				5D57BEC91739B010004267F9 /* MWTAPIClient.m in Sources */,
+				5D57BED51739B8C7004267F9 /* SVProgressHUD.m in Sources */,
+				5D57BEDA173A1CFA004267F9 /* MWTStockDetail.m in Sources */,
+				5D57BEDD173C4E11004267F9 /* MWTBuyNewStockViewController.m in Sources */,
+				5D57BEE117417D1C004267F9 /* MWTPortfolioShortCell.m in Sources */,
+				5D57BEE417417D2D004267F9 /* MWTPortfolioDateTimeCell.m in Sources */,
+				5D57BEE717417D39004267F9 /* MWTPortfolioStopLossCell.m in Sources */,
+				5D57BEEE1742D956004267F9 /* MWTStopLossTransaction.m in Sources */,
+				5D57BEF11742DFB9004267F9 /* MWTDateTimeTransaction.m in Sources */,
+				5D57BEF41742E37A004267F9 /* MWTShort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +604,8 @@
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
+				PROVISIONING_PROFILE = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -475,8 +619,8 @@
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5E9797DA-3BDD-43C4-9CDC-C2FAAA88D242";
+				PROVISIONING_PROFILE = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
