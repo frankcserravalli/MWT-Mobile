@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _portfolioSingleton = [MWTPortfolioSingleton sharedInstance];
 //    [_portfolioSingleton.userPortfolio getPendingDateTimePositions];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -51,24 +50,24 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return _portfolioSingleton.userPortfolio.pending_date_time_transactions.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"PendingDateTimeTransactionsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    NSDictionary *dictionaryAtIndex = [_portfolioSingleton.userPortfolio retrieveDictFromJSON:_portfolioSingleton.userPortfolio.pending_date_time_transactions At:indexPath.row];
-    cell.textLabel.text = [dictionaryAtIndex objectForKey:@"created_at"];
-    
-    return cell;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return _portfolioSingleton.userPortfolio.pending_date_time_transactions.count;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"PendingDateTimeTransactionsCell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    NSDictionary *dictionaryAtIndex = [_portfolioSingleton.userPortfolio retrieveDictFromJSON:_portfolioSingleton.userPortfolio.pending_date_time_transactions At:indexPath.row];
+//    cell.textLabel.text = [dictionaryAtIndex objectForKey:@"created_at"];
+//    
+//    return cell;
+//}
 
 /*
 // Override to support conditional editing of the table view.
