@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UIWebView *chartView;
 @property (strong, nonatomic) IBOutlet UIButton *buyButton;
 @property (strong, nonatomic) IBOutlet UIButton *sellButton;
+@property (strong, nonatomic) IBOutlet UIButton *shortButton;
 
 -(void)assignLabels;
 - (IBAction)buyButtonAction:(id)sender;
