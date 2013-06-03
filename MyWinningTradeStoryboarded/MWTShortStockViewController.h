@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentPrice;
 @property (strong, nonatomic) IBOutlet UITextField *volumeField;
 @property (strong, nonatomic) IBOutlet UILabel *borrowTotal;
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDetail;
