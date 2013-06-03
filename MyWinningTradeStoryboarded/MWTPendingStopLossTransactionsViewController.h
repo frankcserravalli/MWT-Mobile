@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWTPortfolioSingleton.h"
 
 @interface MWTPendingStopLossTransactionsViewController : UITableViewController
 
-@property (strong, nonatomic) MWTPortfolioSingleton *portfolioSingleton;
 
 @end
