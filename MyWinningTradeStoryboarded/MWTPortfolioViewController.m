@@ -83,6 +83,8 @@ static const int STOP_LOSS_POSITIONS = 3;
     
     [operation start];
     
+    _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
+    [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -364,7 +366,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.symbolLabel.text = stockAtIndexPath.symbol;
                 cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
-                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
+//                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
+                cell.priceLabel.text = [_numberToCurrencyConverter stringFromNumber:stockAtIndexPath.current_value];
                 
                 cell.symbolLabel.textColor = [UIColor blackColor];
                 cell.percentGainLabel.hidden = NO;

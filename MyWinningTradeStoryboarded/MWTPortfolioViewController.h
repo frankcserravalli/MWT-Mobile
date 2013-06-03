@@ -27,6 +27,8 @@
 
 @property (strong, nonatomic) MWTPortfolio *portfolio;
 
+@property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
+
 - (IBAction)sort:(id)sender;
 - (IBAction)segmentedControlSorter:(id)sender;
 
