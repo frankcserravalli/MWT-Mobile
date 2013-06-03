@@ -13,7 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *percentGainLabel;
 @property (strong, nonatomic) IBOutlet UILabel *symbolLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sharesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *costBasisLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sharesLabelText;
 @property (strong, nonatomic) IBOutlet UILabel *sharesAttributeLabel;
 
