@@ -605,7 +605,7 @@
                                     <constraint firstAttribute="width" constant="132" id="rcJ-wA-h3E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="q8m-Fg-0KM" id="yct-bD-8OR"/>
                                 </connections>
@@ -1180,9 +1180,9 @@
                                             <constraint firstItem="iZT-P1-ZXc" firstAttribute="leading" secondItem="Y4r-p5-0uf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="PTo-s3-Dob"/>
                                             <constraint firstItem="tqw-Ol-4KW" firstAttribute="top" secondItem="43O-yL-tRW" secondAttribute="top" constant="10" id="TgG-Gb-uKz"/>
                                             <constraint firstItem="Y4r-p5-0uf" firstAttribute="top" secondItem="tqw-Ol-4KW" secondAttribute="top" type="default" id="WZv-n7-5gl"/>
-                                            <constraint firstAttribute="trailing" secondItem="6Xb-WV-mhY" secondAttribute="trailing" constant="40" id="edB-3x-iEl"/>
                                             <constraint firstItem="pHp-kd-lzv" firstAttribute="leading" secondItem="43O-yL-tRW" secondAttribute="leading" constant="20" type="default" id="gHP-Dg-Zvm"/>
                                             <constraint firstItem="Y4r-p5-0uf" firstAttribute="bottom" secondItem="tqw-Ol-4KW" secondAttribute="bottom" type="default" id="hYe-Y1-yHu"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Xb-WV-mhY" secondAttribute="trailing" constant="20" type="default" id="iaf-Bw-EBP"/>
                                             <constraint firstItem="tqw-Ol-4KW" firstAttribute="leading" secondItem="43O-yL-tRW" secondAttribute="leading" constant="102" id="s5d-Dl-gxn"/>
                                         </constraints>
                                         <connections>
