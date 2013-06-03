@@ -364,7 +364,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 MWTStock *stockAtIndexPath = [_portfolio.stocksArray objectAtIndex:indexPath.row];
                 
                 cell.symbolLabel.text = stockAtIndexPath.symbol;
-                cell.percentGainLabel.text = [stockAtIndexPath.percent_gain stringValue];
+                NSString *percentGainString = [[stockAtIndexPath.percent_gain stringValue] stringByAppendingString:@"%"];
+                cell.percentGainLabel.text = percentGainString;
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
 //                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
                 cell.priceLabel.text = [_numberToCurrencyConverter stringFromNumber:stockAtIndexPath.current_value];
