@@ -31,6 +31,13 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
+    
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
+    
+    UIImage *resizableButton = [[UIImage imageNamed:@"button.png" ] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 6, 12, 6)];
+    [_submitButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    [_cancelButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,44 +49,57 @@
 #pragma mark - IBActions
 - (IBAction)register:(id)sender
 {
-    [SVProgressHUD showWithStatus:@"Registering"];
-    
-    /*
-     PARAMS
-     name, email, password, password_confirmation
-     */
-    
-    NSString *postPath = @"api/v1/users/create";
-    
-    NSString *name = [self compileFullNameFromFirstName:_firstName.text andLastName:_lastName.text];
-    NSString *email = _email.text;
-    NSString *password = _password.text;
-    NSString *password_confirmation = _confirmPassword.text;
-    
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            name, @"name",
-                            email, @"email",
-                            password, @"password",
-                            password_confirmation, @"password_confirmation",
-                            nil];
-    
-    MWTAPIClient *client = [MWTAPIClient sharedInstance];
-    
-    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation
-                                         JSONRequestOperationWithRequest:request
-                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                             [SVProgressHUD showSuccessWithStatus:@"Registered!"];
-                                             [self completeRegistrationWith:JSON];
-                                             [self performSegueWithIdentifier:@"RegisterToPortfolio" sender:nil];
-                                         }
-                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                             [SVProgressHUD showErrorWithStatus:@"Server error"];
-                                             
-                                             NSLog(@"%@", error);
-                                         }];
-    [operation start];
+    if ([_email.text rangeOfString:@"@"].location == NSNotFound)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Email" message:@"Please enter a valid email address." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else if (![_password.text isEqualToString:_confirmPassword.text])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Passwords don't match" message:@"Please re-enter your password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        [SVProgressHUD showWithStatus:@"Registering"];
+        
+        /*
+         PARAMS
+         name, email, password, password_confirmation
+         */
+        
+        NSString *postPath = @"api/v1/users/create";
+        
+        NSString *name = [self compileFullNameFromFirstName:_firstName.text andLastName:_lastName.text];
+        NSString *email = _email.text;
+        NSString *password = _password.text;
+        NSString *password_confirmation = _confirmPassword.text;
+        
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                name, @"name",
+                                email, @"email",
+                                password, @"password",
+                                password_confirmation, @"password_confirmation",
+                                nil];
+        
+        MWTAPIClient *client = [MWTAPIClient sharedInstance];
+        
+        NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+        
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                             JSONRequestOperationWithRequest:request
+                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                 [SVProgressHUD showSuccessWithStatus:@"Registered!"];
+                                                 [self completeRegistrationWith:JSON];
+                                                 [self performSegueWithIdentifier:@"RegisterToPortfolio" sender:nil];
+                                             }
+                                             failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                 [SVProgressHUD showErrorWithStatus:@"Server error"];
+                                                 
+                                                 NSLog(@"%@", error);
+                                             }];
+        [operation start];
+    }
 }
 
 - (IBAction)cancel:(id)sender
