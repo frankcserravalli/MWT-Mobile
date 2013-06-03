@@ -324,7 +324,7 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
                 cell.sharesAttributeLabel.hidden = YES;
                 cell.sharesLabel.hidden = YES;
-                cell.priceLabel.hidden = YES;
+                cell.costBasisLabel.hidden = YES;
                 cell.sharesLabelText.hidden = YES;
                 cell.percentGainLabel.hidden = YES;
             }
@@ -334,7 +334,7 @@ static const int STOP_LOSS_POSITIONS = 3;
             cell.symbolLabel.text = self.searchDisplayController.searchBar.text.uppercaseString;
             cell.sharesAttributeLabel.hidden = YES;
             cell.sharesLabel.hidden = YES;
-            cell.priceLabel.hidden = YES;
+            cell.costBasisLabel.hidden = YES;
             cell.sharesLabelText.hidden = YES;
             cell.percentGainLabel.hidden = YES;
         }
@@ -355,7 +355,7 @@ static const int STOP_LOSS_POSITIONS = 3;
                 
                 cell.percentGainLabel.hidden = YES;
                 cell.sharesLabel.hidden = YES;
-                cell.priceLabel.hidden = YES;
+                cell.costBasisLabel.hidden = YES;
                 cell.sharesAttributeLabel.hidden = YES;
                 
             }
@@ -368,12 +368,12 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.percentGainLabel.text = percentGainString;
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
 //                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
-                cell.priceLabel.text = [_numberToCurrencyConverter stringFromNumber:stockAtIndexPath.current_value];
+                cell.costBasisLabel.text = [_numberToCurrencyConverter stringFromNumber:stockAtIndexPath.cost_basis];
                 
                 cell.symbolLabel.textColor = [UIColor blackColor];
                 cell.percentGainLabel.hidden = NO;
                 cell.sharesLabel.hidden = NO;
-                cell.priceLabel.hidden = NO;
+                cell.costBasisLabel.hidden = NO;
                 cell.sharesAttributeLabel.hidden = NO;
                 
 
@@ -584,7 +584,7 @@ static const int STOP_LOSS_POSITIONS = 3;
             break;
         case 3:
 //            [_portfolio displayStocksArraySortedBy:@"current_value"];
-            [_portfolio sortStocksBasedOn:@"current_value"];
+            [_portfolio sortStocksBasedOn:@"cost_basis"];
             [self.tableView reloadData];
             break;
         default:
