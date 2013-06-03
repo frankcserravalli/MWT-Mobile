@@ -35,6 +35,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     UIImage *resizableButton = [[UIImage imageNamed:@"button.png" ] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 6, 12, 6)];
     [_loginButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    [_registerButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
+    
 }
 
 - (void)didReceiveMemoryWarning

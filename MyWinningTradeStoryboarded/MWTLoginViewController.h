@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *emailTextfield;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextfield;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIButton *registerButton;
 
 - (IBAction)backgroundDismissKeyboard:(id)sender;
 - (IBAction)login:(id)sender;
