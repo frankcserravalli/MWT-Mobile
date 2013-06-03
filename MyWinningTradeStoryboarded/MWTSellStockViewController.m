@@ -34,9 +34,13 @@
     [_submitButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     [_cancelButton setBackgroundImage:resizableButton forState:UIControlStateNormal];
     
+    _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
+    [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
+
+    
 	// Do any additional setup after loading the view. 
-    _companyNameLabel.text = _stock.symbol;
-    _currentPriceLabel.text = [_stock.current_price stringValue];
+    _companyNameLabel.text = _stock.name;
+    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:_stock.current_price];
     _volumeHeld.text = [NSString stringWithFormat:@"%@", _stockDetail.volume];
     _cash = _portfolio.cash;
 }
@@ -131,11 +135,15 @@
 {
     _volume = 0.0f;
     _volume = [_volumeTextField.text floatValue];
-    float totalPriceWhenSold = _volume * [_currentPriceLabel.text floatValue];
-    NSString *totalPriceWhenSoldString = [NSString stringWithFormat:@"%f", totalPriceWhenSold];
+    
+    float totalPriceWhenSold = _volume * [_stock.current_price floatValue];
+    NSNumber *totalPriceWhenSoldNumber = [NSNumber numberWithFloat:totalPriceWhenSold];
+    NSString *totalPriceWhenSoldString = [_numberToCurrencyConverter stringFromNumber:totalPriceWhenSoldNumber];
     _totalLabel.text = totalPriceWhenSoldString;
+    
     float cashAfterPurchase = [_cash floatValue] + totalPriceWhenSold;
-    _cashAfterTransactionLabel.text = [NSString stringWithFormat:@"%f", cashAfterPurchase];
+    NSNumber *cashAfterPurchaseNumber = [NSNumber numberWithFloat:cashAfterPurchase];
+    _cashAfterTransactionLabel.text = [_numberToCurrencyConverter stringFromNumber:cashAfterPurchaseNumber];
 }
 
 @end

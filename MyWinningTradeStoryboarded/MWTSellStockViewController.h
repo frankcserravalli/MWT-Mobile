@@ -33,6 +33,8 @@
 @property (strong, nonatomic) NSString *stockSymbol;
 @property (strong, nonatomic) NSNumber *cash;
 
+@property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
+
 
 @property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDetail;
