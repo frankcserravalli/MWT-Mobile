@@ -38,11 +38,21 @@
     [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
 
     
-	// Do any additional setup after loading the view. 
-    _companyNameLabel.text = _stock.name;
-    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:_stock.current_price];
-    _volumeHeld.text = [NSString stringWithFormat:@"%@", _stockDetail.volume];
+	// Do any additional setup after loading the view.
+    _companyNameLabel.text = _stockDetail.name;
+    NSNumber *currentPriceNumber = [NSNumber numberWithFloat:[_stockDetail.current_price floatValue]];
+    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:currentPriceNumber];
     _cash = _portfolio.cash;
+    
+    MWTStock *stock = [_portfolio fetchStockFromSymbol:_stockDetail.symbol];
+    if (stock)
+    {
+        _volumeHeld.text = [NSString stringWithFormat:@"%@", stock.shares_owned];
+    }
+    else
+    {
+        _volumeHeld.text = @"0";
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +63,7 @@
 
 - (IBAction)submitButtonAction:(id)sender
 {
-    [self connectToAPIPath:@"/api/v1/sells" toSell:[_volumeTextField.text integerValue] ofStock:_stockSymbol];
+    [self connectToAPIPath:@"/api/v1/sells" toSell:[_volumeTextField.text integerValue] ofStock:_stockDetail.symbol];
 //    [self cancelButtonAction:sender];
 }
 
@@ -136,7 +146,7 @@
     _volume = 0.0f;
     _volume = [_volumeTextField.text floatValue];
     
-    float totalPriceWhenSold = _volume * [_stock.current_price floatValue];
+    float totalPriceWhenSold = _volume * [_stockDetail.current_price floatValue];
     NSNumber *totalPriceWhenSoldNumber = [NSNumber numberWithFloat:totalPriceWhenSold];
     NSString *totalPriceWhenSoldString = [_numberToCurrencyConverter stringFromNumber:totalPriceWhenSoldNumber];
     _totalLabel.text = totalPriceWhenSoldString;
