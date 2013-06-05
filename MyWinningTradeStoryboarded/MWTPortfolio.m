@@ -376,7 +376,10 @@
     for (NSString *key in dictionary)
     {
         NSDictionary *shortDict = [dictionary objectForKey:key];
-        MWTShort *theShort = [[MWTShort alloc] initWith:shortDict];
+//        MWTShort *theShort = [[MWTShort alloc] initWith:shortDict];
+//        theShort.symbol = key;
+//        [shorts addObject:theShort];
+        MWTStock *theShort = [[MWTStock alloc] initWith:shortDict];
         theShort.symbol = key;
         [shorts addObject:theShort];
     }
@@ -425,6 +428,8 @@
             return stockAtIterator;
         }
     }
+    
+    return nil;
 }
 
 
