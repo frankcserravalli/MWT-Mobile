@@ -25,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 
-@property (strong, nonatomic) MWTStock *stock;
+//@property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDetail;
 @property (strong, nonatomic) MWTPortfolio *portfolio;
 @property float volume;
