@@ -43,12 +43,34 @@
 //    _stock = [[MWTStock alloc] init];
 //    [_stock getStockDetailsForStock:self.title];
     
-    NSString *URLString = [NSString stringWithFormat:@"https://www.tradingview.com/e/?symbol=%@", self.title];
-    
-    NSURL *url = [NSURL URLWithString:URLString];
-    NSURLRequest *chartRequest = [NSURLRequest requestWithURL:url];
-    [_chartView loadRequest:chartRequest];
+//    NSString *URLString = [NSString stringWithFormat:@"https://www.tradingview.com/e/?symbol=%@", self.title];
+//    
+//    NSURL *url = [NSURL URLWithString:URLString];
+//    NSURLRequest *chartRequest = [NSURLRequest requestWithURL:url];
+//    [_chartView loadRequest:chartRequest];
 
+    [self fetchStockDetails];
+    //    [self fetchPortfolio];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) assignLabels
+{
+    _companyNameLabel.text = _stock.name;
+    _buyPriceLabel.text = [_stock.current_price stringValue];
+    _percentChangeLabel.text = [_stock.percent_gain stringValue];
+    _pointChangeLabel.text = _stockDeetz.point_change;
+    _peRatioLabel.text = _stockDeetz.pe_ratio;
+    _volumeLabel.text = _stockDeetz.volume;
+}
+
+- (void) fetchStockDetails
+{
     NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
     NSString *symbol = _stock.symbol;
     NSString *postPath = @"/api/v1/stocks/details";
@@ -71,23 +93,7 @@
                                              NSLog(@"%@", error);
                                          }];
     [operation start];
-    [self fetchPortfolio];
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) assignLabels
-{
-    _companyNameLabel.text = _stock.name;
-    _buyPriceLabel.text = [_stock.current_price stringValue];
-    _percentChangeLabel.text = [_stock.percent_gain stringValue];
-    _pointChangeLabel.text = _stockDeetz.point_change;
-    _peRatioLabel.text = _stockDeetz.pe_ratio;
-    _volumeLabel.text = _stockDeetz.volume;
 }
 
 - (void) fetchPortfolio
@@ -134,12 +140,13 @@
     [self performSegueWithIdentifier:@"ShortStock" sender:self];
 }
 
+#pragma mark - Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"BuyStock"])
     {
         MWTBuyStockViewController *destinationController = [segue destinationViewController];
-        destinationController.stock = _stock;
+//        destinationController.stock = _stock;
         destinationController.stockDetail = _stockDeetz;
         destinationController.portfolio = _portfolio;
     }
@@ -147,7 +154,7 @@
     {
         MWTSellStockViewController *destinationController = [segue destinationViewController];
         destinationController.stockSymbol = self.title;
-        destinationController.stock = _stock;
+//        destinationController.stock = _stock;
         destinationController.stockDetail = _stockDeetz;
         destinationController.portfolio = _portfolio;
 
@@ -157,7 +164,7 @@
         MWTShortStockViewController *destinationViewController = [segue destinationViewController];
         destinationViewController.stockDetail = _stockDeetz;
         destinationViewController.portfolio = _portfolio;
-        destinationViewController.stock = _stock;
+//        destinationViewController.stock = _stock;
     }
     else if ([[segue identifier] isEqualToString:@"StockChart"])
     {
