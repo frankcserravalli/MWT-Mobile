@@ -405,6 +405,7 @@
                             <action selector="backgroundDismissKeyboard:" destination="Y6D-TF-SqT" eventType="touchDown" id="8DE-V9-pzE"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="ctl-Rc-l9A"/>
                     <connections>
                         <outlet property="cancelButton" destination="r5Y-Bw-piI" id="KJO-nG-Iar"/>
                         <outlet property="cashAfterPurchaseLabel" destination="6pX-LY-Gbv" id="nXW-v0-hP1"/>
@@ -418,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfU-ep-kX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="-1011"/>
+            <point key="canvasLocation" x="1350" y="-1511"/>
         </scene>
         <!--Sell Stock View Controller-->
         <scene sceneID="c2T-3R-dIv">
@@ -841,6 +842,189 @@
             </objects>
             <point key="canvasLocation" x="1298" y="-341"/>
         </scene>
+        <!--Search Details View Controller-->
+        <scene sceneID="fLQ-GS-dLt">
+            <objects>
+                <viewController id="IZh-BX-QXz" customClass="MWTSearchDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7uR-3r-xj1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-eN-74K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="Dov-rg-4pG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <state key="normal" backgroundImage="chart.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ssc-Q0-H0Y" kind="push" identifier="StockChart" id="c8a-E4-zg3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-WC-IXw">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcW-zU-Hra">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PE Ratio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5C-8z-5Ol">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Percent Change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyj-7V-O93">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Point Change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHY-yU-KHj">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-8f-xtd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-nr-0UX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-pW-ygw">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AND-UH-nlY">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYF-Yg-YA1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOO-Wh-AdK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-yQ-O99">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="8AG-rE-242"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Buy">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyButtonAction:" destination="IZh-BX-QXz" eventType="touchUpInside" id="e1z-lJ-9z9"/>
+                                    <action selector="buyButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="fxp-Rk-Kun"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-fK-COQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Pgb-lO-Dvu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sell">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sellButtonAction:" destination="IZh-BX-QXz" eventType="touchUpInside" id="3Lh-3z-L3K"/>
+                                    <action selector="sellButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="gFF-14-5it"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-ds-osg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="v5y-rY-Sot"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Short">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shortButtonAction:" destination="T3f-zd-mwX" eventType="touchUpInside" id="7Jo-qS-pOU"/>
+                                    <action selector="shortButtonAction:" destination="IZh-BX-QXz" eventType="touchUpInside" id="7iQ-87-hbH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mtf-yQ-O99" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="00y-t5-OOk"/>
+                            <constraint firstItem="Zyj-7V-O93" firstAttribute="baseline" secondItem="9ks-pW-ygw" secondAttribute="baseline" type="default" id="2aO-dP-Avu"/>
+                            <constraint firstItem="GHY-yU-KHj" firstAttribute="baseline" secondItem="AND-UH-nlY" secondAttribute="baseline" type="default" id="8NF-Rc-Gen"/>
+                            <constraint firstItem="Chv-WC-IXw" firstAttribute="top" secondItem="Ec4-eN-74K" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EV7-tZ-t6N"/>
+                            <constraint firstItem="l5C-8z-5Ol" firstAttribute="top" secondItem="GHY-yU-KHj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HjK-ty-467"/>
+                            <constraint firstItem="9ks-pW-ygw" firstAttribute="centerY" secondItem="7uR-3r-xj1" secondAttribute="centerY" type="default" id="JDo-WN-e3L"/>
+                            <constraint firstAttribute="trailing" secondItem="DOO-Wh-AdK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Jzp-EU-YA2"/>
+                            <constraint firstItem="DOO-Wh-AdK" firstAttribute="baseline" secondItem="1Lf-8f-xtd" secondAttribute="baseline" type="default" id="K59-mp-Wvl"/>
+                            <constraint firstItem="Zyj-7V-O93" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Lft-eZ-10X"/>
+                            <constraint firstItem="hdd-ds-osg" firstAttribute="centerX" secondItem="Chv-WC-IXw" secondAttribute="centerX" type="default" id="RmY-6g-Z9c"/>
+                            <constraint firstItem="Mtf-yQ-O99" firstAttribute="top" secondItem="1Lf-8f-xtd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TEi-1h-uOf"/>
+                            <constraint firstAttribute="trailing" secondItem="CCu-fK-COQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VvX-Re-a5C"/>
+                            <constraint firstAttribute="trailing" secondItem="sYF-Yg-YA1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XhM-Ts-3Gn"/>
+                            <constraint firstItem="GHY-yU-KHj" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Y5W-48-GBN"/>
+                            <constraint firstItem="hdd-ds-osg" firstAttribute="baseline" secondItem="CCu-fK-COQ" secondAttribute="baseline" type="default" id="YTC-dW-T1K"/>
+                            <constraint firstItem="hdd-ds-osg" firstAttribute="baseline" secondItem="Mtf-yQ-O99" secondAttribute="baseline" type="default" id="eb0-Mf-MWK"/>
+                            <constraint firstItem="1Lf-8f-xtd" firstAttribute="top" secondItem="l5C-8z-5Ol" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ed8-Mv-P2R"/>
+                            <constraint firstAttribute="trailing" secondItem="AND-UH-nlY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fAC-jf-El9"/>
+                            <constraint firstItem="1Lf-8f-xtd" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gEP-il-Llx"/>
+                            <constraint firstAttribute="trailing" secondItem="OeM-nr-0UX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="grV-AB-zc2"/>
+                            <constraint firstItem="sYF-Yg-YA1" firstAttribute="baseline" secondItem="l5C-8z-5Ol" secondAttribute="baseline" type="default" id="hfo-vd-bhh"/>
+                            <constraint firstItem="lcW-zU-Hra" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="iCQ-9X-6PX"/>
+                            <constraint firstItem="l5C-8z-5Ol" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jcB-D9-WTQ"/>
+                            <constraint firstItem="OeM-nr-0UX" firstAttribute="baseline" secondItem="lcW-zU-Hra" secondAttribute="baseline" type="default" id="l6S-mt-eNf"/>
+                            <constraint firstItem="GHY-yU-KHj" firstAttribute="top" secondItem="Zyj-7V-O93" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lA7-Ra-0Tn"/>
+                            <constraint firstItem="Ec4-eN-74K" firstAttribute="trailing" secondItem="7uR-3r-xj1" secondAttribute="trailing" type="default" id="oDP-Jn-sVl"/>
+                            <constraint firstItem="Zyj-7V-O93" firstAttribute="top" secondItem="lcW-zU-Hra" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ob0-TH-doh"/>
+                            <constraint firstItem="Ec4-eN-74K" firstAttribute="centerX" secondItem="Chv-WC-IXw" secondAttribute="centerX" type="default" id="ori-gn-7Nb"/>
+                            <constraint firstAttribute="trailing" secondItem="9ks-pW-ygw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vGa-Gc-QnI"/>
+                            <constraint firstItem="Ec4-eN-74K" firstAttribute="top" secondItem="7uR-3r-xj1" secondAttribute="top" type="default" id="wKb-9Q-rEC"/>
+                            <constraint firstItem="Ec4-eN-74K" firstAttribute="leading" secondItem="7uR-3r-xj1" secondAttribute="leading" type="default" id="zZJ-j3-28u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7re-GR-QZH"/>
+                    <connections>
+                        <outlet property="buyButton" destination="Mtf-yQ-O99" id="Tcf-xm-Bgh"/>
+                        <outlet property="buyPriceLabel" destination="OeM-nr-0UX" id="Gpg-3G-oaf"/>
+                        <outlet property="companyNameLabel" destination="Chv-WC-IXw" id="BBW-7F-UGl"/>
+                        <outlet property="peRatioLabel" destination="sYF-Yg-YA1" id="acp-Ct-axG"/>
+                        <outlet property="percentChangeLabel" destination="9ks-pW-ygw" id="cG7-aY-HLY"/>
+                        <outlet property="pointChangeLabel" destination="AND-UH-nlY" id="Gbj-CB-HPe"/>
+                        <outlet property="sellButton" destination="CCu-fK-COQ" id="oAG-fG-j49"/>
+                        <outlet property="shortButton" destination="hdd-ds-osg" id="z7n-fv-ABT"/>
+                        <outlet property="volumeLabel" destination="DOO-Wh-AdK" id="gn1-pE-KXg"/>
+                        <segue destination="Y6D-TF-SqT" kind="modal" identifier="BuyStock" id="bfA-pu-lhK"/>
+                        <segue destination="bih-vL-2Su" kind="modal" identifier="SellStock" id="jcw-vf-viw"/>
+                        <segue destination="q8m-Fg-0KM" kind="modal" identifier="ShortStock" id="Oe6-7z-w2U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ja0-Ee-892" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="-1234"/>
+        </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="EJd-pn-a1q">
             <objects>
@@ -1027,7 +1211,7 @@
             <objects>
                 <viewController id="Ssc-Q0-H0Y" customClass="MWTStockChartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RgN-9p-jsc">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZyC-CT-ac6">
@@ -1080,7 +1264,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwM-nK-3cR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="-179"/>
+            <point key="canvasLocation" x="1617" y="1058"/>
         </scene>
         <!--Portfolio View Controller - Dashboard-->
         <scene sceneID="ua9-RM-Dpg">
@@ -1340,6 +1524,7 @@
                         <segue destination="u27-2O-d5O" kind="push" identifier="PendingStopLossTransactions" id="QO5-8f-oQR"/>
                         <segue destination="T3f-zd-mwX" kind="push" identifier="StockDetails" id="djR-re-y7K"/>
                         <segue destination="TmW-Dc-N2y" kind="modal" identifier="BuyNewStock" id="5Wu-Ux-GSL"/>
+                        <segue destination="IZh-BX-QXz" kind="push" identifier="SearchDetails" id="lZc-dz-FIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCs-W9-cPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1353,7 +1538,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1277" y="460"/>
+            <point key="canvasLocation" x="1261" y="390"/>
         </scene>
         <!--Pending Date Time Transactions View Controller-->
         <scene sceneID="aRb-Bv-scq">
@@ -1383,7 +1568,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEN-ik-vTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167" y="600"/>
+            <point key="canvasLocation" x="2397" y="1058"/>
         </scene>
         <!--Pending Stop Loss Transactions View Controller-->
         <scene sceneID="355-yP-dNd">
@@ -1413,7 +1598,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9i-Fk-Wyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="-136"/>
+            <point key="canvasLocation" x="1995" y="1058"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aue-0A-sDW">
@@ -1536,6 +1721,23 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="MWTSearchDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSearchDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buyButtonAction:"/>
+                <relationship kind="action" name="sellButtonAction:"/>
+                <relationship kind="action" name="shortButtonAction:"/>
+                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buyPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="companyNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="peRatioLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percentChangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pointChangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="shortButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="MWTSellStockViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWTSellStockViewController.h"/>
             <relationships>
@@ -1625,7 +1827,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xuo-IA-M18"/>
         <segue reference="vw0-Us-hfc"/>
+        <segue reference="Xuo-IA-M18"/>
+        <segue reference="jcw-vf-viw"/>
+        <segue reference="Oe6-7z-w2U"/>
+        <segue reference="c8a-E4-zg3"/>
+        <segue reference="bfA-pu-lhK"/>
     </inferredMetricsTieBreakers>
 </document>
