@@ -18,6 +18,7 @@
 #import "MWTPendingStopLossTransactionsViewController.h"
 #import "MWTStockDetailViewController.h"
 #import "MWTBuyNewStockViewController.h"
+#import "MWTSearchDetailsViewController.h"
 
 @interface MWTPortfolioViewController ()
 
@@ -203,7 +204,7 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else
         {
-            return 1;
+            return [self.searchResults count];
         }
     }
     else
@@ -322,6 +323,7 @@ static const int STOP_LOSS_POSITIONS = 3;
             else
             {
                 cell.symbolLabel.text = [_filteredList objectAtIndex:indexPath.row];
+//                cell.symbolLabel.text = result.symbol;
                 cell.sharesAttributeLabel.hidden = YES;
                 cell.sharesLabel.hidden = YES;
                 cell.costBasisLabel.hidden = YES;
@@ -331,10 +333,13 @@ static const int STOP_LOSS_POSITIONS = 3;
         }
         else
         {
-            cell.symbolLabel.text = self.searchDisplayController.searchBar.text.uppercaseString;
+            MWTSearchResult *result = [_searchResults objectAtIndex:indexPath.row];
+//            cell.symbolLabel.text = self.searchDisplayController.searchBar.text.uppercaseString;
+            cell.symbolLabel.text = result.name;
             cell.sharesAttributeLabel.hidden = YES;
             cell.sharesLabel.hidden = YES;
-            cell.costBasisLabel.hidden = YES;
+//            cell.costBasisLabel.hidden = YES;
+            cell.costBasisLabel.text = result.symbol;
             cell.sharesLabelText.hidden = YES;
             cell.percentGainLabel.hidden = YES;
         }
@@ -393,7 +398,7 @@ static const int STOP_LOSS_POSITIONS = 3;
             }
             else
             {
-                MWTShort *shortAtIndexPath = [_portfolio.shortsArray objectAtIndex:indexPath.row];
+                MWTStock *shortAtIndexPath = [_portfolio.shortsArray objectAtIndex:indexPath.row];
                 
                 cell.cellTitle.textColor = [UIColor blackColor];
                 cell.cellTitle.text = shortAtIndexPath.symbol;
@@ -461,8 +466,8 @@ static const int STOP_LOSS_POSITIONS = 3;
         else if (indexPath.section == 1)
         {
             MWTPortfolioStockCell *cell = (MWTPortfolioStockCell *)[tableView cellForRowAtIndexPath:indexPath];
-            NSString *stockSymbol = cell.symbolLabel.text.uppercaseString;
-            [self performSegueWithIdentifier:@"BuyNewStock" sender:stockSymbol];
+            MWTSearchResult *searchResult = [_searchResults objectAtIndex:indexPath.row];
+            [self performSegueWithIdentifier:@"SearchDetails" sender:searchResult];
         }
     }
     else
@@ -479,6 +484,13 @@ static const int STOP_LOSS_POSITIONS = 3;
         else if (indexPath.section == SHORTS)
         {
 //            [self performSegueWithIdentifier:@"Shorts" sender:self];
+            MWTStock *shortAtIndexPath = nil;
+            if (_portfolio.shortsArray.count > 0)
+            {
+                shortAtIndexPath = (MWTStock *)[_portfolio.shortsArray objectAtIndex:indexPath.row];
+                [self performSegueWithIdentifier:@"StockDetails" sender:shortAtIndexPath];
+            }
+            
         }
         else if (indexPath.section == DATE_TIME_POSITIONS)
         {
@@ -532,10 +544,11 @@ static const int STOP_LOSS_POSITIONS = 3;
     else if ([[segue identifier] isEqualToString:@"StockDetails"])
     {
         MWTStockDetailViewController *detailViewController = [segue destinationViewController];
-                        
+        
         MWTStock *stock = (MWTStock *)sender;
         detailViewController.title = stock.symbol;
         detailViewController.stock = stock;
+        detailViewController.portfolio = _portfolio;
     }
     else if ([segue.identifier isEqualToString:@"BuyNewStock"])
     {
@@ -547,8 +560,13 @@ static const int STOP_LOSS_POSITIONS = 3;
         if (destinationViewController.view)
         {
             destinationViewController.companyName.text = stockSymbol;
-            destinationViewController.cash.text = [_portfolio.cash stringValue];
+//            destinationViewController.cash.text = [_portfolio.cash stringValue];
         }
+    }
+    else if ([segue.identifier isEqualToString:@"SearchDetails"])
+    {
+        MWTSearchDetailsViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.searchResult = (MWTSearchResult *)sender;
     }
     else
     {
@@ -625,8 +643,46 @@ static const int STOP_LOSS_POSITIONS = 3;
 //    _tableView.frame = CGRectMake(_tableView.frame.origin.x, 0, _tableView.frame.size.width, _tableView.frame.size.height);
 }
 
+- (void) searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self fetchSearchResultsWithTerm:searchBar.text];
+}
+
 - (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
 //_tableView.frame = CGRectMake(_tableView.frame.origin.x, 0, _tableView.frame.size.width, _tableView.frame.size.height);
 }
+
+#pragma mark - Search Data
+- (void) fetchSearchResultsWithTerm:(NSString *)searchTerm
+{
+    NSString *ios_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"ios_token"];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            ios_token, @"ios_token",
+                            searchTerm, @"term",
+                            nil];
+    NSString *postPath = @"/api/v1/stocks/search";
+    
+    MWTAPIClient *client = [MWTAPIClient sharedInstance];
+    NSURLRequest *request = [client requestWithMethod:@"POST" path:postPath parameters:params];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                         JSONRequestOperationWithRequest:request
+                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                             NSLog(@"%@", JSON);
+                                             _searchResults = [NSMutableArray array];
+                                             for (id searchResultDictionary in JSON)
+                                             {
+                                                 MWTSearchResult *searchResult = [[MWTSearchResult alloc] initWith:searchResultDictionary];
+                                                 [_searchResults addObject:searchResult];
+                                                 [self.searchDisplayController.searchResultsTableView reloadData];
+                                             }
+                                             
+                                         }
+                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                             NSLog(@"%@", error);
+                                         }];
+    [operation start];
+}
+
 @end

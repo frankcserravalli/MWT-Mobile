@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MWTPortfolio.h"
+#import "MWTSearchResult.h"
 #import "AFNetworking.h"
 #import "MWTAPIClient.h"
 
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) NSArray *interfaceElements;
 @property (strong, nonatomic) NSArray *tableHeaders;
 @property (strong, nonatomic) NSMutableArray *filteredList;
+@property (strong, nonatomic) NSMutableArray *searchResults;
 
 @property (strong, nonatomic) MWTPortfolio *portfolio;
 
