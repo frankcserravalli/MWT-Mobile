@@ -31,6 +31,13 @@
 		5D57BEF41742E37A004267F9 /* MWTShort.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEF31742E37A004267F9 /* MWTShort.m */; };
 		5D5BEC61175D222200962AC5 /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC5F175D222200962AC5 /* chart@2x.png */; };
 		5D5BEC62175D222200962AC5 /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC60175D222200962AC5 /* chart.png */; };
+		5D5BEC64175D430C00962AC5 /* App Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC63175D430C00962AC5 /* App Icon.png */; };
+		5D5BEC66175D431000962AC5 /* App Icon @2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC65175D431000962AC5 /* App Icon @2x.png */; };
+		5D5BEC6E175D45ED00962AC5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC6D175D45ED00962AC5 /* Default-568h@2x.png */; };
+		5D5BEC70175D45F600962AC5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC6F175D45F600962AC5 /* Default@2x.png */; };
+		5D5BEC72175D460000962AC5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BEC71175D460000962AC5 /* Default.png */; };
+		5D62CEBE175E5BCD00EE300A /* MWTSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D62CEBD175E5BCD00EE300A /* MWTSearchResult.m */; };
+		5D62CEC1175FA24E00EE300A /* MWTSearchDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D62CEC0175FA24E00EE300A /* MWTSearchDetailsViewController.m */; };
 		5D6400EE16AF33C700D5F659 /* MWTStockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400ED16AF33C700D5F659 /* MWTStockCell.m */; };
 		5D6400F116AF411600D5F659 /* MWTShortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F016AF411600D5F659 /* MWTShortsViewController.m */; };
 		5D6400F516AF4BD500D5F659 /* MWTStockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6400F416AF4BD500D5F659 /* MWTStockDetailViewController.m */; };
@@ -114,6 +121,15 @@
 		5D57BEF31742E37A004267F9 /* MWTShort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTShort.m; sourceTree = "<group>"; };
 		5D5BEC5F175D222200962AC5 /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
 		5D5BEC60175D222200962AC5 /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
+		5D5BEC63175D430C00962AC5 /* App Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App Icon.png"; path = "../App Icon.png"; sourceTree = "<group>"; };
+		5D5BEC65175D431000962AC5 /* App Icon @2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App Icon @2x.png"; path = "../App Icon @2x.png"; sourceTree = "<group>"; };
+		5D5BEC6D175D45ED00962AC5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		5D5BEC6F175D45F600962AC5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		5D5BEC71175D460000962AC5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		5D62CEBC175E5BCD00EE300A /* MWTSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSearchResult.h; sourceTree = "<group>"; };
+		5D62CEBD175E5BCD00EE300A /* MWTSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSearchResult.m; sourceTree = "<group>"; };
+		5D62CEBF175FA24E00EE300A /* MWTSearchDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTSearchDetailsViewController.h; sourceTree = "<group>"; };
+		5D62CEC0175FA24E00EE300A /* MWTSearchDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTSearchDetailsViewController.m; sourceTree = "<group>"; };
 		5D6400EC16AF33C700D5F659 /* MWTStockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTStockCell.h; sourceTree = "<group>"; };
 		5D6400ED16AF33C700D5F659 /* MWTStockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTStockCell.m; sourceTree = "<group>"; };
 		5D6400EF16AF411600D5F659 /* MWTShortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTShortsViewController.h; sourceTree = "<group>"; };
@@ -243,6 +259,8 @@
 		5D6400F216AF412200D5F659 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				5D62CEBF175FA24E00EE300A /* MWTSearchDetailsViewController.h */,
+				5D62CEC0175FA24E00EE300A /* MWTSearchDetailsViewController.m */,
 				5D7420DB16A8A656002E5CA3 /* MWTPortfolioViewController.h */,
 				5D7420DC16A8A656002E5CA3 /* MWTPortfolioViewController.m */,
 				5D57BEDE17417D00004267F9 /* Portfolio Cells */,
@@ -370,6 +388,8 @@
 		5DA9A6E616B0475C00C67CEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5D62CEBC175E5BCD00EE300A /* MWTSearchResult.h */,
+				5D62CEBD175E5BCD00EE300A /* MWTSearchResult.m */,
 				5D57BED8173A1CFA004267F9 /* MWTStockDetail.h */,
 				5D57BED9173A1CFA004267F9 /* MWTStockDetail.m */,
 				5DA9A6EB16B06C4B00C67CEA /* MWTStock.h */,
@@ -389,6 +409,11 @@
 		5DC50A5816EAB7CF000E59CA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BEC71175D460000962AC5 /* Default.png */,
+				5D5BEC6F175D45F600962AC5 /* Default@2x.png */,
+				5D5BEC6D175D45ED00962AC5 /* Default-568h@2x.png */,
+				5D5BEC65175D431000962AC5 /* App Icon @2x.png */,
+				5D5BEC63175D430C00962AC5 /* App Icon.png */,
 				5D5BEC5F175D222200962AC5 /* chart@2x.png */,
 				5D5BEC60175D222200962AC5 /* chart.png */,
 				5D935FD91721F29600AEB465 /* graphOpaque.png */,
@@ -470,6 +495,11 @@
 				5D57BED41739B8C7004267F9 /* SVProgressHUD.bundle in Resources */,
 				5D5BEC61175D222200962AC5 /* chart@2x.png in Resources */,
 				5D5BEC62175D222200962AC5 /* chart.png in Resources */,
+				5D5BEC64175D430C00962AC5 /* App Icon.png in Resources */,
+				5D5BEC66175D431000962AC5 /* App Icon @2x.png in Resources */,
+				5D5BEC6E175D45ED00962AC5 /* Default-568h@2x.png in Resources */,
+				5D5BEC70175D45F600962AC5 /* Default@2x.png in Resources */,
+				5D5BEC72175D460000962AC5 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +550,8 @@
 				5D57BEEE1742D956004267F9 /* MWTStopLossTransaction.m in Sources */,
 				5D57BEF11742DFB9004267F9 /* MWTDateTimeTransaction.m in Sources */,
 				5D57BEF41742E37A004267F9 /* MWTShort.m in Sources */,
+				5D62CEBE175E5BCD00EE300A /* MWTSearchResult.m in Sources */,
+				5D62CEC1175FA24E00EE300A /* MWTSearchDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,14 +630,14 @@
 		5D7420C516A8989D002E5CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (V45776U728)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (V45776U728)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (WPQCS4SRJ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (WPQCS4SRJ9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
+				PROVISIONING_PROFILE = "4060FCCE-5D31-44F2-95A5-2812DA870FD7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4060FCCE-5D31-44F2-95A5-2812DA870FD7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -613,14 +645,14 @@
 		5D7420C616A8989D002E5CA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (V45776U728)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (V45776U728)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe LEVIN (WPQCS4SRJ9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joe LEVIN (WPQCS4SRJ9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Prefix.pch";
 				INFOPLIST_FILE = "MyWinningTradeStoryboarded/MyWinningTradeStoryboarded-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD72E6CC-CC37-41D6-A62A-4DED8143D242";
+				PROVISIONING_PROFILE = "4060FCCE-5D31-44F2-95A5-2812DA870FD7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4060FCCE-5D31-44F2-95A5-2812DA870FD7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
