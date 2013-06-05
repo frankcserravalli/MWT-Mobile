@@ -38,9 +38,10 @@
     _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
     [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    _companyNameLabel.text = _stock.name;
+    _companyNameLabel.text = _stockDetail.name;
 //    _currentPriceLabel.text = [_stock.current_price stringValue];
-    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:_stock.current_price];
+    NSNumber *currentPriceNumber = [NSNumber numberWithFloat:[_stockDetail.current_price floatValue]];
+    _currentPriceLabel.text = [_numberToCurrencyConverter stringFromNumber:currentPriceNumber];
 //    _currentCashLabel.text = [_portfolio.cash stringValue];
     _currentCashLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.cash];
 }
@@ -55,7 +56,7 @@
 {
     NSLog(@"Bought %i shares", [[_volumeTextField text] integerValue]);
     
-    [self connectToAPIPath:@"/api/v1/buys" toBuy:[_volumeTextField.text integerValue] ofStock:_stock.symbol];
+    [self connectToAPIPath:@"/api/v1/buys" toBuy:[_volumeTextField.text integerValue] ofStock:_stockDetail.symbol];
 }
 
 - (IBAction)cancelButtonAction:(id)sender
@@ -127,7 +128,7 @@
     _volume = 0.0f;
     _volume = [[_volumeTextField text] floatValue];
     
-    float totalPriceToBuy = _volume * [_stock.current_price floatValue];
+    float totalPriceToBuy = _volume * [_stockDetail.current_price floatValue];
     NSNumber *totalPriceToBuyNumber = [NSNumber numberWithFloat:totalPriceToBuy];
     NSString *totalPriceToBuyString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBuyNumber];
     _totalPriceToBuyLabel.text = totalPriceToBuyString;
@@ -145,7 +146,7 @@
     _volume = 0.0f;
     _volume = [[_volumeTextField text] floatValue];
     
-    float totalPriceToBuy = _volume * [_stock.current_price floatValue];
+    float totalPriceToBuy = _volume * [_stockDetail.current_price floatValue];
     NSNumber *totalPriceToBuyNumber = [NSNumber numberWithFloat:totalPriceToBuy];
     NSString *totalPriceToBuyString = [_numberToCurrencyConverter stringFromNumber:totalPriceToBuyNumber];
     _totalPriceToBuyLabel.text = totalPriceToBuyString;

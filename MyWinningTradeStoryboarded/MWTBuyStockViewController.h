@@ -32,7 +32,7 @@
 @property float volume;
 @property (strong, nonatomic) NSNumberFormatter *numberToCurrencyConverter;
 
-@property (strong, nonatomic) MWTStock *stock;
+//@property (strong, nonatomic) MWTStock *stock;
 @property (strong, nonatomic) MWTStockDetail *stockDetail;
 @property (strong, nonatomic) MWTPortfolio *portfolio;
 
