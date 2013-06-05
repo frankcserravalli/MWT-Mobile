@@ -41,6 +41,7 @@
 
     _numberToCurrencyConverter = [[NSNumberFormatter alloc] init];
     [_numberToCurrencyConverter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    _cash.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.cash];
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,7 +127,8 @@
                                              NSDictionary *stockDetails = [JSON objectForKey:@"table"];
                                              _stockDeetz = [[MWTStockDetail alloc] initWith:stockDetails];
                                              
-                                             _currentPrice.text = _stockDeetz.current_price;
+                                             NSNumber *currentPriceNumber = [NSNumber numberWithFloat:[_stockDeetz.current_price floatValue]];
+                                             _currentPrice.text = [_numberToCurrencyConverter stringFromNumber:currentPriceNumber];
                                              [SVProgressHUD showSuccessWithStatus:@"Details downloaded"];
                                          }
                                          failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
