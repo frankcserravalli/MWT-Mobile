@@ -28,9 +28,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.view.backgroundColor = background;
     
-    CGFloat red = 55/255.0f;
-    CGFloat green = 70/255.0f;
-    CGFloat blue = 87/255.0f;
+    CGFloat red = 61/255.0f;
+    CGFloat green = 80/255.0f;
+    CGFloat blue = 100/255.0f;
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
     
     UIImage *resizableButton = [[UIImage imageNamed:@"button.png" ] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 6, 12, 6)];
