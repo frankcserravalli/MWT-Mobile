@@ -37,15 +37,19 @@ static const int STOP_LOSS_POSITIONS = 3;
     
     self.navigationItem.hidesBackButton = YES;
     
-    CGFloat red = 55/255.0f;
-    CGFloat green = 70/255.0f;
-    CGFloat blue = 87/255.0f;
-    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+//    CGFloat red = 55/255.0f;
+//    CGFloat green = 70/255.0f;
+//    CGFloat blue = 87/255.0f;
+//    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
 
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.view.backgroundColor = background;
         
-    _sorterSegmentedControl.tintColor = [UIColor colorWithRed:155/255.0 green:160/255.0 blue:133/255.0 alpha:1];
+    _sorterSegmentedControl.tintColor = [UIColor colorWithRed:0.414 green:0.510 blue:0.364 alpha:1.000];
+    
+    [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:61/255.0 green:80/255.0 blue:100/255.0 alpha:1.0]];
+    
+    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:0.414 green:0.510 blue:0.364 alpha:1.000]];
     
     self.navigationItem.backBarButtonItem.title = @"Logout";
     
@@ -69,9 +73,12 @@ static const int STOP_LOSS_POSITIONS = 3;
                                              NSLog(@"%@", JSON);
                                              _portfolio = [[MWTPortfolio alloc] initWith:JSON];
                                              
-                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
-                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
-                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+//                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
+//                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
+//                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+                                             _portfolioValue.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.current_value];
+                                             _accountValueLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.account_value];
+                                             _cashLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.cash];
                                              
                                              [_tableView reloadData];
                                              
@@ -109,9 +116,12 @@ static const int STOP_LOSS_POSITIONS = 3;
                                              NSLog(@"%@", JSON);
                                              _portfolio = [[MWTPortfolio alloc] initWith:JSON];
                                              
-                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
-                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
-                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+//                                             _portfolioValue.text = [self abbreviate:_portfolio.current_value];
+//                                             _accountValueLabel.text = [self abbreviate:_portfolio.account_value];
+//                                             _cashLabel.text = [self abbreviate:_portfolio.cash];
+                                             _portfolioValue.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.current_value];
+                                             _accountValueLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.account_value];
+                                             _cashLabel.text = [_numberToCurrencyConverter stringFromNumber:_portfolio.cash];
                                              
                                              [_tableView reloadData];
                                              
@@ -371,6 +381,14 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.symbolLabel.text = stockAtIndexPath.symbol;
                 NSString *percentGainString = [[stockAtIndexPath.percent_gain stringValue] stringByAppendingString:@"%"];
                 cell.percentGainLabel.text = percentGainString;
+                if ([stockAtIndexPath.percent_gain floatValue] > 0)
+                {
+                    cell.percentGainLabel.textColor = [UIColor colorWithRed:0.414 green:0.510 blue:0.364 alpha:1.000];
+                }
+                else
+                {
+                    cell.percentGainLabel.textColor = [UIColor redColor];
+                }
                 cell.sharesLabel.text = [stockAtIndexPath.shares_owned stringValue];
 //                cell.priceLabel.text = [stockAtIndexPath.current_value stringValue];
                 cell.costBasisLabel.text = [_numberToCurrencyConverter stringFromNumber:stockAtIndexPath.cost_basis];
@@ -383,6 +401,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 
 
             }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
             
             return cell;
         }
@@ -404,6 +424,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.cellTitle.text = shortAtIndexPath.symbol;
             }
             
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            
             return cell;
         }
         else if (indexPath.section == DATE_TIME_POSITIONS)
@@ -423,6 +445,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.cellTitle.textColor = [UIColor blackColor];
                 cell.cellTitle.text =  dateTimeAtIndexPath.created_at;
             }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
             return cell;
         }
@@ -443,6 +467,8 @@ static const int STOP_LOSS_POSITIONS = 3;
                 cell.cellTitle.textColor = [UIColor blackColor];
 
             }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             return cell;
         }
