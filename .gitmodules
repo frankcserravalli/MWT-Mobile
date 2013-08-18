@@ -1,3 +1,6 @@
 [submodule "SVProgressHUD"]
 	path = SVProgressHUD
 	url = https://github.com/samvermette/SVProgressHUD.git
+[submodule "LAWalkthrough"]
+	path = LAWalkthrough
+	url = https://github.com/larryaasen/LAWalkthrough.git
