@@ -71,9 +71,9 @@
 		5DA9A6ED16B06C4B00C67CEA /* MWTStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9A6EC16B06C4B00C67CEA /* MWTStock.m */; };
 		5DC50A5B16EAB7E2000E59CA /* segmentControl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DC50A5A16EAB7E2000E59CA /* segmentControl.jpg */; };
 		5DE2489616BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */; };
-		6E87272D17C02C0000242164 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E87271417C02C0000242164 /* .gitignore */; };
-		6E87273817C02C0000242164 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E87272917C02C0000242164 /* SVProgressHUD.bundle */; };
-		6E87273917C02C0000242164 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E87272B17C02C0000242164 /* SVProgressHUD.m */; };
+		6E5FE7A817C05DBB0060CCF5 /* LAWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FE7A717C05DBB0060CCF5 /* LAWalkthroughViewController.m */; };
+		6E5FE7AD17C05DF70060CCF5 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E5FE7AA17C05DF70060CCF5 /* SVProgressHUD.bundle */; };
+		6E5FE7AE17C05DF70060CCF5 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FE7AC17C05DF70060CCF5 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,10 +186,11 @@
 		5DC50A5A16EAB7E2000E59CA /* segmentControl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = segmentControl.jpg; sourceTree = "<group>"; };
 		5DE2489416BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingDateTimeTransactionsViewController.h; sourceTree = "<group>"; };
 		5DE2489516BADB6C00DC827F /* MWTPendingDateTimeTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingDateTimeTransactionsViewController.m; sourceTree = "<group>"; };
-		6E87271417C02C0000242164 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		6E87272917C02C0000242164 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		6E87272A17C02C0000242164 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		6E87272B17C02C0000242164 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		6E5FE7A617C05DBB0060CCF5 /* LAWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAWalkthroughViewController.h; sourceTree = "<group>"; };
+		6E5FE7A717C05DBB0060CCF5 /* LAWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAWalkthroughViewController.m; sourceTree = "<group>"; };
+		6E5FE7AA17C05DF70060CCF5 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		6E5FE7AB17C05DF70060CCF5 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		6E5FE7AC17C05DF70060CCF5 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,7 +302,8 @@
 		5D7420A316A8989D002E5CA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E87271317C02C0000242164 /* SVProgressHUD */,
+				6E5FE7A917C05DF60060CCF5 /* SVProgressHUD */,
+				6E5FE7A517C05DBB0060CCF5 /* LAWalkthrough */,
 				5D57BEAA1739AFB8004267F9 /* AFNetworking */,
 				5D57BED61739B8E8004267F9 /* QuartzCore.framework */,
 				5D7420A416A8989D002E5CA3 /* UIKit.framework */,
@@ -419,15 +421,25 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		6E87271317C02C0000242164 /* SVProgressHUD */ = {
+		6E5FE7A517C05DBB0060CCF5 /* LAWalkthrough */ = {
 			isa = PBXGroup;
 			children = (
-				6E87272917C02C0000242164 /* SVProgressHUD.bundle */,
-				6E87272A17C02C0000242164 /* SVProgressHUD.h */,
-				6E87272B17C02C0000242164 /* SVProgressHUD.m */,
-				6E87271417C02C0000242164 /* .gitignore */,
+				6E5FE7A617C05DBB0060CCF5 /* LAWalkthroughViewController.h */,
+				6E5FE7A717C05DBB0060CCF5 /* LAWalkthroughViewController.m */,
 			);
-			path = SVProgressHUD;
+			name = LAWalkthrough;
+			path = LAWalkthrough/LAWalkthrough;
+			sourceTree = "<group>";
+		};
+		6E5FE7A917C05DF60060CCF5 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6E5FE7AA17C05DF70060CCF5 /* SVProgressHUD.bundle */,
+				6E5FE7AB17C05DF70060CCF5 /* SVProgressHUD.h */,
+				6E5FE7AC17C05DF70060CCF5 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD/SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,8 +514,7 @@
 				5D5BEC6E175D45ED00962AC5 /* Default-568h@2x.png in Resources */,
 				5D5BEC70175D45F600962AC5 /* Default@2x.png in Resources */,
 				5D5BEC72175D460000962AC5 /* Default.png in Resources */,
-				6E87272D17C02C0000242164 /* .gitignore in Resources */,
-				6E87273817C02C0000242164 /* SVProgressHUD.bundle in Resources */,
+				6E5FE7AD17C05DF70060CCF5 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +566,8 @@
 				5D57BEF41742E37A004267F9 /* MWTShort.m in Sources */,
 				5D62CEBE175E5BCD00EE300A /* MWTSearchResult.m in Sources */,
 				5D62CEC1175FA24E00EE300A /* MWTSearchDetailsViewController.m in Sources */,
-				6E87273917C02C0000242164 /* SVProgressHUD.m in Sources */,
+				6E5FE7A817C05DBB0060CCF5 /* LAWalkthroughViewController.m in Sources */,
+				6E5FE7AE17C05DF70060CCF5 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
