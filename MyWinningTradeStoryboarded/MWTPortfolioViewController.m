@@ -134,6 +134,22 @@ static const int STOP_LOSS_POSITIONS = 3;
                                          }];
     
     [operation start];
+    
+    [super viewWillAppear:animated];
+    
+    self.view.layer.shadowOpacity = 0.75f;
+    self.view.layer.shadowRadius = 10.0f;
+    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[LeftMenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    }
+    
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+- (IBAction)revealMenu:(id)sender
+{
+    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -710,5 +726,4 @@ static const int STOP_LOSS_POSITIONS = 3;
                                          }];
     [operation start];
 }
-
 @end
