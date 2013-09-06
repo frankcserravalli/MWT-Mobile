@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0166878A17DA8C6E00E47EE5 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166878517DA8C6E00E47EE5 /* ECSlidingViewController.m */; };
-		0166878B17DA8C6E00E47EE5 /* InitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166878717DA8C6E00E47EE5 /* InitialSlidingViewController.m */; };
-		0166878C17DA8C6E00E47EE5 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166878917DA8C6E00E47EE5 /* UIImage+ImageWithUIView.m */; };
-		0166878F17DA8D7200E47EE5 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166878E17DA8D7200E47EE5 /* LeftMenuViewController.m */; };
 		5D241AB316BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */; };
 		5D57BEBE1739AFB8004267F9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEAC1739AFB8004267F9 /* AFHTTPClient.m */; };
 		5D57BEBF1739AFB8004267F9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57BEAE1739AFB8004267F9 /* AFHTTPRequestOperation.m */; };
@@ -81,14 +77,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0166878417DA8C6E00E47EE5 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
-		0166878517DA8C6E00E47EE5 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
-		0166878617DA8C6E00E47EE5 /* InitialSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSlidingViewController.h; sourceTree = "<group>"; };
-		0166878717DA8C6E00E47EE5 /* InitialSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSlidingViewController.m; sourceTree = "<group>"; };
-		0166878817DA8C6E00E47EE5 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
-		0166878917DA8C6E00E47EE5 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
-		0166878D17DA8D7200E47EE5 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = ../LeftMenuViewController.h; sourceTree = "<group>"; };
-		0166878E17DA8D7200E47EE5 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = ../LeftMenuViewController.m; sourceTree = "<group>"; };
 		5D241AB116BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTPendingStopLossTransactionsViewController.h; sourceTree = "<group>"; };
 		5D241AB216BADDA00083D0DA /* MWTPendingStopLossTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTPendingStopLossTransactionsViewController.m; sourceTree = "<group>"; };
 		5D57BEAB1739AFB8004267F9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -220,19 +208,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0166878317DA8C6E00E47EE5 /* ECSlidingViewControllerVendorFiles */ = {
-			isa = PBXGroup;
-			children = (
-				0166878417DA8C6E00E47EE5 /* ECSlidingViewController.h */,
-				0166878517DA8C6E00E47EE5 /* ECSlidingViewController.m */,
-				0166878617DA8C6E00E47EE5 /* InitialSlidingViewController.h */,
-				0166878717DA8C6E00E47EE5 /* InitialSlidingViewController.m */,
-				0166878817DA8C6E00E47EE5 /* UIImage+ImageWithUIView.h */,
-				0166878917DA8C6E00E47EE5 /* UIImage+ImageWithUIView.m */,
-			);
-			path = ECSlidingViewControllerVendorFiles;
-			sourceTree = "<group>";
-		};
 		5D57BEAA1739AFB8004267F9 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +302,6 @@
 		5D7420A316A8989D002E5CA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0166878317DA8C6E00E47EE5 /* ECSlidingViewControllerVendorFiles */,
 				6E5FE7A917C05DF60060CCF5 /* SVProgressHUD */,
 				6E5FE7A517C05DBB0060CCF5 /* LAWalkthrough */,
 				5D57BEAA1739AFB8004267F9 /* AFNetworking */,
@@ -377,8 +351,6 @@
 		5D7420DA16A8A60A002E5CA3 /* Interface View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0166878D17DA8D7200E47EE5 /* LeftMenuViewController.h */,
-				0166878E17DA8D7200E47EE5 /* LeftMenuViewController.m */,
 				5D7420CD16A89C68002E5CA3 /* MWTCellDetailViewController.h */,
 				5D7420CE16A89C68002E5CA3 /* MWTCellDetailViewController.m */,
 				5D7420D416A89FB8002E5CA3 /* MWTLoginViewController.h */,
@@ -596,10 +568,6 @@
 				5D62CEC1175FA24E00EE300A /* MWTSearchDetailsViewController.m in Sources */,
 				6E5FE7A817C05DBB0060CCF5 /* LAWalkthroughViewController.m in Sources */,
 				6E5FE7AE17C05DF70060CCF5 /* SVProgressHUD.m in Sources */,
-				0166878A17DA8C6E00E47EE5 /* ECSlidingViewController.m in Sources */,
-				0166878B17DA8C6E00E47EE5 /* InitialSlidingViewController.m in Sources */,
-				0166878C17DA8C6E00E47EE5 /* UIImage+ImageWithUIView.m in Sources */,
-				0166878F17DA8D7200E47EE5 /* LeftMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

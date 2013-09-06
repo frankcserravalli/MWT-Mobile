@@ -4,6 +4,3 @@
 [submodule "LAWalkthrough"]
 	path = LAWalkthrough
 	url = https://github.com/larryaasen/LAWalkthrough.git
-[submodule "ECSlidingViewController"]
-	path = ECSlidingViewController
-	url = https://github.com/edgecase/ECSlidingViewController.git

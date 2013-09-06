@@ -11,7 +11,7 @@
 #import "MWTSearchResult.h"
 #import "AFNetworking.h"
 #import "MWTAPIClient.h"
-#import "LeftMenuViewController.h"
+
 @interface MWTPortfolioViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 {
 
